@@ -19,5 +19,7 @@ class listaSimpleEnlazada{
         int pop();
         void insert(int indice, int valor); //insertar en un lugar especifico
         void print();
+        void removeAt(int indice);
+        int findIndex(int valor);
         void graph();
 };

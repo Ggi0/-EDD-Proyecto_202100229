@@ -63,9 +63,6 @@ void listaSimpleEnlazada::append(int valor){
 /*
 lista = [1, 2, 3, 4]
 valor = lista.pop()  # valor = 4, lista = [1, 2, 3]
-
-lista = [1, 2, 3, 4]
-valor = lista.pop(1)  # valor = 2, lista = [1, 3, 4]
 */
 int listaSimpleEnlazada::pop(){
     Nodo *temp;
@@ -80,6 +77,47 @@ int listaSimpleEnlazada::pop(){
 
     delete temp;
     return ret;
+}
+
+// Método para eliminar un nodo en un índice específico
+void listaSimpleEnlazada::removeAt(int indice) {
+    if (primero == nullptr) {  // La lista está vacía
+        std::cerr << "La lista está vacía, no se puede eliminar." << std::endl;
+        return;
+    }
+
+    if (indice == 0) {  // Eliminar el primer nodo
+        Nodo *temp = primero;
+        primero = primero->getSig();
+        if (primero == nullptr) {  // Si la lista queda vacía
+            ultimo = nullptr;
+        }
+        delete temp;
+        return;
+    }
+
+    Nodo *temp = primero;
+    Nodo *prev = nullptr;
+    int i = 0;
+
+    // Buscar el nodo en la posición especificada
+    while (temp != nullptr && i < indice) {
+        prev = temp;
+        temp = temp->getSig();
+        i++;
+    }
+
+    if (temp == nullptr) {  // El índice está fuera de rango
+        std::cerr << "Índice fuera de rango, no se puede eliminar." << std::endl;
+        return;
+    }
+
+    // Actualizar el siguiente nodo del nodo anterior
+    prev->setSig(temp->getSig());
+    if (temp->getSig() == nullptr) {  // Si se está eliminando el último nodo
+        ultimo = prev;
+    }
+    delete temp;
 }
 
 /*
@@ -121,6 +159,23 @@ void listaSimpleEnlazada::insert(int indice, int valor){
         temp->setSig(nuevo_nodo);
     }
 }
+
+// Método para encontrar el índice de un valor específico
+int listaSimpleEnlazada::findIndex(int valor) {
+    Nodo *temp = primero;
+    int indice = 0;
+
+    while (temp != nullptr) {
+        if (temp->getData() == valor) {
+            return indice;  // Retorna el índice si se encuentra el valor
+        }
+        temp = temp->getSig();
+        indice++;
+    }
+
+    return -1;  // Retorna -1 si el valor no se encuentra en la lista
+}
+
 
 // para IMPRIMIR
 void listaSimpleEnlazada::print(){
