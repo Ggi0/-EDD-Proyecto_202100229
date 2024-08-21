@@ -1,9 +1,9 @@
-#include "NodoUs.h"
+#include "usuarios_Nodo.h"
 
 class arrayList_us{
     private:
-        Nodo *primero;
-        Nodo *ultimo;
+        usuarios_Nodo *primero;
+        usuarios_Nodo *ultimo;
 
     public:
         // ----- CONSTRUCTOR ------
@@ -15,4 +15,5 @@ class arrayList_us{
         // ------- METODOS --------
         void push(Usuarios usuario);
         void append(Usuarios usuario);
+        void printAll();
 };

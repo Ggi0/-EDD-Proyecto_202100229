@@ -1,3 +1,5 @@
+#ifndef USUARIOS_H
+#define USUARIOS_H
 #include <string>
 /*
     clase para los Nuevos Usuarios
@@ -54,3 +56,5 @@ class Usuarios{
         void graficarUsuario();
 
 };
+
+#endif // USUARIOS_H

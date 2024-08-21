@@ -1,6 +1,13 @@
 
 #include "listaEnlazada/listaSimpleEnlazada.h"
+
+// LISTA DE USUARIOS
+#include "listaEnlazadaUsuarios/arrayListUs.h"
+
+// OBJETOS USUARIOS
 #include "Registro/Usuarios.h"
+// para que cin solo acepte int
+#include <limits>
 #include <string>
 
 
@@ -19,6 +26,8 @@ int main(int argc, char const *argv[]){
     std::string correo;
     std::string contrasenia;
 
+    arrayList_us listaUsuarios;
+
     do{
         //system("cls"); // limpiar consola win 
         //system("clear"); // limpiar consola macOS
@@ -34,6 +43,14 @@ int main(int argc, char const *argv[]){
         // capturar la entrada
         std::cout<<"Seleccione una opcion: ";
         std::cin >> opcion;
+
+        // Verificar si la entrada es válida
+        if (std::cin.fail()) {
+            std::cin.clear(); // Limpiar el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Descartar la entrada inválida
+            opcion = 0; // Asignar un valor inválido para que el switch maneje la opción por defecto
+        }
+
         std::cout <<"-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"<< std::endl<< std::endl<<std::endl;
         Usuarios usuario_nuevo;
         // clasificar opcion
@@ -83,6 +100,7 @@ int main(int argc, char const *argv[]){
                 // Crear un nuevo objeto usuario con los datos ingresados
                 usuario_nuevo = Usuarios(nombres, apellidos, fechaN, correo, contrasenia);
                 usuario_nuevo.printUsuario();
+                listaUsuarios.append(usuario_nuevo);
                 break;
 
             case 3:
@@ -94,6 +112,7 @@ int main(int argc, char const *argv[]){
                 break;
 
             case 4: 
+                listaUsuarios.printAll();
                 std::cout << "... adio"<<std::endl;
                 break;
 
@@ -107,22 +126,6 @@ int main(int argc, char const *argv[]){
 
 
     } while (opcion != 4);
-    
-    //prueba de lista enlazada
-    /*
-    listaSimpleEnlazada list;
-    list.push(12);
-    list.push(4);
-    list.push(23);
-    list.push(3);
-    list.push(78);
-    list.push(47);
-
-    list.append(500);
-    list.insert(3, 999);
-
-    list.print();
-    */
 
 
     return 0;

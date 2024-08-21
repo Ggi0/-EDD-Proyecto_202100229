@@ -37,16 +37,15 @@ std::string Usuarios::getContrasenia(){ return contrasenia; }
 
 // Setters
 void Usuarios::setID(int ID) { this->ID = ID; }
-void Usuarios::setNombres(std::string& nombre) { this->nombres = nombres; }
+void Usuarios::setNombres(std::string& nombre) { this->nombres = nombre; }
 void Usuarios::setApellidos(std::string& apellidos) { this->apellidos = apellidos; }
-void Usuarios::setFechaN(std::string& fecha) { this->fechaN = fechaN; }
+void Usuarios::setFechaN(std::string& fecha) { this->fechaN = fecha; }
 void Usuarios::setCorreo(std::string& correo) { this->correo = correo; }
-void Usuarios::setContrasenia(std::string& contrasena) { this->contrasenia = contrasenia; }
+void Usuarios::setContrasenia(std::string& contrasena) { this->contrasenia = contrasena; }
 
 
 // ----- METODO printUsuario -----
 void Usuarios::printUsuario(){
-    std::cout << "desde el metodo del objeto" << std::endl;
     std::cout << "===== Informacion del Usuario =====" << std::endl;
     std::cout << "ID: " << getID() << std::endl;
     std::cout << "Nombre: " << getNombres() << std::endl;
@@ -54,4 +53,5 @@ void Usuarios::printUsuario(){
     std::cout << "Fecha de Nacimiento: " << getFechaN() << std::endl;
     std::cout << "Correo Electronico: " << getCorreo() << std::endl;
     std::cout << "Contrasena: " << getContrasenia() << std::endl; 
+    std::cout << "===== ======================= =====" << std::endl<< std::endl;
 }

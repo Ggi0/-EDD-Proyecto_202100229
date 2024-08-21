@@ -8,8 +8,8 @@ arrayList_us::arrayList_us(){
 
 // Destructor
 arrayList_us::~arrayList_us() {
-    Nodo *tempo = primero;
-    Nodo *aux;
+    usuarios_Nodo *tempo = primero;
+    usuarios_Nodo *aux;
     while (tempo != nullptr) {
         aux = tempo->getSig();
         delete tempo;
@@ -17,9 +17,11 @@ arrayList_us::~arrayList_us() {
     }
 }
 
+// ----------- METODOS ----------------
+
 // Insertar un nodo al inicio de la lista
 void arrayList_us::push(Usuarios usuario) {
-    Nodo *nuevo_Nodo = new Nodo(usuario);
+    usuarios_Nodo *nuevo_Nodo = new usuarios_Nodo(usuario);
     if (primero == nullptr) {
         primero = nuevo_Nodo;
         ultimo = nuevo_Nodo;
@@ -31,7 +33,7 @@ void arrayList_us::push(Usuarios usuario) {
 
 // Insertar un nodo al final de la lista
 void arrayList_us::append(Usuarios usuario) {
-    Nodo *nuevo_Nodo = new Nodo(usuario);
+    usuarios_Nodo *nuevo_Nodo = new usuarios_Nodo(usuario);
     if (primero == nullptr) {
         primero = nuevo_Nodo;
         ultimo = nuevo_Nodo;
@@ -40,3 +42,17 @@ void arrayList_us::append(Usuarios usuario) {
         ultimo = nuevo_Nodo;
     }
 }
+
+
+
+// Método para imprimir todos los usuarios en la lista
+void arrayList_us::printAll() {
+    usuarios_Nodo *actual = primero;  // Empezar desde el primer nodo
+
+    // Recorrer toda la lista
+    while (actual != nullptr) {
+        actual->getDato().printUsuario();  // Llamar al método printUsuario de cada objeto Usuario
+        actual = actual->getSig();  // Avanzar al siguiente nodo
+    }
+}
+
