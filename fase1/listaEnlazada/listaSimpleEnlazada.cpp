@@ -122,6 +122,7 @@ void listaSimpleEnlazada::insert(int indice, int valor){
     }
 }
 
+// para IMPRIMIR
 void listaSimpleEnlazada::print(){
     Nodo *tempo = primero;
 

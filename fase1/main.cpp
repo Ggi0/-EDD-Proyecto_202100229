@@ -1,5 +1,6 @@
 
 #include "listaEnlazada/listaSimpleEnlazada.h"
+#include "Registro/Usuarios.h"
 #include <string>
 
 
@@ -12,8 +13,11 @@ void enter() {
 int main(int argc, char const *argv[]){
 
     int opcion;
+    std::string nombres;
+    std::string apellidos;
+    std::string fechaN;
     std::string correo;
-    std::string contrasena;
+    std::string contrasenia;
 
     do{
         //system("cls"); // limpiar consola win 
@@ -31,7 +35,7 @@ int main(int argc, char const *argv[]){
         std::cout<<"Seleccione una opcion: ";
         std::cin >> opcion;
         std::cout <<"-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"<< std::endl<< std::endl<<std::endl;
-
+        Usuarios usuario_nuevo;
         // clasificar opcion
         switch(opcion){
             case 1:
@@ -43,10 +47,10 @@ int main(int argc, char const *argv[]){
                 std::getline(std::cin >> std::ws, correo);  // Leer el correo ingresado por el usuario
                 // Solicitar contraseña
                 std::cout << "Contrasena: ";
-                std::getline(std::cin >> std::ws, contrasena);  // Leer la contraseña ingresada por el usuario
+                std::getline(std::cin >> std::ws, contrasenia);  // Leer la contraseña ingresada por el usuario
 
                 std::cout <<"su correo es: "<< correo<<std::endl; 
-                std::cout <<"su contrasenia es: "<< contrasena<<std::endl;
+                std::cout <<"su contrasenia es: "<< contrasenia<<std::endl;
                 enter(); 
                 std::cout<< std::endl<< std::endl;
                 break;
@@ -54,8 +58,31 @@ int main(int argc, char const *argv[]){
             case 2:
                 std::cout << "2) REGISTRARSE"<< std::endl;
                 std::cout << "- - - - - - - - - - - - - - - -"<< std::endl<< std::endl;
-                // registrar a un usuario nuevo
+                // REGISTRAR a un usuario nuevo
+                // Nombres
+                std::cout << "Nombres: ";
+                std::getline(std::cin >> std::ws, nombres);
+
+                // Apellidos
+                std::cout << "Apellidos: ";
+                std::getline(std::cin >> std::ws, apellidos);
+
+                // Fecha de nacimiento
+                std::cout << "Fecha de Nacimiento (DD/MM/AA): ";
+                std::getline(std::cin >> std::ws, fechaN);
+                
+                // Correo Electronico
+                std::cout << "correo electronico: ";
+                std::getline(std::cin >> std::ws, correo);
+
+                // Contrasenia
+                std::cout << "contrasenia: ";
+                std::getline(std::cin >> std::ws, contrasenia);
                 std::cout<< std::endl<< std::endl;
+
+                // Crear un nuevo objeto usuario con los datos ingresados
+                usuario_nuevo = Usuarios(nombres, apellidos, fechaN, correo, contrasenia);
+                usuario_nuevo.printUsuario();
                 break;
 
             case 3:
