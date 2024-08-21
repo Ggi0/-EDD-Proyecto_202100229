@@ -6,6 +6,7 @@ listaSimpleEnlazada::listaSimpleEnlazada(){
     ultimo = nullptr;
 }
 
+// Destructor
 listaSimpleEnlazada::~listaSimpleEnlazada(){
     Nodo *tempo = primero; // puntero temporal que apunte a la cabeza
     Nodo *aux;
@@ -19,7 +20,7 @@ listaSimpleEnlazada::~listaSimpleEnlazada(){
     }
 }
 
-// insertar en la cabeza de la lista
+// insertar en la cabeza de la lista (inicio)
 void listaSimpleEnlazada::push(int valor){
     // new --> nueva direccion de memoria, que tendra el valor (parametro)
     Nodo *nuevo_Nodo = new Nodo(valor);
@@ -38,6 +39,7 @@ void listaSimpleEnlazada::push(int valor){
     }
 }
 
+// insertar un nodo al final de la lista
 void listaSimpleEnlazada::append(int valor){
     Nodo *nuevo_Nodo = new Nodo(valor);
 
@@ -56,6 +58,16 @@ void listaSimpleEnlazada::append(int valor){
         // temp->setSig(nuevo_nodo);
     }
 }
+
+// Eliminar
+/*
+lista = [1, 2, 3, 4]
+valor = lista.pop()  # valor = 4, lista = [1, 2, 3]
+
+lista = [1, 2, 3, 4]
+valor = lista.pop(1)  # valor = 2, lista = [1, 3, 4]
+*/
+
 
 int listaSimpleEnlazada::pop(){
     Nodo *temp;
