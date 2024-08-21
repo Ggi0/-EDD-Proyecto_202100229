@@ -67,8 +67,6 @@ valor = lista.pop()  # valor = 4, lista = [1, 2, 3]
 lista = [1, 2, 3, 4]
 valor = lista.pop(1)  # valor = 2, lista = [1, 3, 4]
 */
-
-
 int listaSimpleEnlazada::pop(){
     Nodo *temp;
     int ret;
