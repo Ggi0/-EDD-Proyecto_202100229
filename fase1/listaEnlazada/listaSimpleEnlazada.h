@@ -16,6 +16,7 @@ class listaSimpleEnlazada{
         // ----- METODOS -------
         void push(int valor); // agregar al inicio de la lista
         void append(int valor); // agregar al final de la lista
+        int pop();
         void insert(int indice, int valor); //insertar en un lugar especifico
         void print();
         void graph();
