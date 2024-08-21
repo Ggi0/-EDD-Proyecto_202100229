@@ -12,6 +12,7 @@
 class Usuarios{
     private:
         int ID;
+        static int contadorID;
         std::string nombres;
         std::string apellidos;
         std::string fechaN;
@@ -40,11 +41,11 @@ class Usuarios{
 
         // ----- SETTERS -------
         void setID(int ID);
-        void setNombres(std::string nombre);
-        void setApellidos(std::string apellidos);
-        void setFechaN(std::string fecha);
-        void setCorreo(std::string correo);
-        void setContrasenia(std::string contrasena);
+        void setNombres(std::string& nombre);
+        void setApellidos(std::string& apellidos);
+        void setFechaN(std::string& fecha);
+        void setCorreo(std::string& correo);
+        void setContrasenia(std::string& contrasena);
 
         // ---- METODOS -----
         void printUsuario();
