@@ -6,6 +6,10 @@
 
 // OBJETOS USUARIOS
 #include "Registro/Usuarios.h"
+
+// para validad usuarios
+#include "Registro/registrarUsuarios.h"
+
 // para que cin solo acepte int
 #include <limits>
 #include <string>
@@ -25,8 +29,12 @@ int main(int argc, char const *argv[]){
     std::string fechaN;
     std::string correo;
     std::string contrasenia;
+    std::string msj = "";
+    
 
     arrayList_us listaUsuarios;
+    GestorUsuarios listaOficial_usuarios;
+    //listaUsuarios = listaOficial_usuarios.getListaUsuarios();
 
     do{
         //system("cls"); // limpiar consola win 
@@ -53,6 +61,7 @@ int main(int argc, char const *argv[]){
 
         std::cout <<"-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"<< std::endl<< std::endl<<std::endl;
         Usuarios usuario_nuevo;
+        std::string validacion_correro = "";
         // clasificar opcion
         switch(opcion){
             case 1:
@@ -99,8 +108,13 @@ int main(int argc, char const *argv[]){
 
                 // Crear un nuevo objeto usuario con los datos ingresados
                 usuario_nuevo = Usuarios(nombres, apellidos, fechaN, correo, contrasenia);
-                usuario_nuevo.printUsuario();
-                listaUsuarios.append(usuario_nuevo);
+                //usuario_nuevo.printUsuario();
+
+                // AGREGAR LOS USUARIOS A LA LISTA ENLAZADA
+                //listaUsuarios.append(usuario_nuevo);
+
+                msj=listaOficial_usuarios.agregarUsuario(usuario_nuevo);
+                std::cout << msj<<std::endl;
                 break;
 
             case 3:
@@ -112,7 +126,7 @@ int main(int argc, char const *argv[]){
                 break;
 
             case 4: 
-                listaUsuarios.printAll();
+                //listaUsuarios.printAll();
                 std::cout << "... adio"<<std::endl;
                 break;
 
@@ -127,7 +141,7 @@ int main(int argc, char const *argv[]){
 
     } while (opcion != 4);
 
-
+    listaOficial_usuarios.getListaUsuarios().printAll();
     return 0;
 
 }

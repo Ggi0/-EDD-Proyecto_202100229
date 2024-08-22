@@ -17,6 +17,10 @@ arrayList_us::~arrayList_us() {
     }
 }
 
+usuarios_Nodo* arrayList_us::getPrimero() {
+    return primero;
+}
+
 // ----------- METODOS ----------------
 
 // Insertar un nodo al inicio de la lista
@@ -40,6 +44,47 @@ void arrayList_us::append(Usuarios usuario) {
     } else {
         ultimo->setSig(nuevo_Nodo);
         ultimo = nuevo_Nodo;
+    }
+}
+
+// Método para obtener el tamaño de la lista
+int arrayList_us::size() {
+    int count = 0;
+    usuarios_Nodo *actual = primero;
+    
+    while (actual != nullptr) {
+        count++;
+        actual = actual->getSig();
+    }
+    
+    return count;
+}
+
+// Método para eliminar el último elemento de la lista
+void arrayList_us::pop() {
+    if (primero == nullptr) {
+        // La lista está vacía, no hay nada que eliminar
+        return;
+    }
+    
+    if (primero == ultimo) {
+        // Solo hay un elemento en la lista
+        delete primero;
+        primero = nullptr;
+        ultimo = nullptr;
+    } else {
+        // Hay más de un elemento en la lista
+        usuarios_Nodo *actual = primero;
+        
+        // Recorrer la lista hasta el penúltimo nodo
+        while (actual->getSig() != ultimo) {
+            actual = actual->getSig();
+        }
+        
+        // Eliminar el último nodo
+        delete ultimo;
+        ultimo = actual;
+        ultimo->setSig(nullptr);
     }
 }
 

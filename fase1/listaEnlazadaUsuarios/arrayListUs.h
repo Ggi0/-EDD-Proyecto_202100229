@@ -1,3 +1,6 @@
+#ifndef ARRAYLIST_US_H
+#define ARRAYLIST_US_H
+
 #include "usuarios_Nodo.h"
 
 class arrayList_us{
@@ -15,5 +18,11 @@ class arrayList_us{
         // ------- METODOS --------
         void push(Usuarios usuario);
         void append(Usuarios usuario);
+        int size();
+        void pop();
         void printAll();
+
+        usuarios_Nodo* getPrimero();
 };
+
+#endif // ARRAYLIST_US_H
