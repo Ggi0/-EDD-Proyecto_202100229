@@ -1,3 +1,6 @@
+#ifndef NODO
+#define NODO
+
 #include <iostream>
 
 class Nodo{
@@ -17,10 +20,7 @@ class Nodo{
         void setData(int valor); // Define el valor de del nodo
         void setSig(Nodo* sig); // Define el siguiente del nodo
         
-        int getData(); // Devuelve la Data entera
+        int& getData(); // Devuelve la Data entera
         Nodo* getSig(); // Devuelve el siguiente del nodo, retorna un puntero ya que es un puntero 
-        
-        
-
-
 };
+#endif // NODO

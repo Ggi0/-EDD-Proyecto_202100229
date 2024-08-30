@@ -1,3 +1,5 @@
+#ifndef LISTA_SIMPLE_ENLAZADA
+#define LISTA_SIMPLE_ENLAZADA
 
 #include "Nodo.h"
 
@@ -19,7 +21,11 @@ class listaSimpleEnlazada{
         int pop();
         void insert(int indice, int valor); //insertar en un lugar especifico
         void print();
-        void removeAt(int indice);
-        int findIndex(int valor);
+        void removeAt(int indice); // elimina en un indice espcifico
+        int findIndex(int valor); // encuentra el indice de un valor concreto
         void graph();
+        int size();
+
+        Nodo* getPrimero() const;
 };
+#endif // LISTA_SIMPLE_ENLAZADA

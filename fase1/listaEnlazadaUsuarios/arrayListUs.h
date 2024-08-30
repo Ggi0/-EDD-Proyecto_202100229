@@ -1,7 +1,17 @@
-#ifndef ARRAYLIST_US_H
-#define ARRAYLIST_US_H
+#ifndef ARRAYLISTUS_H
+#define ARRAYLISTUS_H
 
 #include "usuarios_Nodo.h"
+
+#include <fstream>  // Para manejar archivos
+#include <iostream>
+
+#include <algorithm>
+#include <vector>
+#include <fstream>
+
+class Usuarios; 
+
 
 class arrayList_us{
     private:
@@ -21,8 +31,36 @@ class arrayList_us{
         int size();
         void pop();
         void printAll();
+        void removeIf(bool (*condition)(const Usuarios&));
+        
+        // Método para graficar la lista usando Graphviz
+        void graficar() const; 
 
+        // Métodos para acceder y modificar los nodos primero y último
         usuarios_Nodo* getPrimero();
+        void setPrimero(usuarios_Nodo* nuevoPrimero);
+
+        usuarios_Nodo* getUltimo();
+        void setUltimo(usuarios_Nodo* nuevoUltimo);
+
+        Usuarios* buscarPorCorreo(const std::string& correo);
+        Usuarios* buscarPorID(int id);
+        void eliminarUsuario(const std::string& correo);
+
+
+        // Método para obtener los 5 usuarios con más publicaciones
+        std::vector<Usuarios*> top5UsuariosConMasPublicaciones();
+
+        // Método para obtener los 5 usuarios con menos amigos
+        std::vector<Usuarios*> top5UsuariosConMenosAmigos();
+
+        // Método para graficar los 5 usuarios con más publicaciones
+        void graficarTop5ConMasPublicaciones();
+
+        // Método para graficar los 5 usuarios con menos amigos
+        void graficarTop5ConMenosAmigos();
+
+        Usuarios* buscarUsuarioPorID(int id) const;
 };
 
 #endif // ARRAYLIST_US_H

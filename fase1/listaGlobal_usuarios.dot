@@ -1,0 +1,22 @@
+digraph G {
+  rankdir=LR;
+  1 [label="ID: 1\nNombres: gio1\nApellidos: concoha\nCorreo: calificacion.f1.1@gmail.com"];
+  1 -> 3;
+  3 [label="ID: 3\nNombres: Maria\nApellidos: Lopez\nCorreo: maria.lopez@example.com"];
+  3 -> 4;
+  4 [label="ID: 4\nNombres: Juan\nApellidos: Martinez\nCorreo: juan.martinez@example.com"];
+  4 -> 5;
+  5 [label="ID: 5\nNombres: Ana\nApellidos: Hernandez\nCorreo: ana.hernandez@example.com"];
+  5 -> 6;
+  6 [label="ID: 6\nNombres: Luis\nApellidos: Perez\nCorreo: luis.perez@example.com"];
+  6 -> 7;
+  7 [label="ID: 7\nNombres: Laura\nApellidos: Ramirez\nCorreo: laura.ramirez@example.com"];
+  7 -> 8;
+  8 [label="ID: 8\nNombres: Jose\nApellidos: Garcia\nCorreo: jose.garcia@example.com"];
+  8 -> 9;
+  9 [label="ID: 9\nNombres: Elena\nApellidos: Torres\nCorreo: elena.torres@example.com"];
+  9 -> 10;
+  10 [label="ID: 10\nNombres: Miguel\nApellidos: Rodriguez\nCorreo: miguel.rodriguez@example.com"];
+  10 -> 11;
+  11 [label="ID: 11\nNombres: Sofia\nApellidos: Gonzalez\nCorreo: sofia.gonzalez@example.com"];
+}

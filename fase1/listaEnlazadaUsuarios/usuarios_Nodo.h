@@ -1,8 +1,9 @@
-#ifndef NODOUS_H
-#define NODOUS_H
+#ifndef USUARIOS_NODO_H
+#define USUARIOS_NODO_H
 
 #include "../Registro/Usuarios.h"
 #include <iostream>
+class Usuarios; // Declaración adelantada
 
 class usuarios_Nodo {
     private:
@@ -18,7 +19,9 @@ class usuarios_Nodo {
         void setSig(usuarios_Nodo* sig);
         void setDato(Usuarios valor);
 
-        Usuarios getDato();
+        Usuarios& getDato();
         usuarios_Nodo* getSig();
 };
-#endif // NODOUS_H
+#endif // USUARIOS_NODO_H
+
+

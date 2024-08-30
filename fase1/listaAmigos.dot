@@ -1,0 +1,5 @@
+digraph G {
+    rankdir=LR;
+    node [shape=record];
+    node0 [label="{ID: 7\nNombre: Laura Ramirez\nCorreo: laura.ramirez@example.com}"];
+}

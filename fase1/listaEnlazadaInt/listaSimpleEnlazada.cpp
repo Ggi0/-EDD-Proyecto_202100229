@@ -49,7 +49,6 @@ void listaSimpleEnlazada::append(int valor){
     }else{
         ultimo -> setSig(nuevo_Nodo);
         ultimo = nuevo_Nodo;
-
         // esta solución es para utilizar un puntero menos, que a su vez es menos memoria utilizada
         //Nodo *temp = primero;
         // while(temp->getSig() != nullptr){
@@ -186,4 +185,23 @@ void listaSimpleEnlazada::print(){
         tempo = tempo -> getSig();
     }
     std::cout<< std::endl;
+}
+
+
+
+int listaSimpleEnlazada::size() {
+    int contador = 0;
+    Nodo *temp = primero;
+
+    // Recorre la lista y cuenta cada nodo
+    while (temp != nullptr) {
+        contador++;
+        temp = temp->getSig();
+    }
+
+    return contador;
+}
+
+Nodo* listaSimpleEnlazada::getPrimero() const {
+    return primero;
 }

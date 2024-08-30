@@ -1,25 +1,24 @@
+// para menuAdmin
+#include "Administrador/menuAdmin.h"
 
-#include "listaEnlazada/listaSimpleEnlazada.h"
+// para menuAdmin
+#include "ModuloUsuario/menuUsuario.h"
 
-// LISTA DE USUARIOS
-#include "listaEnlazadaUsuarios/arrayListUs.h"
+// Funciones para verificar usuarios
+#include "Registro/registroUsuarioOficial.h"
 
-// OBJETOS USUARIOS
-#include "Registro/Usuarios.h"
-
-// para validad usuarios
-#include "Registro/registrarUsuarios.h"
-
-// para que cin solo acepte int
-#include <limits>
 #include <string>
 
+#include "Registro/global_data.h"
+#include "publicaciones/global_data_publicaciones.h"
 
-void enter() {
-    std::cout << "Presiona Enter para continuar..." << std::endl;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignora cualquier entrada previa hasta encontrar un salto de línea
-    std::cin.get(); // Espera a que el usuario presione Enter
-}
+// metodo para registrar solicitudes
+#include "Solicitudes/registroSolicitudes.h"
+
+//registrar publicaciones
+#include "publicaciones/registroPublicaciones.h"
+
+#include "Herramientas/enter.h"
 
 int main(int argc, char const *argv[]){
 
@@ -30,11 +29,16 @@ int main(int argc, char const *argv[]){
     std::string correo;
     std::string contrasenia;
     std::string msj = "";
-    
+    int valorInicioSesion = 0;
 
-    arrayList_us listaUsuarios;
-    GestorUsuarios listaOficial_usuarios;
-    //listaUsuarios = listaOficial_usuarios.getListaUsuarios();
+    std::string emisor = "";
+    std::string receptor = "";
+    std::string estado = "";
+
+    std::string correo_p = "";
+    std::string contenido_p ="";
+    std::string fecha_p ="";
+    std::string hora_p="";
 
     do{
         //system("cls"); // limpiar consola win 
@@ -60,8 +64,6 @@ int main(int argc, char const *argv[]){
         }
 
         std::cout <<"-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"<< std::endl<< std::endl<<std::endl;
-        Usuarios usuario_nuevo;
-        std::string validacion_correro = "";
         // clasificar opcion
         switch(opcion){
             case 1:
@@ -74,11 +76,16 @@ int main(int argc, char const *argv[]){
                 // Solicitar contraseña
                 std::cout << "Contrasena: ";
                 std::getline(std::cin >> std::ws, contrasenia);  // Leer la contraseña ingresada por el usuario
-
-                std::cout <<"su correo es: "<< correo<<std::endl; 
-                std::cout <<"su contrasenia es: "<< contrasenia<<std::endl;
-                enter(); 
                 std::cout<< std::endl<< std::endl;
+
+                valorInicioSesion = iniciarSesion(correo, contrasenia);
+                if (valorInicioSesion == 2){
+                    menuAdmin();
+                }else if (valorInicioSesion == 1){
+                    menuUsuario(correo);
+                }
+
+                enter(); 
                 break;
 
             case 2:
@@ -106,42 +113,136 @@ int main(int argc, char const *argv[]){
                 std::getline(std::cin >> std::ws, contrasenia);
                 std::cout<< std::endl<< std::endl;
 
-                // Crear un nuevo objeto usuario con los datos ingresados
-                usuario_nuevo = Usuarios(nombres, apellidos, fechaN, correo, contrasenia);
-                //usuario_nuevo.printUsuario();
-
-                // AGREGAR LOS USUARIOS A LA LISTA ENLAZADA
-                //listaUsuarios.append(usuario_nuevo);
-
-                msj=listaOficial_usuarios.agregarUsuario(usuario_nuevo);
-                std::cout << msj<<std::endl;
+                verificarCorreo(nombres, apellidos, fechaN, correo, contrasenia);
                 break;
 
             case 3:
                 std::cout << "3) INFORMACION"<< std::endl;
                 std::cout << "- - - - - - - - - - - - - - - -"<< std::endl<< std::endl;
                 std::cout << "Giovanni Concohá"<< std::endl<<"       202100229"<< std::endl<<std::endl;
+
+                verListaGlobal();
                 enter();
                 std::cout << std::endl;
                 break;
 
             case 4: 
-                //listaUsuarios.printAll();
                 std::cout << "... adio"<<std::endl;
+                break;
+
+            case 5: 
+                std::cout << "... viendo si jala la lista global"<<std::endl;
+                listaGlobal_usuarios.printAll();
+                break;
+
+            case 6: 
+                std::cout << "... validadndo solicitudes"<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio2/gio1/PEN)"<<std::endl;
+                emisor = "gio2";
+                receptor = "gio1";
+                estado = "PENDIENTE";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio3/gio1/PEN)"<<std::endl;
+                emisor = "gio3";
+                receptor = "gio1";
+                estado = "PENDIENTE";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio4/gio1/Ac)"<<std::endl;
+                emisor = "gio4";
+                receptor = "gio1";
+                estado = "ACEPTADA";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio1/gio3/ACEP)"<<std::endl;
+                emisor = "gio1";
+                receptor = "gio3";
+                estado = "ACEPTADA";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio7/gio2/PEN)"<<std::endl;
+                emisor = "gio7";
+                receptor = "gio2";
+                estado = "PENDIENTE";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio2/gio7/ACEP)"<<std::endl;
+                emisor = "gio2";
+                receptor = "gio7";
+                estado = "ACEPTADA";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+                
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(gio1/gio2/ACEP)"<<std::endl;
+                emisor = "gio1";
+                receptor = "gio2";
+                estado = "ACEPTADA";
+                registroSolicitudes(emisor, receptor, estado);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+                break;
+
+            case 7:
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(publicacion 1)"<<std::endl;
+                correo_p = "gio1";
+                contenido_p ="hola publicacion 1 de gio1";
+                fecha_p ="hoy";
+                hora_p="6 pm";
+                verificarCorreo_publicacion(correo_p, contenido_p, fecha_p,hora_p);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(publicacion 2)"<<std::endl;
+                correo_p = "gio1";
+                contenido_p ="hola publicacion 2 de gio1";
+                fecha_p ="hoy";
+                hora_p="7 pm";
+                verificarCorreo_publicacion(correo_p, contenido_p, fecha_p, hora_p);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(publicacion 3)"<<std::endl;
+                correo_p = "gio7";
+                contenido_p ="hola publicacion 1 de gio7";
+                fecha_p ="hoy";
+                hora_p="9 pm";
+                verificarCorreo_publicacion(correo_p, contenido_p, fecha_p, hora_p);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+
+                std::cout << "--------------------------"<<std::endl;
+                std::cout << "(publicacion 4)"<<std::endl;
+                correo_p = "gio5";
+                contenido_p ="hola publicacion 1 de gio5";
+                fecha_p ="hoy";
+                hora_p="3 pm";
+                verificarCorreo_publicacion(correo_p, contenido_p, fecha_p, hora_p);
+                std::cout << "--------------------------"<<std::endl<<std::endl;
+                break;
+
+            case 8:
+                std::cout << "todas las publicaciones: "<<std::endl;
+                listaGlobal_publicaciones.print();
                 break;
 
             default:
                 std::cout << "opcion NO valida. Seleccione una de la 4 opciones";
-                std::cout << "... presione ENTER para continuar..."<<std::endl;
                 enter();
         }
-
-
-
-
     } while (opcion != 4);
-
-    listaOficial_usuarios.getListaUsuarios().printAll();
     return 0;
 
 }

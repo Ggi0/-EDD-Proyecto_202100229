@@ -1,0 +1,16 @@
+digraph G {
+    rankdir=LR;
+    node [shape=record];
+    node0 [label="{<ant> | Correo: luis.perez@example.com\nContenido: Día perfecto para una caminata por el parque, disfrutando de la naturaleza.\nFecha: 15/08/2024\nHora: 10:57 | <sig>}"];
+    node1 [label="{<ant> | Correo: laura.ramirez@example.com\nContenido: La lectura de un buen libro puede cambiar tu perspectiva del mundo.\nFecha: 20/08/2024\nHora: 16:45 | <sig>}"];
+    node2 [label="{<ant> | Correo: luis.perez@example.com\nContenido: El ejercicio diario es clave para una vida saludable, nunca lo dudes.\nFecha: 14/08/2024\nHora: 06:15 | <sig>}"];
+    node3 [label="{<ant> | Correo: laura.ramirez@example.com\nContenido: La naturaleza siempre tiene una forma de sorprendernos, es increíble.\nFecha: 20/08/2024\nHora: 18:30 | <sig>}"];
+    node0:sig -> node1:ant;
+    node1:ant -> node0:sig;
+    node1:sig -> node2:ant;
+    node2:ant -> node1:sig;
+    node2:sig -> node3:ant;
+    node3:ant -> node2:sig;
+    node3:sig -> node0:ant;
+    node0:ant -> node3:sig;
+}

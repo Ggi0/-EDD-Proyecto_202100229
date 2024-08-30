@@ -12,7 +12,8 @@ Nodo::Nodo(int data){
 }
 
 // ----- Getter and Setter ----------
-int Nodo::getData(){
+
+int& Nodo::getData(){
     return data;
 }
 

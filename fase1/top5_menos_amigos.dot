@@ -1,0 +1,13 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record];
+  node0 [label="{Correo: calificacion.f1.1@gmail.com| Amigos: 0}"];
+  node1 [label="{Correo: maria.lopez@example.com| Amigos: 0}"];
+  node0 -> node1;
+  node2 [label="{Correo: jose.garcia@example.com| Amigos: 0}"];
+  node1 -> node2;
+  node3 [label="{Correo: elena.torres@example.com| Amigos: 0}"];
+  node2 -> node3;
+  node4 [label="{Correo: juan.martinez@example.com| Amigos: 1}"];
+  node3 -> node4;
+}

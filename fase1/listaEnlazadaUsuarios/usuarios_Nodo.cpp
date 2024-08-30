@@ -20,7 +20,7 @@ void usuarios_Nodo::setSig(usuarios_Nodo *sig){
     this->sig = sig;
 }
 
-Usuarios usuarios_Nodo::getDato(){
+Usuarios& usuarios_Nodo::getDato() {
     return dato;
 }
 
