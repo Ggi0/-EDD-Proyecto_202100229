@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QStackedWidget>
-#include <QPushButton>
 
 namespace Ui {
 class Form_admin;

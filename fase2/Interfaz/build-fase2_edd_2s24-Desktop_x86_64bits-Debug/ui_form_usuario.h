@@ -11,10 +11,14 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,10 +36,41 @@ public:
     QPushButton *btt_cerrarSesion;
     QStackedWidget *stackedWidget;
     QWidget *page_buscar;
+    QLineEdit *txt_buscarUser;
+    QLabel *label_2;
+    QPushButton *btt_buscar2;
     QWidget *page_publi;
+    QLabel *label_3;
+    QFrame *frame_2;
+    QFrame *frame_3;
     QWidget *page_soli;
+    QTableView *tableV_usuarios;
+    QTableView *tableV_soliRec;
+    QTableView *tableV_soliEnv;
     QWidget *page_reportes;
+    QFrame *frame_4;
+    QTableView *tableView;
+    QFrame *frame_5;
+    QTableView *tableView_2;
+    QFrame *frame_6;
+    QComboBox *comboBox;
+    QWidget *page_white;
     QWidget *page_perfil;
+    QFrame *frame_7;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLineEdit *txt_nombres;
+    QLineEdit *txt_apellidos;
+    QLineEdit *txt_correo;
+    QLineEdit *txt_contrasenia;
+    QLineEdit *txt_fechaNac;
+    QPushButton *btt_modificarDatos;
+    QPushButton *btt_eliminarDatos;
+    QFrame *frame_8;
+    QLabel *label_9;
 
     void setupUi(QWidget *Form_usuario)
     {
@@ -278,21 +313,268 @@ public:
         stackedWidget->setGeometry(QRect(10, 60, 791, 391));
         page_buscar = new QWidget();
         page_buscar->setObjectName(QString::fromUtf8("page_buscar"));
+        txt_buscarUser = new QLineEdit(page_buscar);
+        txt_buscarUser->setObjectName(QString::fromUtf8("txt_buscarUser"));
+        txt_buscarUser->setGeometry(QRect(120, 10, 231, 31));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
+        font2.setPointSize(16);
+        txt_buscarUser->setFont(font2);
+        txt_buscarUser->setEchoMode(QLineEdit::Normal);
+        label_2 = new QLabel(page_buscar);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(10, 0, 111, 41));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
+        font3.setPointSize(30);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label_2->setFont(font3);
+        btt_buscar2 = new QPushButton(page_buscar);
+        btt_buscar2->setObjectName(QString::fromUtf8("btt_buscar2"));
+        btt_buscar2->setGeometry(QRect(360, 10, 31, 31));
+        btt_buscar2->setFont(font1);
+        btt_buscar2->setStyleSheet(QString::fromUtf8("QPushButton#btt_buscar2 {\n"
+"background: qlineargradient(\n"
+"    spread: pad, \n"
+"    x1: 0, y1: 0, \n"
+"    x2: 1, y2: 1, \n"
+"    stop: 0 #5DADE2, /* Azul m\303\241s claro */\n"
+"    stop: 1 #85C1E9  /* Azul a\303\272n m\303\241s claro */\n"
+"); /* Degradado de azul claro a azul m\303\241s claro */\n"
+"\n"
+"\n"
+"    border: 0px solid #3498DB; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"}\n"
+"\n"
+"QPushButton#btt_buscar2:hover {\n"
+"    background-color: #2980B9; \n"
+"    border-color: #1F618D; \n"
+"}\n"
+"\n"
+"QPushButton#btt_buscar2:pressed {\n"
+"    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #1F618D; /* Borde m\303\241s oscuro cuando se presiona */\n"
+"}"));
         stackedWidget->addWidget(page_buscar);
         page_publi = new QWidget();
         page_publi->setObjectName(QString::fromUtf8("page_publi"));
+        label_3 = new QLabel(page_publi);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(10, 0, 211, 41));
+        label_3->setFont(font3);
+        frame_2 = new QFrame(page_publi);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setGeometry(QRect(10, 40, 281, 341));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        frame_3 = new QFrame(page_publi);
+        frame_3->setObjectName(QString::fromUtf8("frame_3"));
+        frame_3->setGeometry(QRect(300, 40, 481, 341));
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Raised);
         stackedWidget->addWidget(page_publi);
         page_soli = new QWidget();
         page_soli->setObjectName(QString::fromUtf8("page_soli"));
+        tableV_usuarios = new QTableView(page_soli);
+        tableV_usuarios->setObjectName(QString::fromUtf8("tableV_usuarios"));
+        tableV_usuarios->setGeometry(QRect(20, 50, 741, 161));
+        tableV_soliRec = new QTableView(page_soli);
+        tableV_soliRec->setObjectName(QString::fromUtf8("tableV_soliRec"));
+        tableV_soliRec->setGeometry(QRect(20, 220, 311, 161));
+        tableV_soliEnv = new QTableView(page_soli);
+        tableV_soliEnv->setObjectName(QString::fromUtf8("tableV_soliEnv"));
+        tableV_soliEnv->setGeometry(QRect(350, 220, 311, 161));
         stackedWidget->addWidget(page_soli);
         page_reportes = new QWidget();
         page_reportes->setObjectName(QString::fromUtf8("page_reportes"));
+        frame_4 = new QFrame(page_reportes);
+        frame_4->setObjectName(QString::fromUtf8("frame_4"));
+        frame_4->setGeometry(QRect(0, 0, 381, 171));
+        frame_4->setFrameShape(QFrame::StyledPanel);
+        frame_4->setFrameShadow(QFrame::Raised);
+        tableView = new QTableView(frame_4);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(10, 30, 361, 131));
+        frame_5 = new QFrame(page_reportes);
+        frame_5->setObjectName(QString::fromUtf8("frame_5"));
+        frame_5->setGeometry(QRect(400, 0, 381, 171));
+        frame_5->setFrameShape(QFrame::StyledPanel);
+        frame_5->setFrameShadow(QFrame::Raised);
+        tableView_2 = new QTableView(frame_5);
+        tableView_2->setObjectName(QString::fromUtf8("tableView_2"));
+        tableView_2->setGeometry(QRect(10, 30, 361, 131));
+        frame_6 = new QFrame(page_reportes);
+        frame_6->setObjectName(QString::fromUtf8("frame_6"));
+        frame_6->setGeometry(QRect(0, 180, 781, 211));
+        frame_6->setFrameShape(QFrame::StyledPanel);
+        frame_6->setFrameShadow(QFrame::Raised);
+        comboBox = new QComboBox(frame_6);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(40, 80, 91, 32));
         stackedWidget->addWidget(page_reportes);
+        page_white = new QWidget();
+        page_white->setObjectName(QString::fromUtf8("page_white"));
+        stackedWidget->addWidget(page_white);
         page_perfil = new QWidget();
         page_perfil->setObjectName(QString::fromUtf8("page_perfil"));
+        frame_7 = new QFrame(page_perfil);
+        frame_7->setObjectName(QString::fromUtf8("frame_7"));
+        frame_7->setGeometry(QRect(0, 0, 541, 391));
+        frame_7->setStyleSheet(QString::fromUtf8("QFrame#frame_7{\n"
+"    background: qlineargradient(\n"
+"        spread: pad, \n"
+"        x1: 0, y1: 0, \n"
+"        x2: 1, y2: 1, \n"
+"        stop: 0 #d3877d, \n"
+"        stop: 1 #f6e1dd\n"
+"    ); /* Degradado de #566e71 a un tono m\303\241s fresco */\n"
+"    padding: 15px; /* Espacio interno mayor para mejor estructura */\n"
+"    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"}\n"
+""));
+        frame_7->setFrameShape(QFrame::StyledPanel);
+        frame_7->setFrameShadow(QFrame::Raised);
+        label_4 = new QLabel(frame_7);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(20, 10, 91, 31));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
+        font4.setPointSize(20);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_4->setFont(font4);
+        label_5 = new QLabel(frame_7);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(20, 50, 101, 31));
+        label_5->setFont(font4);
+        label_6 = new QLabel(frame_7);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(20, 90, 81, 31));
+        label_6->setFont(font4);
+        label_7 = new QLabel(frame_7);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(20, 130, 131, 31));
+        label_7->setFont(font4);
+        label_8 = new QLabel(frame_7);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(20, 170, 211, 31));
+        label_8->setFont(font4);
+        txt_nombres = new QLineEdit(frame_7);
+        txt_nombres->setObjectName(QString::fromUtf8("txt_nombres"));
+        txt_nombres->setGeometry(QRect(140, 10, 381, 31));
+        txt_nombres->setFont(font2);
+        txt_nombres->setEchoMode(QLineEdit::Normal);
+        txt_apellidos = new QLineEdit(frame_7);
+        txt_apellidos->setObjectName(QString::fromUtf8("txt_apellidos"));
+        txt_apellidos->setGeometry(QRect(140, 50, 381, 31));
+        txt_apellidos->setFont(font2);
+        txt_apellidos->setEchoMode(QLineEdit::Normal);
+        txt_correo = new QLineEdit(frame_7);
+        txt_correo->setObjectName(QString::fromUtf8("txt_correo"));
+        txt_correo->setGeometry(QRect(140, 90, 381, 31));
+        txt_correo->setFont(font2);
+        txt_correo->setEchoMode(QLineEdit::Normal);
+        txt_contrasenia = new QLineEdit(frame_7);
+        txt_contrasenia->setObjectName(QString::fromUtf8("txt_contrasenia"));
+        txt_contrasenia->setGeometry(QRect(140, 130, 381, 31));
+        txt_contrasenia->setFont(font2);
+        txt_contrasenia->setEchoMode(QLineEdit::Normal);
+        txt_fechaNac = new QLineEdit(frame_7);
+        txt_fechaNac->setObjectName(QString::fromUtf8("txt_fechaNac"));
+        txt_fechaNac->setGeometry(QRect(230, 170, 291, 31));
+        txt_fechaNac->setFont(font2);
+        txt_fechaNac->setEchoMode(QLineEdit::Normal);
+        btt_modificarDatos = new QPushButton(frame_7);
+        btt_modificarDatos->setObjectName(QString::fromUtf8("btt_modificarDatos"));
+        btt_modificarDatos->setGeometry(QRect(70, 290, 161, 41));
+        btt_modificarDatos->setFont(font1);
+        btt_modificarDatos->setStyleSheet(QString::fromUtf8("QPushButton#btt_modificarDatos {\n"
+"background: qlineargradient(\n"
+"    spread: pad, \n"
+"    x1: 0, y1: 0, \n"
+"    x2: 1, y2: 1, \n"
+"    stop: 0 #b44c43, /* Azul m\303\241s claro */\n"
+"    stop: 1 #944038  /* Azul a\303\272n m\303\241s claro */\n"
+"); /* Degradado de azul claro a azul m\303\241s claro */\n"
+"\n"
+"    color: #FFFFFF; /* Texto blanco para buen contraste */\n"
+"    border: 2px solid #582924; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"    padding: 10px 20px; /* Espacio interno para mejor tama\303\261o del bot\303\263n */\n"
+"    font-size: 16px; /* Tama\303\261o de fuente para legibilidad */\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton#btt_modificarDatos:hover {\n"
+"    background-color: #582924; \n"
+"    border-color: #3c1e1b; \n"
+"}\n"
+"\n"
+"QPushButton#btt_modificarDatos:press {\n"
+"    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #3c1e1b; /* Borde m\303\241s oscuro c"
+                        "uando se presiona */\n"
+"}"));
+        btt_eliminarDatos = new QPushButton(frame_7);
+        btt_eliminarDatos->setObjectName(QString::fromUtf8("btt_eliminarDatos"));
+        btt_eliminarDatos->setGeometry(QRect(260, 290, 161, 41));
+        btt_eliminarDatos->setFont(font1);
+        btt_eliminarDatos->setStyleSheet(QString::fromUtf8("QPushButton#btt_eliminarDatos {\n"
+"background: qlineargradient(\n"
+"    spread: pad, \n"
+"    x1: 0, y1: 0, \n"
+"    x2: 1, y2: 1, \n"
+"    stop: 0 #b44c43, /* Azul m\303\241s claro */\n"
+"    stop: 1 #944038  /* Azul a\303\272n m\303\241s claro */\n"
+"); /* Degradado de azul claro a azul m\303\241s claro */\n"
+"\n"
+"    color: #FFFFFF; /* Texto blanco para buen contraste */\n"
+"    border: 2px solid #582924; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"    padding: 10px 20px; /* Espacio interno para mejor tama\303\261o del bot\303\263n */\n"
+"    font-size: 16px; /* Tama\303\261o de fuente para legibilidad */\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton#btt_eliminarDatos:hover {\n"
+"    background-color: #582924; \n"
+"    border-color: #3c1e1b; \n"
+"}\n"
+"\n"
+"QPushButton#btt_eliminarDatos:press {\n"
+"    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #3c1e1b; /* Borde m\303\241s oscuro cuan"
+                        "do se presiona */\n"
+"}"));
+        frame_8 = new QFrame(page_perfil);
+        frame_8->setObjectName(QString::fromUtf8("frame_8"));
+        frame_8->setGeometry(QRect(550, 20, 231, 221));
+        frame_8->setStyleSheet(QString::fromUtf8("QFrame#frame_8{\n"
+"    background: qlineargradient(\n"
+"        spread: pad, \n"
+"        x1: 0, y1: 0, \n"
+"        x2: 1, y2: 1, \n"
+"        stop: 0 #d3877d, \n"
+"        stop: 1 #f6e1dd\n"
+"    ); /* Degradado de #566e71 a un tono m\303\241s fresco */\n"
+"    padding: 15px; /* Espacio interno mayor para mejor estructura */\n"
+"    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"}\n"
+""));
+        frame_8->setFrameShape(QFrame::StyledPanel);
+        frame_8->setFrameShadow(QFrame::Raised);
+        label_9 = new QLabel(frame_8);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(60, 90, 58, 16));
         stackedWidget->addWidget(page_perfil);
 
         retranslateUi(Form_usuario);
+
+        stackedWidget->setCurrentIndex(4);
+
 
         QMetaObject::connectSlotsByName(Form_usuario);
     } // setupUi
@@ -307,6 +589,23 @@ public:
         btt_reportes->setText(QCoreApplication::translate("Form_usuario", "Reportes", nullptr));
         btt_perfil->setText(QCoreApplication::translate("Form_usuario", "Perfil", nullptr));
         btt_cerrarSesion->setText(QCoreApplication::translate("Form_usuario", "Cerrar sesi\303\263n", nullptr));
+        txt_buscarUser->setText(QString());
+        label_2->setText(QCoreApplication::translate("Form_usuario", "Buscar:", nullptr));
+        btt_buscar2->setText(QCoreApplication::translate("Form_usuario", "\360\237\224\215\357\270\216", nullptr));
+        label_3->setText(QCoreApplication::translate("Form_usuario", "Publicaciones:", nullptr));
+        label_4->setText(QCoreApplication::translate("Form_usuario", "Nombres:", nullptr));
+        label_5->setText(QCoreApplication::translate("Form_usuario", "Apellidos:", nullptr));
+        label_6->setText(QCoreApplication::translate("Form_usuario", "Correo:", nullptr));
+        label_7->setText(QCoreApplication::translate("Form_usuario", "Contrase\303\261a:", nullptr));
+        label_8->setText(QCoreApplication::translate("Form_usuario", "Fecha de nacimiento:", nullptr));
+        txt_nombres->setText(QString());
+        txt_apellidos->setText(QString());
+        txt_correo->setText(QString());
+        txt_contrasenia->setText(QString());
+        txt_fechaNac->setText(QString());
+        btt_modificarDatos->setText(QCoreApplication::translate("Form_usuario", "Modificar datos", nullptr));
+        btt_eliminarDatos->setText(QCoreApplication::translate("Form_usuario", "Eliminar Cuenta", nullptr));
+        label_9->setText(QCoreApplication::translate("Form_usuario", "TextLabel", nullptr));
     } // retranslateUi
 
 };

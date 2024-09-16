@@ -253,7 +253,7 @@ QPushButton#btt_reportes:pressed {
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_white"/>
     <widget class="QWidget" name="page_buscar">
@@ -278,7 +278,7 @@ QPushButton#btt_reportes:pressed {
        <string>Buscar:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="txt_user">
+     <widget class="QLineEdit" name="txt_BusacarUser">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -345,16 +345,16 @@ QPushButton#btt_buscar2:pressed {
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>450</x>
         <y>0</y>
-        <width>71</width>
+        <width>61</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Kohinoor Devanagari</family>
-        <pointsize>25</pointsize>
+        <pointsize>20</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>

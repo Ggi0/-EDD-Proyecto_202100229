@@ -7,6 +7,8 @@ Form_usuario::Form_usuario(QWidget *parent) :
     ui(new Ui::Form_usuario)
 {
     ui->setupUi(this);
+    // Muestra la página vacía (page_white) al inicio
+    ui->stackedWidget->setCurrentWidget(ui->page_white);
 }
 
 Form_usuario::~Form_usuario()
@@ -23,5 +25,37 @@ void Form_usuario::on_btt_cerrarSesion_clicked()
     // Cierra la ventana actual (form_admin)
     this->close();
 
+}
+
+void Form_usuario::on_btt_buscar_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_buscar);
+}
+
+
+void Form_usuario::on_btt_publicaciones_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_publi);
+
+}
+
+
+void Form_usuario::on_btt_solicitudes_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_soli);
+
+}
+
+
+void Form_usuario::on_btt_reportes_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes);
+
+}
+
+
+void Form_usuario::on_btt_perfil_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_perfil);
 }
 

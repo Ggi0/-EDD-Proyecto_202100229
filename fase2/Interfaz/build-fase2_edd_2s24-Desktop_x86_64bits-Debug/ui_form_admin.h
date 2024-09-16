@@ -35,7 +35,7 @@ public:
     QWidget *page_white;
     QWidget *page_buscar;
     QLabel *label_2;
-    QLineEdit *txt_user;
+    QLineEdit *txt_BusacarUser;
     QPushButton *btt_buscar2;
     QLabel *label_5;
     QComboBox *cbx_orden;
@@ -233,14 +233,14 @@ public:
         font2.setBold(true);
         font2.setWeight(75);
         label_2->setFont(font2);
-        txt_user = new QLineEdit(page_buscar);
-        txt_user->setObjectName(QString::fromUtf8("txt_user"));
-        txt_user->setGeometry(QRect(120, 10, 231, 31));
+        txt_BusacarUser = new QLineEdit(page_buscar);
+        txt_BusacarUser->setObjectName(QString::fromUtf8("txt_BusacarUser"));
+        txt_BusacarUser->setGeometry(QRect(120, 10, 231, 31));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
         font3.setPointSize(16);
-        txt_user->setFont(font3);
-        txt_user->setEchoMode(QLineEdit::Normal);
+        txt_BusacarUser->setFont(font3);
+        txt_BusacarUser->setEchoMode(QLineEdit::Normal);
         btt_buscar2 = new QPushButton(page_buscar);
         btt_buscar2->setObjectName(QString::fromUtf8("btt_buscar2"));
         btt_buscar2->setGeometry(QRect(360, 10, 31, 31));
@@ -269,10 +269,10 @@ public:
 "}"));
         label_5 = new QLabel(page_buscar);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(430, 0, 71, 41));
+        label_5->setGeometry(QRect(450, 0, 61, 41));
         QFont font4;
         font4.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
-        font4.setPointSize(25);
+        font4.setPointSize(20);
         font4.setBold(false);
         font4.setWeight(50);
         label_5->setFont(font4);
@@ -500,7 +500,7 @@ public:
 
         retranslateUi(Form_admin);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Form_admin);
@@ -514,7 +514,7 @@ public:
         btt_cargarAr->setText(QCoreApplication::translate("Form_admin", "Carga Masiva", nullptr));
         btt_reportes->setText(QCoreApplication::translate("Form_admin", "Reportes", nullptr));
         label_2->setText(QCoreApplication::translate("Form_admin", "Buscar:", nullptr));
-        txt_user->setText(QString());
+        txt_BusacarUser->setText(QString());
         btt_buscar2->setText(QCoreApplication::translate("Form_admin", "\360\237\224\215\357\270\216", nullptr));
         label_5->setText(QCoreApplication::translate("Form_admin", "Orden", nullptr));
         cbx_orden->setItemText(0, QCoreApplication::translate("Form_admin", "PreOrden", nullptr));
