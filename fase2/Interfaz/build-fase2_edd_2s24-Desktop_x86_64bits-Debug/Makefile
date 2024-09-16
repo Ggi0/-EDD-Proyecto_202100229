@@ -52,10 +52,22 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../fase2_edd_2s24/main.cpp \
-		../fase2_edd_2s24/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+SOURCES       = ../fase2_edd_2s24/form_admin.cpp \
+		../fase2_edd_2s24/form_registrarusuarios.cpp \
+		../fase2_edd_2s24/form_usuario.cpp \
+		../fase2_edd_2s24/main.cpp \
+		../fase2_edd_2s24/mainwindow.cpp moc_form_admin.cpp \
+		moc_form_registrarusuarios.cpp \
+		moc_form_usuario.cpp \
+		moc_mainwindow.cpp
+OBJECTS       = form_admin.o \
+		form_registrarusuarios.o \
+		form_usuario.o \
+		main.o \
 		mainwindow.o \
+		moc_form_admin.o \
+		moc_form_registrarusuarios.o \
+		moc_form_usuario.o \
 		moc_mainwindow.o
 DIST          = /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_pre.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/qdevice.pri \
@@ -340,6 +352,7 @@ DIST          = /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/fe
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf \
+		../fase2_edd_2s24/.qmake.stash \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf \
@@ -368,7 +381,13 @@ DIST          = /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/fe
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exceptions.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/yacc.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/lex.prf \
-		../fase2_edd_2s24/fase2_edd_2s24.pro ../fase2_edd_2s24/mainwindow.h ../fase2_edd_2s24/main.cpp \
+		../fase2_edd_2s24/fase2_edd_2s24.pro ../fase2_edd_2s24/form_admin.h \
+		../fase2_edd_2s24/form_registrarusuarios.h \
+		../fase2_edd_2s24/form_usuario.h \
+		../fase2_edd_2s24/mainwindow.h ../fase2_edd_2s24/form_admin.cpp \
+		../fase2_edd_2s24/form_registrarusuarios.cpp \
+		../fase2_edd_2s24/form_usuario.cpp \
+		../fase2_edd_2s24/main.cpp \
 		../fase2_edd_2s24/mainwindow.cpp
 QMAKE_TARGET  = fase2_edd_2s24
 DESTDIR       = 
@@ -388,7 +407,7 @@ include /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/m
 first: all
 ####### Build rules
 
-fase2_edd_2s24.app/Contents/MacOS/fase2_edd_2s24: ui_mainwindow.h $(OBJECTS)  
+fase2_edd_2s24.app/Contents/MacOS/fase2_edd_2s24: ui_form_admin.h ui_form_registrarusuarios.h ui_form_usuario.h ui_mainwindow.h $(OBJECTS)  
 	@test -d fase2_edd_2s24.app/Contents/MacOS/ || mkdir -p fase2_edd_2s24.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -675,6 +694,7 @@ Makefile: ../fase2_edd_2s24/fase2_edd_2s24.pro /Users/gio/Desktop/qt/qt-everywhe
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf \
@@ -991,6 +1011,7 @@ Makefile: ../fase2_edd_2s24/fase2_edd_2s24.pro /Users/gio/Desktop/qt/qt-everywhe
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf:
@@ -1053,9 +1074,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../fase2_edd_2s24/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../fase2_edd_2s24/main.cpp ../fase2_edd_2s24/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../fase2_edd_2s24/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../fase2_edd_2s24/form_admin.h ../fase2_edd_2s24/form_registrarusuarios.h ../fase2_edd_2s24/form_usuario.h ../fase2_edd_2s24/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../fase2_edd_2s24/form_admin.cpp ../fase2_edd_2s24/form_registrarusuarios.cpp ../fase2_edd_2s24/form_usuario.cpp ../fase2_edd_2s24/main.cpp ../fase2_edd_2s24/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../fase2_edd_2s24/form_admin.ui ../fase2_edd_2s24/form_registrarusuarios.ui ../fase2_edd_2s24/form_usuario.ui ../fase2_edd_2s24/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1065,7 +1086,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r fase2_edd_2s24.app
-	-$(DEL_FILE) /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh
+	-$(DEL_FILE) /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -1090,9 +1111,639 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/data/dummy.cpp
 	/Library/Developer/CommandLineTools/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.13 -Wall -Wextra -dM -E -o moc_predefs.h /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_form_admin.cpp moc_form_registrarusuarios.cpp moc_form_usuario.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_form_admin.cpp moc_form_registrarusuarios.cpp moc_form_usuario.cpp moc_mainwindow.cpp
+moc_form_admin.cpp: ../fase2_edd_2s24/form_admin.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		moc_predefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
+	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/fase2_edd_2s24 -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../fase2_edd_2s24/form_admin.h -o moc_form_admin.cpp
+
+moc_form_registrarusuarios.cpp: ../fase2_edd_2s24/form_registrarusuarios.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		moc_predefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
+	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/fase2_edd_2s24 -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../fase2_edd_2s24/form_registrarusuarios.h -o moc_form_registrarusuarios.cpp
+
+moc_form_usuario.cpp: ../fase2_edd_2s24/form_usuario.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		moc_predefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
+	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/fase2_edd_2s24 -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../fase2_edd_2s24/form_usuario.h -o moc_form_usuario.cpp
+
 moc_mainwindow.cpp: ../fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMainWindow \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmainwindow.h \
@@ -1305,6 +1956,11 @@ moc_mainwindow.cpp: ../fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
 		moc_predefs.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
 	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/fase2_edd_2s24 -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../fase2_edd_2s24/mainwindow.h -o moc_mainwindow.cpp
@@ -1313,9 +1969,21 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_form_admin.h ui_form_registrarusuarios.h ui_form_usuario.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_form_admin.h ui_form_registrarusuarios.h ui_form_usuario.h ui_mainwindow.h
+ui_form_admin.h: ../fase2_edd_2s24/form_admin.ui \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/uic
+	/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh ../fase2_edd_2s24/form_admin.ui -o ui_form_admin.h
+
+ui_form_registrarusuarios.h: ../fase2_edd_2s24/form_registrarusuarios.ui \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/uic
+	/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh ../fase2_edd_2s24/form_registrarusuarios.ui -o ui_form_registrarusuarios.h
+
+ui_form_usuario.h: ../fase2_edd_2s24/form_usuario.ui \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/uic
+	/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh ../fase2_edd_2s24/form_usuario.ui -o ui_form_usuario.h
+
 ui_mainwindow.h: ../fase2_edd_2s24/mainwindow.ui \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/uic
 	/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh ../fase2_edd_2s24/mainwindow.ui -o ui_mainwindow.h
@@ -1331,6 +1999,633 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+form_admin.o: ../fase2_edd_2s24/form_admin.cpp ../fase2_edd_2s24/form_admin.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		ui_form_admin.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_admin.o ../fase2_edd_2s24/form_admin.cpp
+
+form_registrarusuarios.o: ../fase2_edd_2s24/form_registrarusuarios.cpp ../fase2_edd_2s24/form_registrarusuarios.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		ui_form_registrarusuarios.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_registrarusuarios.o ../fase2_edd_2s24/form_registrarusuarios.cpp
+
+form_usuario.o: ../fase2_edd_2s24/form_usuario.cpp ../fase2_edd_2s24/form_usuario.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qtwidgetsglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtguiglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobal.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig-bootstrapped.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qconfig.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/qtcore-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsystemdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qprocessordetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qcompilerdetection.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qtypeinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qsysinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qlogging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qflags.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qbasicatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_bootstrap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qgenericatomic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_cxx11.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qatomic_msvc.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qglobalstatic.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/thread/qmutex.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnumeric.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qversiontagging.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/qtgui-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/qtwidgets-config.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/global/qnamespace.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobjectdefs_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qwindowdefs_win.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstring.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qchar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrefcount.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qarraydata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringliteral.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringbuilder.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qalgorithms.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qiterator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhashfunctions.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpair.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvector.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainertools_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qpoint.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qbytearraylist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringlist.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregexp.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qstringmatcher.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qscopedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qmetatype.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qvarlengtharray.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontainerfwd.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qobject_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmargins.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpaintdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qrect.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsize.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpalette.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qcolor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgb.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qrgba64.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qbrush.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qmatrix.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpolygon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qregion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qdatastream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qiodevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qline.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qtransform.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qimage.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qpixelformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qpixmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qshareddata.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qhash.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qsharedpointer_impl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfont.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontmetrics.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qfontinfo.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qsizepolicy.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qkeysequence.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qevent.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qvariant.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qmap.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qdebug.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/serialization/qtextstream.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qlocale.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qset.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/tools/qcontiguouscache.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurl.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qurlquery.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfile.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/io/qfiledevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/math3d/qvector2d.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtouchdevice.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qtouchdevice.h \
+		ui_form_usuario.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_usuario.o ../fase2_edd_2s24/form_usuario.cpp
 
 main.o: ../fase2_edd_2s24/main.cpp ../fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMainWindow \
@@ -1544,6 +2839,11 @@ main.o: ../fase2_edd_2s24/main.cpp ../fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
@@ -1771,8 +3071,69 @@ mainwindow.o: ../fase2_edd_2s24/mainwindow.cpp ../fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
-		ui_mainwindow.h
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
+		ui_mainwindow.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QVariant \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFrame \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLabel \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLineEdit \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMenuBar \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmenubar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmenubar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmenu.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmenu.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qaction.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qaction.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qactiongroup.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qactiongroup.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QPushButton \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		../fase2_edd_2s24/form_admin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../fase2_edd_2s24/mainwindow.cpp
+
+moc_form_admin.o: moc_form_admin.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_form_admin.o moc_form_admin.cpp
+
+moc_form_registrarusuarios.o: moc_form_registrarusuarios.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_form_registrarusuarios.o moc_form_registrarusuarios.cpp
+
+moc_form_usuario.o: moc_form_usuario.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_form_usuario.o moc_form_usuario.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

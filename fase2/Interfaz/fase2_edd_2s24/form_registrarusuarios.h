@@ -15,6 +15,9 @@ public:
     explicit Form_registrarUsuarios(QWidget *parent = nullptr);
     ~Form_registrarUsuarios();
 
+private slots:
+    void on_btt_exit_clicked();
+
 private:
     Ui::Form_registrarUsuarios *ui;
 };

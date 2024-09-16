@@ -34,7 +34,7 @@ public:
     QLabel *label_4;
     QPushButton *btt_login;
     QLabel *label_5;
-    QLabel *lbl_registro;
+    QPushButton *btt_registro;
     QLabel *label_6;
     QMenuBar *menubar;
 
@@ -161,17 +161,40 @@ public:
                         "}"));
         label_5 = new QLabel(frame);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(50, 320, 121, 16));
+        label_5->setGeometry(QRect(50, 330, 121, 16));
         QFont font6;
         font6.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
         font6.setPointSize(14);
         font6.setBold(false);
         font6.setWeight(50);
         label_5->setFont(font6);
-        lbl_registro = new QLabel(frame);
-        lbl_registro->setObjectName(QString::fromUtf8("lbl_registro"));
-        lbl_registro->setGeometry(QRect(180, 320, 61, 21));
-        lbl_registro->setFont(font6);
+        btt_registro = new QPushButton(frame);
+        btt_registro->setObjectName(QString::fromUtf8("btt_registro"));
+        btt_registro->setGeometry(QRect(180, 330, 61, 21));
+        QFont font7;
+        font7.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
+        font7.setPointSize(12);
+        font7.setItalic(false);
+        font7.setUnderline(false);
+        font7.setStrikeOut(false);
+        font7.setKerning(true);
+        btt_registro->setFont(font7);
+        btt_registro->setStyleSheet(QString::fromUtf8("QPushButton#btt_registro {\n"
+"    background-color: #E0F7FA; /* Azul claro con un toque vibrante */\n"
+"\n"
+"    \n"
+"\n"
+"\n"
+"    /* Agregar un degradado sutil para darle m\303\241s dimensi\303\263n */\n"
+"    background: qlineargradient(\n"
+"        spread: pad, \n"
+"        x1: 0, y1: 0, \n"
+"        x2: 1, y2: 1, \n"
+"        stop: 0 #E0F7FA, \n"
+"        stop: 1 #B2EBF2\n"
+"    ); /* Degradado azul claro a un tono m\303\241s fresco */\n"
+"}\n"
+""));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(80, 80, 271, 61));
@@ -192,12 +215,12 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Social", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Bienvenido!!", nullptr));
-        txt_user->setText(QCoreApplication::translate("MainWindow", "dsada", nullptr));
+        txt_user->setText(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Usuario:", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Contrase\303\261a", nullptr));
         btt_login->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "\302\277no tienes cuenta?", nullptr));
-        lbl_registro->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#0096ff;\">Regitrate</span></p></body></html>", nullptr));
+        btt_registro->setText(QCoreApplication::translate("MainWindow", "Registrate", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Structure", nullptr));
     } // retranslateUi
 
