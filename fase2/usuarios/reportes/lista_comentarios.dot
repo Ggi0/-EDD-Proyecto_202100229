@@ -1,0 +1,8 @@
+digraph G {
+  rankdir=LR;
+  nodo0 [label="Correo: 2maria@L\nComentario: ¡Qué envidia! Me encantaría estar en la playa ahora mismo.\nFecha: 13/08/2024\nHora: 09:30"];
+  nodo0 -> nodo1;
+  nodo1 [label="Correo: 3juan@M\nComentario: Totalmente de acuerdo, los atardeceres son la mejor parte del día.\nFecha: 14/08/2024\nHora: 08:00"];
+  nodo1 -> nodo2;
+  nodo2 [label="Correo: 9miguel@R\nComentario: ¡Gracias!\nFecha: 20/08/2024\nHora: 09:20"];
+}

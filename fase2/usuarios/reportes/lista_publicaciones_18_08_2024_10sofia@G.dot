@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: 10sofia@G\nContenido: La música siempre encuentra la manera de alegrar mi día.\nFecha: 18/08/2024\nHora: 17:15}"];
+}

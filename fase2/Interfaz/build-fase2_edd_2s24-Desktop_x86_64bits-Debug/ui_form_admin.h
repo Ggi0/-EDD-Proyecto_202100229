@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -40,6 +41,7 @@ public:
     QLabel *label_5;
     QComboBox *cbx_orden;
     QTableView *tableView_buscar;
+    QPushButton *btt_eliminarUser;
     QWidget *page_cargaAr;
     QLabel *label_3;
     QFrame *frame_2;
@@ -53,6 +55,9 @@ public:
     QLabel *label_8;
     QWidget *page_reportes;
     QLabel *label_4;
+    QPushButton *btt_generarReportes;
+    QGraphicsView *gView_AVL;
+    QGraphicsView *gView_ListaPubli;
     QPushButton *btt_cerrarSesion;
 
     void setupUi(QWidget *Form_admin)
@@ -226,7 +231,7 @@ public:
         page_buscar->setObjectName(QString::fromUtf8("page_buscar"));
         label_2 = new QLabel(page_buscar);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 0, 111, 41));
+        label_2->setGeometry(QRect(0, 0, 111, 41));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
         font2.setPointSize(30);
@@ -235,7 +240,7 @@ public:
         label_2->setFont(font2);
         txt_BusacarUser = new QLineEdit(page_buscar);
         txt_BusacarUser->setObjectName(QString::fromUtf8("txt_BusacarUser"));
-        txt_BusacarUser->setGeometry(QRect(120, 10, 231, 31));
+        txt_BusacarUser->setGeometry(QRect(110, 10, 231, 31));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
         font3.setPointSize(16);
@@ -243,7 +248,7 @@ public:
         txt_BusacarUser->setEchoMode(QLineEdit::Normal);
         btt_buscar2 = new QPushButton(page_buscar);
         btt_buscar2->setObjectName(QString::fromUtf8("btt_buscar2"));
-        btt_buscar2->setGeometry(QRect(360, 10, 31, 31));
+        btt_buscar2->setGeometry(QRect(350, 10, 31, 31));
         btt_buscar2->setFont(font1);
         btt_buscar2->setStyleSheet(QString::fromUtf8("QPushButton#btt_buscar2 {\n"
 "background: qlineargradient(\n"
@@ -269,7 +274,7 @@ public:
 "}"));
         label_5 = new QLabel(page_buscar);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(450, 0, 61, 41));
+        label_5->setGeometry(QRect(400, 0, 61, 41));
         QFont font4;
         font4.setFamily(QString::fromUtf8("Kohinoor Devanagari"));
         font4.setPointSize(20);
@@ -280,13 +285,43 @@ public:
         cbx_orden->addItem(QString());
         cbx_orden->addItem(QString());
         cbx_orden->addItem(QString());
+        cbx_orden->addItem(QString());
         cbx_orden->setObjectName(QString::fromUtf8("cbx_orden"));
-        cbx_orden->setGeometry(QRect(510, 10, 121, 21));
+        cbx_orden->setGeometry(QRect(460, 10, 121, 21));
         cbx_orden->setFont(font3);
         tableView_buscar = new QTableView(page_buscar);
         tableView_buscar->setObjectName(QString::fromUtf8("tableView_buscar"));
         tableView_buscar->setGeometry(QRect(10, 50, 751, 361));
         tableView_buscar->setFont(font1);
+        btt_eliminarUser = new QPushButton(page_buscar);
+        btt_eliminarUser->setObjectName(QString::fromUtf8("btt_eliminarUser"));
+        btt_eliminarUser->setGeometry(QRect(660, 10, 81, 31));
+        btt_eliminarUser->setFont(font1);
+        btt_eliminarUser->setStyleSheet(QString::fromUtf8("QPushButton#btt_eliminarUser {\n"
+"    background: qlineargradient(\n"
+"        spread: pad, \n"
+"        x1: 0, y1: 0, \n"
+"        x2: 1, y2: 1, \n"
+"        stop: 0 #E74C3C, /* Rojo m\303\241s claro */\n"
+"        stop: 1 #F1948A  /* Rojo a\303\272n m\303\241s claro */\n"
+"    ); /* Degradado de rojo claro a rojo m\303\241s claro */\n"
+"\n"
+"    color: #FFFFFF; /* Texto blanco para buen contraste */\n"
+"    border: 2px solid #C0392B; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"    border-radius: 2px; /* Bordes redondeados para suavidad */\n"
+"    font-size: 10 px; /* Tama\303\261o de fuente para legibilidad */\n"
+"}\n"
+"\n"
+"QPushButton#btt_eliminarUser:hover {\n"
+"    background-color: #CB4335; \n"
+"    border-color: #922B21; \n"
+"}\n"
+"\n"
+"QPushButton#btt_eliminarUser:pressed {\n"
+"    background-color: #922B21; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #641E16; /* Borde m\303\241s oscuro cuando se presiona */\n"
+"}\n"
+""));
         stackedWidget->addWidget(page_buscar);
         page_cargaAr = new QWidget();
         page_cargaAr->setObjectName(QString::fromUtf8("page_cargaAr"));
@@ -465,6 +500,41 @@ public:
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(10, 0, 141, 41));
         label_4->setFont(font2);
+        btt_generarReportes = new QPushButton(page_reportes);
+        btt_generarReportes->setObjectName(QString::fromUtf8("btt_generarReportes"));
+        btt_generarReportes->setGeometry(QRect(320, 380, 141, 41));
+        btt_generarReportes->setFont(font1);
+        btt_generarReportes->setStyleSheet(QString::fromUtf8("QPushButton#btt_generarReportes {\n"
+"background: qlineargradient(\n"
+"    spread: pad, \n"
+"    x1: 0, y1: 0, \n"
+"    x2: 1, y2: 1, \n"
+"    stop: 0 #5DADE2, /* Azul m\303\241s claro */\n"
+"    stop: 1 #85C1E9  /* Azul a\303\272n m\303\241s claro */\n"
+"); /* Degradado de azul claro a azul m\303\241s claro */\n"
+"\n"
+"    color: #FFFFFF; /* Texto blanco para buen contraste */\n"
+"    border: 2px solid #3498DB; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"    font-size: 13px; /* Tama\303\261o de fuente para legibilidad */\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton#btt_generarReportes:hover {\n"
+"    background-color: #2980B9; \n"
+"    border-color: #1F618D; \n"
+"}\n"
+"\n"
+"QPushButton#btt_generarReportes:pressed {\n"
+"    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #1F618D; /* Borde m\303\241s oscuro cuando se presiona */\n"
+"}"));
+        gView_AVL = new QGraphicsView(page_reportes);
+        gView_AVL->setObjectName(QString::fromUtf8("gView_AVL"));
+        gView_AVL->setGeometry(QRect(10, 40, 371, 311));
+        gView_ListaPubli = new QGraphicsView(page_reportes);
+        gView_ListaPubli->setObjectName(QString::fromUtf8("gView_ListaPubli"));
+        gView_ListaPubli->setGeometry(QRect(390, 40, 371, 311));
         stackedWidget->addWidget(page_reportes);
         btt_cerrarSesion = new QPushButton(frame);
         btt_cerrarSesion->setObjectName(QString::fromUtf8("btt_cerrarSesion"));
@@ -500,7 +570,7 @@ public:
 
         retranslateUi(Form_admin);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Form_admin);
@@ -517,10 +587,12 @@ public:
         txt_BusacarUser->setText(QString());
         btt_buscar2->setText(QCoreApplication::translate("Form_admin", "\360\237\224\215\357\270\216", nullptr));
         label_5->setText(QCoreApplication::translate("Form_admin", "Orden", nullptr));
-        cbx_orden->setItemText(0, QCoreApplication::translate("Form_admin", "PreOrden", nullptr));
-        cbx_orden->setItemText(1, QCoreApplication::translate("Form_admin", "InOrden", nullptr));
-        cbx_orden->setItemText(2, QCoreApplication::translate("Form_admin", "PostOrden", nullptr));
+        cbx_orden->setItemText(0, QString());
+        cbx_orden->setItemText(1, QCoreApplication::translate("Form_admin", "PreOrden", nullptr));
+        cbx_orden->setItemText(2, QCoreApplication::translate("Form_admin", "InOrden", nullptr));
+        cbx_orden->setItemText(3, QCoreApplication::translate("Form_admin", "PostOrden", nullptr));
 
+        btt_eliminarUser->setText(QCoreApplication::translate("Form_admin", "Eliminar", nullptr));
         label_3->setText(QCoreApplication::translate("Form_admin", "Carga Masiva:", nullptr));
         btt_cUsuarios->setText(QCoreApplication::translate("Form_admin", "Cargar usuarios", nullptr));
         label_6->setText(QCoreApplication::translate("Form_admin", "Usuarios", nullptr));
@@ -529,6 +601,7 @@ public:
         btt_cPublicaciones->setText(QCoreApplication::translate("Form_admin", "Cargar publicaciones", nullptr));
         label_8->setText(QCoreApplication::translate("Form_admin", "Publicaciones", nullptr));
         label_4->setText(QCoreApplication::translate("Form_admin", "Reportes:", nullptr));
+        btt_generarReportes->setText(QCoreApplication::translate("Form_admin", "Generar repotes", nullptr));
         btt_cerrarSesion->setText(QCoreApplication::translate("Form_admin", "Cerrar sesi\303\263n", nullptr));
     } // retranslateUi
 

@@ -1,0 +1,5 @@
+digraph G {
+    rankdir=LR;
+    node [shape=record];
+    node0 [label="{Emisor: gio1\nReceptor: gio4\nEstado: PENDIENTE}"];
+}

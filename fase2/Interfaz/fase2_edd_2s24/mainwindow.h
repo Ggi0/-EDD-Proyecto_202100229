@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include "../../usuarios/registroUsuarios.h"
 
 
 QT_BEGIN_NAMESPACE

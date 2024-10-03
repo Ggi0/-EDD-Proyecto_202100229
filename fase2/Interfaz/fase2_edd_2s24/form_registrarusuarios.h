@@ -2,6 +2,11 @@
 #define FORM_REGISTRARUSUARIOS_H
 
 #include <QWidget>
+#include <iostream>
+#include "mainwindow.h"
+#include "../../usuarios/arbolAVL/avl_usuario.h"
+#include "../../usuarios/registroUsuarios.h"
+#include "../../usuarios/global_usuariosAVL.h"
 
 namespace Ui {
 class Form_registrarUsuarios;
@@ -18,8 +23,11 @@ public:
 private slots:
     void on_btt_exit_clicked();
 
+    void on_btt_registrar_clicked();
+
 private:
     Ui::Form_registrarUsuarios *ui;
+
 };
 
 #endif // FORM_REGISTRARUSUARIOS_H

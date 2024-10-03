@@ -253,14 +253,14 @@ QPushButton#btt_reportes:pressed {
 </string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_white"/>
     <widget class="QWidget" name="page_buscar">
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>0</y>
         <width>111</width>
         <height>41</height>
@@ -281,7 +281,7 @@ QPushButton#btt_reportes:pressed {
      <widget class="QLineEdit" name="txt_BusacarUser">
       <property name="geometry">
        <rect>
-        <x>120</x>
+        <x>110</x>
         <y>10</y>
         <width>231</width>
         <height>31</height>
@@ -303,7 +303,7 @@ QPushButton#btt_reportes:pressed {
      <widget class="QPushButton" name="btt_buscar2">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>350</x>
         <y>10</y>
         <width>31</width>
         <height>31</height>
@@ -345,7 +345,7 @@ QPushButton#btt_buscar2:pressed {
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>400</x>
         <y>0</y>
         <width>61</width>
         <height>41</height>
@@ -366,7 +366,7 @@ QPushButton#btt_buscar2:pressed {
      <widget class="QComboBox" name="cbx_orden">
       <property name="geometry">
        <rect>
-        <x>510</x>
+        <x>460</x>
         <y>10</y>
         <width>121</width>
         <height>21</height>
@@ -378,6 +378,11 @@ QPushButton#btt_buscar2:pressed {
         <pointsize>16</pointsize>
        </font>
       </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
       <item>
        <property name="text">
         <string>PreOrden</string>
@@ -407,6 +412,51 @@ QPushButton#btt_buscar2:pressed {
        <font>
         <family>Kohinoor Devanagari</family>
        </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btt_eliminarUser">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>10</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#btt_eliminarUser {
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #E74C3C, /* Rojo más claro */
+        stop: 1 #F1948A  /* Rojo aún más claro */
+    ); /* Degradado de rojo claro a rojo más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #C0392B; /* Borde más oscuro para definición */
+    border-radius: 2px; /* Bordes redondeados para suavidad */
+    font-size: 10 px; /* Tamaño de fuente para legibilidad */
+}
+
+QPushButton#btt_eliminarUser:hover {
+    background-color: #CB4335; 
+    border-color: #922B21; 
+}
+
+QPushButton#btt_eliminarUser:pressed {
+    background-color: #922B21; /* Color más oscuro cuando se presiona */
+    border-color: #641E16; /* Borde más oscuro cuando se presiona */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Eliminar</string>
       </property>
      </widget>
     </widget>
@@ -750,6 +800,72 @@ QPushButton#btt_cPublicaciones:press {
       </property>
       <property name="text">
        <string>Reportes:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btt_generarReportes">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>380</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#btt_generarReportes {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #3498DB; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    font-size: 13px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_generarReportes:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_generarReportes:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+      </property>
+      <property name="text">
+       <string>Generar repotes</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="gView_AVL">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>371</width>
+        <height>311</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="gView_ListaPubli">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>371</width>
+        <height>311</height>
+       </rect>
       </property>
      </widget>
     </widget>
