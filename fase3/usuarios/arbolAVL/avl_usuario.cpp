@@ -78,7 +78,8 @@ void AVL::postOrden(){
 
 void AVL::graph(){
     // Ruta donde deseas guardar el archivo .dot y .png
-    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes";
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
+    
 
     // Crear el archivo .dot en la ruta especificada
     std::ofstream outfile(outputDir + "AVL.dot");
@@ -98,10 +99,10 @@ void AVL::graph(){
     int returnCode = system(dotCommand.c_str());
 
     if(returnCode == 0){
-        std::cout << "(AVL) Command executed successfully." << std::endl;
+        std::cout << "(AVL - fase3) Command executed successfully." << std::endl;
         }
     else{
-        std::cout << "(AVL) Command execution failed or returned non-zero: " << returnCode << std::endl;
+        std::cout << "(AVL - fase3) Command execution failed or returned non-zero: " << returnCode << std::endl;
     }
 }
 

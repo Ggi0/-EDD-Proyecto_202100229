@@ -85,7 +85,7 @@ void Form_admin::on_btt_cUsuarios_clicked()
 
         // Llamar a la función leerUsuarios() pasando la ruta del archivo
         leerUsuarios(rutaArchivo);
-        arbolGlobal_usuarios.graph();
+        //arbolGlobal_usuarios.graph();
     } else {
         // No se seleccionó ningún archivo, puedes mostrar un mensaje de error o advertencia
         qDebug() << "No se seleccionó ningún archivo.";
@@ -222,7 +222,7 @@ void Form_admin::on_btt_generarReportes_clicked()
     QGraphicsScene* scene = new QGraphicsScene(this);
 
     // Cargar la imagen desde la ruta que conoces
-    QPixmap image("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportesAVL.png");
+    QPixmap image("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/AVL.png");
 
     // Verificar si la imagen se cargó correctamente
     if (!image.isNull()) {
@@ -242,7 +242,7 @@ void Form_admin::on_btt_generarReportes_clicked()
     QGraphicsScene* scene1 = new QGraphicsScene(this);
 
     // Cargar la imagen desde la ruta que conoces
-    QPixmap listaGlobal_publicaciones("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reporteslistaGlobal_publicaciones.png");
+    QPixmap listaGlobal_publicaciones("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/listaGlobal_publicaciones.png");
 
     // Verificar si la imagen se cargó correctamente
     if (!listaGlobal_publicaciones.isNull()) {
