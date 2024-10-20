@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../usuarios/arbolAVL/AVLTableModel.h"
+#include "../../../fase3/usuarios/arbolAVL/AVLTableModel.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

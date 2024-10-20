@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../fase2_edd_2s24/form_admin.h"
+#include "../../../fase3/Intefaz/fase2_edd_2s24/form_admin.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

@@ -1,0 +1,21 @@
+digraph G {
+Nodo0x7f856fe73370[label = "4ana@H"]
+Nodo0x7f856fe73370->Nodo0x7f8575d631e0
+Nodo0x7f856fe73370->Nodo0x7f856fe826b0
+Nodo0x7f8575d631e0[label = "2maria@L"]
+Nodo0x7f8575d631e0->Nodo0x7f8575d60780
+Nodo0x7f8575d631e0->Nodo0x7f856fe39ff0
+Nodo0x7f8575d60780[label = "1carlos@G"]
+Nodo0x7f8575d60780->Nodo0x7f8575d62e70
+Nodo0x7f8575d62e70[label = "10sofia@G"]
+Nodo0x7f856fe39ff0[label = "3juan@M"]
+Nodo0x7f856fe826b0[label = "6laura@R"]
+Nodo0x7f856fe826b0->Nodo0x7f856fec68f0
+Nodo0x7f856fe826b0->Nodo0x7f8575d59180
+Nodo0x7f856fec68f0[label = "5luis@P"]
+Nodo0x7f8575d59180[label = "8elena@T"]
+Nodo0x7f8575d59180->Nodo0x7f856fe72740
+Nodo0x7f8575d59180->Nodo0x7f8575d4f780
+Nodo0x7f856fe72740[label = "7jose@G"]
+Nodo0x7f8575d4f780[label = "9miguel@R"]
+}

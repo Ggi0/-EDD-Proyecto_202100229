@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: ana.hernandez@example.com\nContenido: Los atardeceres en la ciudad son simplemente mágicos, me encanta.\nFecha: 13/08/2024\nHora: 18:12}"];
+}

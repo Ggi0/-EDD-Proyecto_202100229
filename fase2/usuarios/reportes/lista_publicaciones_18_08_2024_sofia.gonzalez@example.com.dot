@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: sofia.gonzalez@example.com\nContenido: Las sonrisas sinceras son el mejor regalo que puedes dar.\nFecha: 18/08/2024\nHora: 09:30}"];
+}

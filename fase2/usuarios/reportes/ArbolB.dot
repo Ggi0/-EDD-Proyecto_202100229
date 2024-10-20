@@ -1,12 +1,12 @@
 digraph G {
 node [shape=record];
-nodo0x7fa4eceb8d40 [label="<f0> |{Usuario: Luis\nComentario: mensaje2\nFecha: 15/02/2024\nHora: 09:30}| <f1> |{Usuario: Elena\nComentario: mensaje5\nFecha: 25/05/2024\nHora: 12:15}| <f2> |{Usuario: Pedro\nComentario: mensaje8\nFecha: 30/08/2024\nHora: 15:00}| <f3>"];
-nodo0x7fa4eceb8d40:f0 -> nodo0x7fa4ece1f270;
-nodo0x7fa4ece1f270 [label="<f0> |{Usuario: Ana\nComentario: mensaje1\nFecha: 01/01/2024\nHora: 08:15}| <f1> |{Usuario: Ana2\nComentario: mensaje2ana\nFecha: 01/01/2024\nHora: 08:16}| <f2>"];
-nodo0x7fa4eceb8d40:f1 -> nodo0x7fa4ece89560;
-nodo0x7fa4ece89560 [label="<f0> |{Usuario: Maria\nComentario: mensaje3\nFecha: 28/03/2024\nHora: 10:45}| <f1> |{Usuario: Carlos\nComentario: mensaje4\nFecha: 12/04/2024\nHora: 11:00}| <f2>"];
-nodo0x7fa4eceb8d40:f2 -> nodo0x7fa4eceaf920;
-nodo0x7fa4eceaf920 [label="<f0> |{Usuario: Jorge MAtias\nComentario: mensaje13\nFecha: 06/6/2024\nHora: 13:31}| <f1> |{Usuario: Jorge\nComentario: mensaje6\nFecha: 07/06/2024\nHora: 13:30}| <f2> |{Usuario: Lucia\nComentario: mensaje7\nFecha: 19/07/2024\nHora: 14:45}| <f3>"];
-nodo0x7fa4eceb8d40:f3 -> nodo0x7fa4eceb87a0;
-nodo0x7fa4eceb87a0 [label="<f0> |{Usuario: Sofia\nComentario: mensaje9\nFecha: 11/09/2024\nHora: 16:15}| <f1> |{Usuario: Miguel\nComentario: mensaje10\nFecha: 23/10/2024\nHora: 17:30}| <f2> |{Usuario: Laura\nComentario: mensaje11\nFecha: 04/11/2024\nHora: 18:45}| <f3> |{Usuario: MARCOS aurelio\nComentario: mensaje12\nFecha: 16/12/2024\nHora: 19:00}| <f4>"];
+nodo0x7fb0b471eb40 [label="<f0> |{Usuario: Luis\nComentario: mensaje2\nFecha: 15/02/2024\nHora: 09:30}| <f1> |{Usuario: Elena\nComentario: mensaje5\nFecha: 25/05/2024\nHora: 12:15}| <f2> |{Usuario: Pedro\nComentario: mensaje8\nFecha: 30/08/2024\nHora: 15:00}| <f3>"];
+nodo0x7fb0b471eb40:f0 -> nodo0x7fb0b47599b0;
+nodo0x7fb0b47599b0 [label="<f0> |{Usuario: Ana\nComentario: mensaje1\nFecha: 01/01/2024\nHora: 08:15}| <f1> |{Usuario: Ana2\nComentario: mensaje2ana\nFecha: 01/01/2024\nHora: 08:16}| <f2>"];
+nodo0x7fb0b471eb40:f1 -> nodo0x7fb0b472ec50;
+nodo0x7fb0b472ec50 [label="<f0> |{Usuario: Maria\nComentario: mensaje3\nFecha: 28/03/2024\nHora: 10:45}| <f1> |{Usuario: Carlos\nComentario: mensaje4\nFecha: 12/04/2024\nHora: 11:00}| <f2>"];
+nodo0x7fb0b471eb40:f2 -> nodo0x7fb0b47569d0;
+nodo0x7fb0b47569d0 [label="<f0> |{Usuario: Jorge MAtias\nComentario: mensaje13\nFecha: 06/6/2024\nHora: 13:31}| <f1> |{Usuario: Jorge\nComentario: mensaje6\nFecha: 07/06/2024\nHora: 13:30}| <f2> |{Usuario: Lucia\nComentario: mensaje7\nFecha: 19/07/2024\nHora: 14:45}| <f3>"];
+nodo0x7fb0b471eb40:f3 -> nodo0x7fb0b475b5f0;
+nodo0x7fb0b475b5f0 [label="<f0> |{Usuario: Sofia\nComentario: mensaje9\nFecha: 11/09/2024\nHora: 16:15}| <f1> |{Usuario: Miguel\nComentario: mensaje10\nFecha: 23/10/2024\nHora: 17:30}| <f2> |{Usuario: Laura\nComentario: mensaje11\nFecha: 04/11/2024\nHora: 18:45}| <f3> |{Usuario: MARCOS aurelio\nComentario: mensaje12\nFecha: 16/12/2024\nHora: 19:00}| <f4>"];
 }
