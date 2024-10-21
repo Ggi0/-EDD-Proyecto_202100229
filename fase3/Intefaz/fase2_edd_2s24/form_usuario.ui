@@ -327,7 +327,7 @@ QPushButton#btt_cerrarSesion:pressed {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="page_buscar">
      <widget class="QLineEdit" name="txt_buscarUser">
@@ -1135,6 +1135,9 @@ QPushButton#btt_publicar:pressed {
        <property name="echoMode">
         <enum>QLineEdit::Normal</enum>
        </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="txt_correo">
        <property name="geometry">
@@ -1327,17 +1330,312 @@ QPushButton#btt_eliminarDatos:press {
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QGraphicsView" name="view_grphUser">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>211</width>
+         <height>201</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_edtiPerfil">
+     <widget class="QFrame" name="frame_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>541</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame_10{
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #d3877d, 
+        stop: 1 #f6e1dd
+    ); /* Degradado de #566e71 a un tono más fresco */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>90</y>
-         <width>58</width>
-         <height>16</height>
+         <x>20</x>
+         <y>10</y>
+         <width>91</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Nombres:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Apellidos:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Correo:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>130</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Contraseña:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>170</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Fecha de nacimiento:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txt_nombres_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>10</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txt_apellidos_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>50</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txt_correo_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>90</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txt_contrasenia_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>130</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txt_fechaNac_2">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>170</y>
+         <width>291</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btt_modificarDatos_2">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>280</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btt_modificarDatos_2 {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #b44c43, /* Azul más claro */
+    stop: 1 #944038  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #582924; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_modificarDatos_2:hover {
+    background-color: #582924; 
+    border-color: #3c1e1b; 
+}
+
+QPushButton#btt_modificarDatos_2:press {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #3c1e1b; /* Borde más oscuro cuando se presiona */
+}</string>
+       </property>
+       <property name="text">
+        <string>Modificar datos</string>
        </property>
       </widget>
      </widget>

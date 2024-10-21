@@ -7,6 +7,14 @@
 #include <QString>
 #include <QLabel>
 #include <string>
+#include <QLineEdit>
+#include <iostream>
+#include <string>
+#include <QDebug>
+
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QPixmap>
 
 #include "../../solicitudes/registroSolicitudes.h"
 #include "../../usuarios/global_usuariosAVL.h"
@@ -42,6 +50,12 @@ private slots:
     void on_btt_publicar_clicked();
 
     void on_btt_hacerPubli_clicked();
+
+    void on_btt_modificarDatos_clicked();
+
+    void on_btt_modificarDatos_2_clicked();
+
+    void actualizar_panelTexto();
 
 private:
     Ui::Form_usuario *ui;

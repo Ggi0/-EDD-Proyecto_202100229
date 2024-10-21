@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -85,7 +86,20 @@ public:
     QPushButton *btt_modificarDatos;
     QPushButton *btt_eliminarDatos;
     QFrame *frame_8;
+    QGraphicsView *view_grphUser;
+    QWidget *page_edtiPerfil;
+    QFrame *frame_10;
     QLabel *label_9;
+    QLabel *label_17;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLineEdit *txt_nombres_2;
+    QLineEdit *txt_apellidos_2;
+    QLineEdit *txt_correo_2;
+    QLineEdit *txt_contrasenia_2;
+    QLineEdit *txt_fechaNac_2;
+    QPushButton *btt_modificarDatos_2;
     QPushButton *btt_publicaciones;
     QLabel *lbl_tituloUser;
 
@@ -597,6 +611,7 @@ public:
         txt_apellidos->setGeometry(QRect(140, 50, 381, 31));
         txt_apellidos->setFont(font2);
         txt_apellidos->setEchoMode(QLineEdit::Normal);
+        txt_apellidos->setReadOnly(false);
         txt_correo = new QLineEdit(frame_7);
         txt_correo->setObjectName(QString::fromUtf8("txt_correo"));
         txt_correo->setGeometry(QRect(140, 90, 381, 31));
@@ -692,10 +707,108 @@ public:
 ""));
         frame_8->setFrameShape(QFrame::StyledPanel);
         frame_8->setFrameShadow(QFrame::Raised);
-        label_9 = new QLabel(frame_8);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(60, 90, 58, 16));
+        view_grphUser = new QGraphicsView(frame_8);
+        view_grphUser->setObjectName(QString::fromUtf8("view_grphUser"));
+        view_grphUser->setGeometry(QRect(10, 10, 211, 201));
         stackedWidget->addWidget(page_perfil);
+        page_edtiPerfil = new QWidget();
+        page_edtiPerfil->setObjectName(QString::fromUtf8("page_edtiPerfil"));
+        frame_10 = new QFrame(page_edtiPerfil);
+        frame_10->setObjectName(QString::fromUtf8("frame_10"));
+        frame_10->setGeometry(QRect(0, 0, 541, 391));
+        frame_10->setStyleSheet(QString::fromUtf8("QFrame#frame_10{\n"
+"    background: qlineargradient(\n"
+"        spread: pad, \n"
+"        x1: 0, y1: 0, \n"
+"        x2: 1, y2: 1, \n"
+"        stop: 0 #d3877d, \n"
+"        stop: 1 #f6e1dd\n"
+"    ); /* Degradado de #566e71 a un tono m\303\241s fresco */\n"
+"    padding: 15px; /* Espacio interno mayor para mejor estructura */\n"
+"    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"}\n"
+""));
+        frame_10->setFrameShape(QFrame::StyledPanel);
+        frame_10->setFrameShadow(QFrame::Raised);
+        label_9 = new QLabel(frame_10);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(20, 10, 91, 31));
+        label_9->setFont(font4);
+        label_17 = new QLabel(frame_10);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(20, 50, 101, 31));
+        label_17->setFont(font4);
+        label_18 = new QLabel(frame_10);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setGeometry(QRect(20, 90, 81, 31));
+        label_18->setFont(font4);
+        label_19 = new QLabel(frame_10);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setGeometry(QRect(20, 130, 131, 31));
+        label_19->setFont(font4);
+        label_20 = new QLabel(frame_10);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        label_20->setGeometry(QRect(20, 170, 211, 31));
+        label_20->setFont(font4);
+        txt_nombres_2 = new QLineEdit(frame_10);
+        txt_nombres_2->setObjectName(QString::fromUtf8("txt_nombres_2"));
+        txt_nombres_2->setGeometry(QRect(140, 10, 381, 31));
+        txt_nombres_2->setFont(font2);
+        txt_nombres_2->setEchoMode(QLineEdit::Normal);
+        txt_apellidos_2 = new QLineEdit(frame_10);
+        txt_apellidos_2->setObjectName(QString::fromUtf8("txt_apellidos_2"));
+        txt_apellidos_2->setGeometry(QRect(140, 50, 381, 31));
+        txt_apellidos_2->setFont(font2);
+        txt_apellidos_2->setEchoMode(QLineEdit::Normal);
+        txt_apellidos_2->setReadOnly(false);
+        txt_correo_2 = new QLineEdit(frame_10);
+        txt_correo_2->setObjectName(QString::fromUtf8("txt_correo_2"));
+        txt_correo_2->setGeometry(QRect(140, 90, 381, 31));
+        txt_correo_2->setFont(font2);
+        txt_correo_2->setEchoMode(QLineEdit::Normal);
+        txt_contrasenia_2 = new QLineEdit(frame_10);
+        txt_contrasenia_2->setObjectName(QString::fromUtf8("txt_contrasenia_2"));
+        txt_contrasenia_2->setGeometry(QRect(140, 130, 381, 31));
+        txt_contrasenia_2->setFont(font2);
+        txt_contrasenia_2->setEchoMode(QLineEdit::Normal);
+        txt_fechaNac_2 = new QLineEdit(frame_10);
+        txt_fechaNac_2->setObjectName(QString::fromUtf8("txt_fechaNac_2"));
+        txt_fechaNac_2->setGeometry(QRect(230, 170, 291, 31));
+        txt_fechaNac_2->setFont(font2);
+        txt_fechaNac_2->setEchoMode(QLineEdit::Normal);
+        btt_modificarDatos_2 = new QPushButton(frame_10);
+        btt_modificarDatos_2->setObjectName(QString::fromUtf8("btt_modificarDatos_2"));
+        btt_modificarDatos_2->setGeometry(QRect(190, 280, 161, 41));
+        btt_modificarDatos_2->setFont(font1);
+        btt_modificarDatos_2->setStyleSheet(QString::fromUtf8("QPushButton#btt_modificarDatos_2 {\n"
+"background: qlineargradient(\n"
+"    spread: pad, \n"
+"    x1: 0, y1: 0, \n"
+"    x2: 1, y2: 1, \n"
+"    stop: 0 #b44c43, /* Azul m\303\241s claro */\n"
+"    stop: 1 #944038  /* Azul a\303\272n m\303\241s claro */\n"
+"); /* Degradado de azul claro a azul m\303\241s claro */\n"
+"\n"
+"    color: #FFFFFF; /* Texto blanco para buen contraste */\n"
+"    border: 2px solid #582924; /* Borde m\303\241s oscuro para definici\303\263n */\n"
+"    border-radius: 5px; /* Bordes redondeados para suavidad */\n"
+"    padding: 10px 20px; /* Espacio interno para mejor tama\303\261o del bot\303\263n */\n"
+"    font-size: 16px; /* Tama\303\261o de fuente para legibilidad */\n"
+"  \n"
+"}\n"
+"\n"
+"QPushButton#btt_modificarDatos_2:hover {\n"
+"    background-color: #582924; \n"
+"    border-color: #3c1e1b; \n"
+"}\n"
+"\n"
+"QPushButton#btt_modificarDatos_2:press {\n"
+"    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
+"    border-color: #3c1e1b; /* Borde m\303\241s os"
+                        "curo cuando se presiona */\n"
+"}"));
+        stackedWidget->addWidget(page_edtiPerfil);
         btt_publicaciones = new QPushButton(frame);
         btt_publicaciones->setObjectName(QString::fromUtf8("btt_publicaciones"));
         btt_publicaciones->setGeometry(QRect(110, 10, 141, 41));
@@ -743,7 +856,7 @@ public:
 
         retranslateUi(Form_usuario);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(Form_usuario);
@@ -788,7 +901,17 @@ public:
         txt_fechaNac->setText(QString());
         btt_modificarDatos->setText(QCoreApplication::translate("Form_usuario", "Modificar datos", nullptr));
         btt_eliminarDatos->setText(QCoreApplication::translate("Form_usuario", "Eliminar Cuenta", nullptr));
-        label_9->setText(QCoreApplication::translate("Form_usuario", "TextLabel", nullptr));
+        label_9->setText(QCoreApplication::translate("Form_usuario", "Nombres:", nullptr));
+        label_17->setText(QCoreApplication::translate("Form_usuario", "Apellidos:", nullptr));
+        label_18->setText(QCoreApplication::translate("Form_usuario", "Correo:", nullptr));
+        label_19->setText(QCoreApplication::translate("Form_usuario", "Contrase\303\261a:", nullptr));
+        label_20->setText(QCoreApplication::translate("Form_usuario", "Fecha de nacimiento:", nullptr));
+        txt_nombres_2->setText(QString());
+        txt_apellidos_2->setText(QString());
+        txt_correo_2->setText(QString());
+        txt_contrasenia_2->setText(QString());
+        txt_fechaNac_2->setText(QString());
+        btt_modificarDatos_2->setText(QCoreApplication::translate("Form_usuario", "Modificar datos", nullptr));
         btt_publicaciones->setText(QCoreApplication::translate("Form_usuario", "Publicaciones", nullptr));
         lbl_tituloUser->setText(QString());
     } // retranslateUi

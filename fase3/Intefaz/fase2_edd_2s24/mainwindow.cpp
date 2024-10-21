@@ -73,8 +73,6 @@ void MainWindow::on_btt_login_clicked()
 
     }
 
-
-
     if (username == "gio" && password == "gio") {
                 // Crear una instancia de la nueva ventana
                 Form_usuario *formUser = new Form_usuario(); // Ahora utiliza Form_admin

@@ -107,6 +107,8 @@ class Usuarios{
         void guardarUsuario();
         void graficarUsuario();
 
+        void modificarDatos(const std::string& nuevosNombres, const std::string& nuevosApellidos, const std::string& nuevaContrasenia, const std::string& nuevaFechaN);
+
         // Nuevos métodos para manejar las estructuras de datos
         void agregarSolicitud(const Solicitud& solicitud);
         void agregarSolicitudPila(const Solicitud& solicitud);

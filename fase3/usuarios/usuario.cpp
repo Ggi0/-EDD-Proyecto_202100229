@@ -117,6 +117,21 @@ void Usuarios::printUsuario(){
     std::cout << "===== ======================= =====" << std::endl<< std::endl;
 }
 
+// ----------- modificar datos personales --------------------
+void Usuarios::modificarDatos(const std::string& nuevosNombres, const std::string& nuevosApellidos, const std::string& nuevaContrasenia, const std::string& nuevaFechaN) {
+    // Usamos los setters para modificar los atributos del usuario
+    setNombres(const_cast<std::string&>(nuevosNombres)); // Usamos const_cast para modificar los strings
+    setApellidos(const_cast<std::string&>(nuevosApellidos));
+    setContrasenia(const_cast<std::string&>(nuevaContrasenia));
+    setFechaN(const_cast<std::string&>(nuevaFechaN));
+
+    // Confirmamos la modificación
+    std::cout << "Datos modificados exitosamente:\n";
+    std::cout << "Nombres: " << getNombres() << "\n";
+    std::cout << "Apellidos: " << getApellidos() << "\n";
+    std::cout << "Contraseña: " << getContrasenia() << "\n";
+    std::cout << "Fecha de Nacimiento: " << getFechaN() << "\n";
+}
 
 
 // ----------- SOLICITUDES A PILA -----------------

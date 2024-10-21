@@ -51,29 +51,6 @@ void Form_usuario::on_btt_solicitudes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_soli);
 
-    /*// logica para manejar las solicitudes
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio1", "gio4", "PENDIENTE");
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio3", "gio6", "ACEPTADA");
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio1", "gio4", "PENDIENTE");
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio4", "gio1", "PENDIENTE");
-
-
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio4", "gio1", "ACEPTADA");
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio4", "gio1", "ACEPTADA");
-
-
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio2", "gio4", "PENDIENTE");
-    std::cout<<"--------------------------------"<< std::endl;
-    registroSolicitudes("gio4", "gio2", "RECHAZADA");
-
-    //std::cout<<"esta retornando: "<< result<< std::endl;*/
 
 }
 
@@ -88,6 +65,9 @@ void Form_usuario::on_btt_reportes_clicked()
 void Form_usuario::on_btt_perfil_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_perfil);
+
+    actualizar_panelTexto();
+
 }
 
 
@@ -169,5 +149,141 @@ void Form_usuario::on_btt_hacerPubli_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_hacerPubli);
 
+}
+
+
+void Form_usuario::on_btt_modificarDatos_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_edtiPerfil);
+    std::string correoActual;
+    correoActual = loginUser_global;
+    NodoAVL* usuarioActual = arbolGlobal_usuarios.buscarPorCorreo(correoActual);
+
+    // obtener la informacion del usuario
+    std::string nombre = usuarioActual->getData().getNombres();
+    std::string apellido = usuarioActual->getData().getApellidos();
+    std::string contrasenia = usuarioActual->getData().getContrasenia();
+    std::string fecha = usuarioActual->getData().getFechaN();
+    std::string correo = usuarioActual->getData().getCorreo();
+
+    //cambiar de string a QString
+    QString viewNombre = QString::fromStdString(nombre);
+    QString viewApellido = QString::fromStdString(apellido);
+    QString viewContra = QString::fromStdString(contrasenia);
+    QString viewFecha = QString::fromStdString(fecha);
+    QString viewCorreo = QString::fromStdString(correo);
+
+
+    // para hacer no editable el panel de texto
+    ui->txt_correo_2->setReadOnly(true);
+
+    // colocar la información del usuario en el pantalla
+
+    ui->txt_nombres_2->setText(viewNombre);
+    ui->txt_apellidos_2->setText(viewApellido);
+    ui->txt_contrasenia_2->setText(viewContra);
+    ui->txt_fechaNac_2->setText(viewFecha);
+    ui->txt_correo_2->setText(viewCorreo);
+
+}
+
+
+void Form_usuario::on_btt_modificarDatos_2_clicked()
+{
+    // Obtener los valores de los QLineEdit
+    QString nombresE = ui->txt_nombres_2->text();
+    QString apellidosE = ui->txt_apellidos_2->text();
+    QString fechaNacE = ui->txt_fechaNac_2->text();
+    QString contraseniaE = ui->txt_contrasenia_2->text();
+
+    // Validar los campos, que no esten vacios
+    if(nombresE.isEmpty() || apellidosE.isEmpty() || fechaNacE.isEmpty() || contraseniaE.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Todos los campos deben estar completos.");
+        return;
+    }
+
+    // Convertir de QString a std::string
+    std::string nombre_edit = nombresE.toStdString();
+    std::string apellido_edit = apellidosE.toStdString();
+    std::string fechaN_edit = fechaNacE.toStdString();
+    std::string contrasena_edit = contraseniaE.toStdString();
+
+    std::string correoActual;
+    correoActual = loginUser_global;
+    NodoAVL* usuarioActual = arbolGlobal_usuarios.buscarPorCorreo(correoActual);
+
+    usuarioActual->getData().modificarDatos(nombre_edit, apellido_edit, contrasena_edit, fechaN_edit);
+    actualizar_panelTexto();
+    ui->stackedWidget->setCurrentWidget(ui->page_perfil);
+
+}
+
+void Form_usuario::actualizar_panelTexto()
+{
+    // Crear una nueva escena
+    QGraphicsScene* scene = new QGraphicsScene(this);
+
+    // Cargar la imagen desde la ruta que conoces
+    QPixmap image("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/imagenes/image_user.png");
+
+    // Verificar si la imagen se cargó correctamente
+    if (!image.isNull()) {
+        // Ajustar el tamaño de la imagen al tamaño del QGraphicsView
+        QSize viewSize = ui->view_grphUser->size();
+        QPixmap scaledImage = image.scaled(viewSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+        // Crear un item gráfico con la imagen ajustada y agregarlo a la escena
+        QGraphicsPixmapItem* item = new QGraphicsPixmapItem(scaledImage);
+        scene->addItem(item);
+
+        // Establecer la escena en el QGraphicsView
+        ui->view_grphUser->setScene(scene);
+
+        // Asegurar que la imagen se ajuste al tamaño del QGraphicsView
+        ui->view_grphUser->fitInView(item, Qt::KeepAspectRatio);
+
+        // Configurar para que el fondo del QGraphicsView sea transparente
+        ui->view_grphUser->setStyleSheet("background: transparent");
+        ui->view_grphUser->setFrameStyle(QFrame::NoFrame);  // Elimina el borde del frame si lo deseas
+
+    } else {
+        // Mostrar un mensaje de error si la imagen no se pudo cargar
+        qDebug() << "Error: No se pudo cargar la imagen.";
+    }
+
+
+    std::string correoActual;
+    correoActual = loginUser_global;
+    NodoAVL* usuarioActual = arbolGlobal_usuarios.buscarPorCorreo(correoActual);
+
+    // obtener la informacion del usuario
+    std::string nombre = usuarioActual->getData().getNombres();
+    std::string apellido = usuarioActual->getData().getApellidos();
+    std::string contrasenia = usuarioActual->getData().getContrasenia();
+    std::string fecha = usuarioActual->getData().getFechaN();
+    std::string correo = usuarioActual->getData().getCorreo();
+
+    //cambiar de string a QString
+    QString viewNombre = QString::fromStdString(nombre);
+    QString viewApellido = QString::fromStdString(apellido);
+    QString viewContra = QString::fromStdString(contrasenia);
+    QString viewFecha = QString::fromStdString(fecha);
+    QString viewCorreo = QString::fromStdString(correo);
+
+
+    // para hacer no editable el panel de texto
+    ui->txt_nombres->setReadOnly(true);
+    ui->txt_apellidos->setReadOnly(true);
+    ui->txt_contrasenia->setReadOnly(true);
+    ui->txt_fechaNac->setReadOnly(true);
+    ui->txt_correo->setReadOnly(true);
+
+    // colocar la información del usuario en el pantalla
+
+    ui->txt_nombres->setText(viewNombre);
+    ui->txt_apellidos->setText(viewApellido);
+    ui->txt_contrasenia->setText(viewContra);
+    ui->txt_fechaNac->setText(viewFecha);
+    ui->txt_correo->setText(viewCorreo);
 }
 
