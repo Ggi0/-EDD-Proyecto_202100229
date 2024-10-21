@@ -57,6 +57,8 @@ private slots:
 
     void actualizar_panelTexto();
 
+    void on_btt_eliminarDatos_clicked();
+
 private:
     Ui::Form_usuario *ui;
 };

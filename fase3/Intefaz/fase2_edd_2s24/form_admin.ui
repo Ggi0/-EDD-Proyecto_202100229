@@ -253,7 +253,7 @@ QPushButton#btt_reportes:pressed {
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_white"/>
     <widget class="QWidget" name="page_buscar">

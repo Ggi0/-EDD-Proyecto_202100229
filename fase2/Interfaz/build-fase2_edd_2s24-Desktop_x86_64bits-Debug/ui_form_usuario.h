@@ -691,7 +691,7 @@ public:
 "}"));
         frame_8 = new QFrame(page_perfil);
         frame_8->setObjectName(QString::fromUtf8("frame_8"));
-        frame_8->setGeometry(QRect(550, 20, 231, 221));
+        frame_8->setGeometry(QRect(550, 0, 241, 221));
         frame_8->setStyleSheet(QString::fromUtf8("QFrame#frame_8{\n"
 "    background: qlineargradient(\n"
 "        spread: pad, \n"
@@ -709,7 +709,17 @@ public:
         frame_8->setFrameShadow(QFrame::Raised);
         view_grphUser = new QGraphicsView(frame_8);
         view_grphUser->setObjectName(QString::fromUtf8("view_grphUser"));
-        view_grphUser->setGeometry(QRect(10, 10, 211, 201));
+        view_grphUser->setGeometry(QRect(0, 0, 251, 231));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(view_grphUser->sizePolicy().hasHeightForWidth());
+        view_grphUser->setSizePolicy(sizePolicy);
+        view_grphUser->setMaximumSize(QSize(254, 254));
+        view_grphUser->setStyleSheet(QString::fromUtf8("background: transparent"));
+        view_grphUser->setFrameShape(QFrame::NoFrame);
+        view_grphUser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        view_grphUser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         stackedWidget->addWidget(page_perfil);
         page_edtiPerfil = new QWidget();
         page_edtiPerfil->setObjectName(QString::fromUtf8("page_edtiPerfil"));

@@ -215,6 +215,7 @@ void Form_usuario::on_btt_modificarDatos_2_clicked()
     usuarioActual->getData().modificarDatos(nombre_edit, apellido_edit, contrasena_edit, fechaN_edit);
     actualizar_panelTexto();
     ui->stackedWidget->setCurrentWidget(ui->page_perfil);
+    QMessageBox::information(this, "Estado", "Actualización de datos exitosa!");
 
 }
 
@@ -228,9 +229,11 @@ void Form_usuario::actualizar_panelTexto()
 
     // Verificar si la imagen se cargó correctamente
     if (!image.isNull()) {
-        // Ajustar el tamaño de la imagen al tamaño del QGraphicsView
+        // Obtener el tamaño del QGraphicsView
         QSize viewSize = ui->view_grphUser->size();
-        QPixmap scaledImage = image.scaled(viewSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+        // Ajustar la imagen exactamente al tamaño del QGraphicsView sin mantener la proporción
+        QPixmap scaledImage = image.scaled(viewSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
         // Crear un item gráfico con la imagen ajustada y agregarlo a la escena
         QGraphicsPixmapItem* item = new QGraphicsPixmapItem(scaledImage);
@@ -240,16 +243,13 @@ void Form_usuario::actualizar_panelTexto()
         ui->view_grphUser->setScene(scene);
 
         // Asegurar que la imagen se ajuste al tamaño del QGraphicsView
-        ui->view_grphUser->fitInView(item, Qt::KeepAspectRatio);
-
-        // Configurar para que el fondo del QGraphicsView sea transparente
-        ui->view_grphUser->setStyleSheet("background: transparent");
-        ui->view_grphUser->setFrameStyle(QFrame::NoFrame);  // Elimina el borde del frame si lo deseas
+        ui->view_grphUser->fitInView(item, Qt::IgnoreAspectRatio);
 
     } else {
         // Mostrar un mensaje de error si la imagen no se pudo cargar
         qDebug() << "Error: No se pudo cargar la imagen.";
     }
+
 
 
     std::string correoActual;
@@ -285,5 +285,36 @@ void Form_usuario::actualizar_panelTexto()
     ui->txt_contrasenia->setText(viewContra);
     ui->txt_fechaNac->setText(viewFecha);
     ui->txt_correo->setText(viewCorreo);
+}
+
+
+void Form_usuario::on_btt_eliminarDatos_clicked()
+{
+    std::string correoActual;
+    correoActual = loginUser_global;
+
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Confirmación", "¿Estás seguro de eliminar tu cuenta??",
+                                  QMessageBox::Yes | QMessageBox::No);
+
+    if (reply == QMessageBox::Yes) {
+        // Acción si el usuario selecciona "Sí"
+        arbolGlobal_usuarios.delPorCorreo(correoActual);
+        std::cout << "Cuenta eliminada exitosamente"<< std::endl;
+
+        // mandar al login:
+        // Crear una instancia de la nueva ventana
+        MainWindow *formLogin = new MainWindow();
+        formLogin->show(); // regresa al login
+
+        // Cierra la ventana actual (form_admin)
+        this->close();
+
+    } else {
+        // Acción si el usuario selecciona "No"
+        std::cout << "Se cancelo la elimininación de la cuenta"<< std::endl;
+    }
+
+
 }
 

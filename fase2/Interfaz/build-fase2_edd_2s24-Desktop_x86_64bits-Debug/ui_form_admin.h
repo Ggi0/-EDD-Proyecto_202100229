@@ -570,7 +570,7 @@ public:
 
         retranslateUi(Form_admin);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Form_admin);

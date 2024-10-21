@@ -125,12 +125,14 @@ void Usuarios::modificarDatos(const std::string& nuevosNombres, const std::strin
     setContrasenia(const_cast<std::string&>(nuevaContrasenia));
     setFechaN(const_cast<std::string&>(nuevaFechaN));
 
+    /*
     // Confirmamos la modificación
     std::cout << "Datos modificados exitosamente:\n";
     std::cout << "Nombres: " << getNombres() << "\n";
     std::cout << "Apellidos: " << getApellidos() << "\n";
     std::cout << "Contraseña: " << getContrasenia() << "\n";
     std::cout << "Fecha de Nacimiento: " << getFechaN() << "\n";
+    */
 }
 
 

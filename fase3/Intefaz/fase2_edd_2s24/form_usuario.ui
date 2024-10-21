@@ -1304,8 +1304,8 @@ QPushButton#btt_eliminarDatos:press {
       <property name="geometry">
        <rect>
         <x>550</x>
-        <y>20</y>
-        <width>231</width>
+        <y>0</y>
+        <width>241</width>
         <height>221</height>
        </rect>
       </property>
@@ -1333,11 +1333,35 @@ QPushButton#btt_eliminarDatos:press {
       <widget class="QGraphicsView" name="view_grphUser">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>211</width>
-         <height>201</height>
+         <x>0</x>
+         <y>0</y>
+         <width>251</width>
+         <height>231</height>
         </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>254</width>
+         <height>254</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
       </widget>
      </widget>
