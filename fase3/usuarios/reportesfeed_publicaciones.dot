@@ -1,0 +1,21 @@
+digraph G {
+    rankdir=TB;
+    node [shape=record];
+
+    node_140630005595840[label="{Fecha: 21/08/2024}", style=filled,fillcolor=lightblue];
+    node_140630005595840 -> node_140629977987696 [label="Der"];
+    node_140629977987696[label="{Fecha: 22/08/2024}", ];
+
+    // Subgrafo para las publicaciones
+    subgraph cluster_publications {
+        style=dashed;
+        label="Publicaciones";
+        pub_0 [shape=record, label="{ID: 8\nCorreo: 8elena@T\nContenido: Cocinando mi plato favorito, nada como la comida casera.\nFecha: 21/08/2024\nHora: 11:40}"];
+        pub_0 -> pub_1;
+        pub_1 [shape=record, label="{ID: 9\nCorreo: 8elena@T\nContenido: publicacion 2\nFecha: 21/08/2024\nHora: 11:41}"];
+        pub_1 -> pub_2;
+        pub_2 [shape=record, label="{ID: 10\nCorreo: 8elena@T\nContenido: publicación 3\nFecha: 21/08/2024\nHora: 11:42}"];
+    }
+
+    node_140630005595840 -> pub_0 [color=red, label="Publicaciones"];
+}

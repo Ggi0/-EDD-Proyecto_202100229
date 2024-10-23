@@ -42,7 +42,7 @@ bool validarFormatoFecha(std::string fecha) {
 */
 void verificarCorreo_publicacion(std::string correo, std::string contenido, std::string fecha, std::string hora, lista_comentarios lista_comentarios) {
     std::cout << "Iniciando verificación para publicación de: " << correo << std::endl;
-    std::cout << "Número de comentarios: " << lista_comentarios.size() << std::endl;
+    //std::cout << "Número de comentarios: " << lista_comentarios.size() << std::endl;
     
     // 1) Verificar el formato de la fecha de la publicación
     if (!validarFormatoFecha(fecha)) {
@@ -72,7 +72,7 @@ void verificarCorreo_publicacion(std::string correo, std::string contenido, std:
             //nuevaPublicacion.getArbolB_comentarios().insertar(comentarioActual);
             nodoActual = nodoActual->getSig();
         }
-        std::cout << "Finalizando inserción de comentarios..." << std::endl;
+        //std::cout << "Finalizando inserción de comentarios..." << std::endl;
 
         //nuevaPublicacion.getArbolB_comentarios().graficar();
 
@@ -83,7 +83,8 @@ void verificarCorreo_publicacion(std::string correo, std::string contenido, std:
         // Imprimir el estado del BST después de la inserción
         Usuarios& usuario = usuarioEncontrado->getData();
         BST& bstPersonal = usuario.getBST_feedPublicaciones();
-        std::cout << "Estado del BST después de la inserción:" << std::endl;
+        
+        //std::cout << "Estado del BST después de la inserción:" << std::endl;
         if (bstPersonal.estaVacio()) {
             std::cout << "El BST está vacío." << std::endl;
         } else {
@@ -134,15 +135,16 @@ void asignarBSTpersonal(Publicacion nuevaPublicacion, std::string correo, std::s
     }
 
     // 4. Agregar la nueva publicación a la lista de publicaciones del nodo
-    if (fecha == nodoFecha->getFechaID()){
-        nodoFecha->getListaPublicaciones().append(nuevaPublicacion);
-        std::cout << "Publicación agregada a la lista del nodo con fecha " << fecha << ". Contenido: " << nuevaPublicacion.getContenido() << std::endl;
+    NodoBST* nodoFecha_ = bstPersonal.buscarNodoPorFecha(fecha);
+    if (fecha == nodoFecha_->getFechaID()){
+        nodoFecha_->getListaPublicaciones().append(nuevaPublicacion);
+        std::cout << "Publicación agregada a la lista del nodo con fecha " << fecha << std::endl;
 
         // Graficar la lista de publicaciones del nodo
         std::string fechaSinBarras = fecha;
         std::replace(fechaSinBarras.begin(), fechaSinBarras.end(), '/', '_');
         std::string nombreArchivo = "lista_publicaciones_" + fechaSinBarras + "_" + correo;
-        nodoFecha->getListaPublicaciones().graficarNodo(nombreArchivo);
+        nodoFecha_->getListaPublicaciones().graficarNodo(nombreArchivo);
         std::cout << "Publicación agregada al feed del usuario " << correo << " en la fecha " << fecha << std::endl;
 
         

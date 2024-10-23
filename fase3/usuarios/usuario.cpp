@@ -176,7 +176,7 @@ bool Usuarios::operator<(const Usuarios& otro) const {
 
 void Usuarios::graficar_fecha(const std::string& fecha) const {
     // Ruta donde se guardarán los archivos
-    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes";
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
 
     std::ofstream archivo(outputDir + "feed_publicaciones.dot");
     if (!archivo.is_open()) {

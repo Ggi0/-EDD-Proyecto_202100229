@@ -1,0 +1,17 @@
+digraph G {
+    rankdir=TB;
+    node [shape=record];
+
+    node_140222475387328[label="{Fecha: 21/08/2024}", ];
+    node_140222475387328 -> node_140222474906864 [label="Der"];
+    node_140222474906864[label="{Fecha: 22/08/2024}", style=filled,fillcolor=lightblue];
+
+    // Subgrafo para las publicaciones
+    subgraph cluster_publications {
+        style=dashed;
+        label="Publicaciones";
+        pub_0 [shape=record, label="{ID: 11\nCorreo: 8elena@T\nContenido: publicacion 4\nFecha: 22/08/2024\nHora: 11:43}"];
+    }
+
+    node_140222474906864 -> pub_0 [color=red, label="Publicaciones"];
+}

@@ -1,0 +1,9 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: 8elena@T\nContenido: Cocinando mi plato favorito, nada como la comida casera.\nFecha: 21/08/2024\nHora: 11:40}"];
+    node1 [label="{Correo: 8elena@T\nContenido: publicacion 2\nFecha: 21/08/2024\nHora: 11:41}"];
+    node0 -> node1;
+    node2 [label="{Correo: 8elena@T\nContenido: publicación 3\nFecha: 21/08/2024\nHora: 11:42}"];
+    node1 -> node2;
+}

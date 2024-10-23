@@ -184,7 +184,7 @@ void ListaDoblementeEnlazadaP::graficar() const {
 }
 
 void ListaDoblementeEnlazadaP::graficarNodo(const std::string& nombreArchivo) const {
-    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/usuarios/reportes/";
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
     std::string fullPath = outputDir + nombreArchivo + ".dot";
     std::ofstream archivo(fullPath);
     

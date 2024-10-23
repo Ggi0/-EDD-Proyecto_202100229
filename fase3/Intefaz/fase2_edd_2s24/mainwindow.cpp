@@ -58,6 +58,13 @@ void MainWindow::on_btt_login_clicked()
     if (resultado == 0){ // error login
         QMessageBox::warning(this, "Login fallido", "Usuario o contraseña incorrectos.");
     }else if (resultado == 1) { // acceso usuarios
+
+        /*   // probando si se puede graficar por fecha. (si se puede)
+        NodoAVL* usue_preuba = arbolGlobal_usuarios.buscarPorCorreo(username_str);
+        Usuarios& usuario = usue_preuba->getData();
+        usuario.graficar_fecha("22/08/2024");
+        */
+
         // Crear una instancia de la nueva ventana
         Form_usuario *formUser = new Form_usuario(); // Ahora utiliza Form_usuario
         formUser->show(); // Muestra la ventana form_usuario
