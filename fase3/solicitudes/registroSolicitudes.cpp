@@ -97,6 +97,7 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
         }
 
         if (solicitudEncontrada) {
+            std::cout << "-----------para eliminar de la pila--------" << std::endl;
             // Eliminar la solicitud de la pila del emisor si existe
             solicitud_pila& pilaEmisor = usuarioEmisor.getPilaSolicitudes();
             solicitud_pila pilaTemp;
@@ -113,6 +114,37 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
                     std::cout << "Solicitud eliminada de la pila del emisor" << std::endl;
                 }
             }
+
+/*
+        // Verificar si hay una solicitud pendiente del receptor al emisor en la pila del emisor
+        solicitud_pila& pilaEmisor = usuarioEmisor.getPilaSolicitudes();
+        solicitud_pila pilaTemp;
+        bool solicitudEncontrada = false;
+
+        while (!pilaEmisor.estaVacia()) {
+            Solicitud solicitudActual = pilaEmisor.top();
+            pilaEmisor.pop();
+
+            if (solicitudActual.getEmisor() == receptor && solicitudActual.getEstado() == "PENDIENTE") {
+                solicitudEncontrada = true;
+                std::cout << "Solicitud eliminada de la pila del emisor" << std::endl;
+            } else {
+                pilaTemp.push(solicitudActual);
+            }
+        }
+
+        // Restaurar la pila del emisor sin la solicitud rechazada
+        while (!pilaTemp.estaVacia()) {
+            pilaEmisor.push(pilaTemp.top());
+            pilaTemp.pop();
+        }
+
+*/
+
+
+
+
+
 
             // Restaurar la pila del emisor sin la solicitud aceptada
             while (!pilaTemp.estaVacia()) {

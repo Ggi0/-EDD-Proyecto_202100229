@@ -428,9 +428,9 @@ public:
         frame_3->setFrameShadow(QFrame::Raised);
         btt_hacerPubli = new QPushButton(frame_3);
         btt_hacerPubli->setObjectName(QString::fromUtf8("btt_hacerPubli"));
-        btt_hacerPubli->setGeometry(QRect(10, 10, 181, 41));
+        btt_hacerPubli->setGeometry(QRect(10, 10, 221, 41));
         btt_hacerPubli->setFont(font1);
-        btt_hacerPubli->setStyleSheet(QString::fromUtf8("QPushButton#btt_solicitudes {\n"
+        btt_hacerPubli->setStyleSheet(QString::fromUtf8("QPushButton#btt_hacerPubli {\n"
 "background: qlineargradient(\n"
 "    spread: pad, \n"
 "    x1: 0, y1: 0, \n"
@@ -447,15 +447,15 @@ public:
 "  \n"
 "}\n"
 "\n"
-"QPushButton#btt_solicitudes:hover {\n"
+"QPushButton#btt_hacerPubli:hover {\n"
 "    background-color: #2980B9; \n"
 "    border-color: #1F618D; \n"
 "}\n"
 "\n"
-"QPushButton#btt_solicitudes:pressed {\n"
+"QPushButton#btt_hacerPubli:pressed {\n"
 "    background-color: #2980B9; /* Color m\303\241s oscuro cuando se presiona */\n"
-"    border-color: #1F618D; /* Borde m\303\241s oscuro cuando s"
-                        "e presiona */\n"
+"    border-color: #1F618D; /* Borde m\303\241s oscuro cuando se p"
+                        "resiona */\n"
 "}"));
         stackedWidget->addWidget(page_publi);
         page_soli = new QWidget();

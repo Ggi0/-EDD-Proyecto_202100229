@@ -666,17 +666,18 @@ QPushButton#btt_buscar2:pressed {
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>181</width>
+         <width>221</width>
          <height>41</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Kohinoor Devanagari</family>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#btt_solicitudes {
+        <string notr="true">QPushButton#btt_hacerPubli {
 background: qlineargradient(
     spread: pad, 
     x1: 0, y1: 0, 
@@ -693,12 +694,12 @@ background: qlineargradient(
   
 }
 
-QPushButton#btt_solicitudes:hover {
+QPushButton#btt_hacerPubli:hover {
     background-color: #2980B9; 
     border-color: #1F618D; 
 }
 
-QPushButton#btt_solicitudes:pressed {
+QPushButton#btt_hacerPubli:pressed {
     background-color: #2980B9; /* Color más oscuro cuando se presiona */
     border-color: #1F618D; /* Borde más oscuro cuando se presiona */
 }</string>
