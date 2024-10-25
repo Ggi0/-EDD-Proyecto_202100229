@@ -24,6 +24,8 @@ LISTACOMENTARIOS_DIR = $$COMENTARIOS_DIR/listaComentarios
 ARBOLB_DIR = $$COMENTARIOS_DIR/arbolB
 LISTADEPUBLI_DIR = $$PUBLICACIONES_DIR/listaDobleEnlazada
 ADMIN_DIR = $$PWD/../../administracion
+MODELOS_DIR = $$PWD/../modelosTablas
+MODENVIARSOLI_DIR = $$MODELOS_DIR/modeloEnviarSoli
 
 SOURCES += \
     form_admin.cpp \
@@ -45,7 +47,8 @@ SOURCES += \
     $$LISTADEPUBLI_DIR/*.cpp \
     $$LISTACOMENTARIOS_DIR/*.cpp \
     #$$ARBOLB_DIR/*.cpp \
-    $$ADMIN_DIR/*.cpp
+    $$ADMIN_DIR/*.cpp \
+    $$MODENVIARSOLI_DIR/*.cpp
 
 HEADERS += \
     form_admin.h \
@@ -66,7 +69,8 @@ HEADERS += \
     $$LISTADEPUBLI_DIR/*.h \
     $$LISTACOMENTARIOS_DIR/*.h \
     # $$ARBOLB_DIR/*.h \
-    $$ADMIN_DIR/*.h
+    $$ADMIN_DIR/*.h \
+    $$MODENVIARSOLI_DIR/*.h
 
 FORMS += \
     form_admin.ui \
@@ -90,7 +94,8 @@ INCLUDEPATH += \
     $$LISTACOMENTARIOS_DIR \
     $$ARBOLB_DIR \
     $$LISTADEPUBLI_DIR \
-    $$ADMIN_DIR
+    $$ADMIN_DIR \
+    $$MODENVIARSOLI_DIR
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

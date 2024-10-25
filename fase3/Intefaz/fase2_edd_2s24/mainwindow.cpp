@@ -38,6 +38,7 @@ void MainWindow::on_btt_login_clicked()
 {
     std::string loginUser_global;
 
+    /*
     // ----------- probar lista ------------------
     listaAdyacencia grafo;
 
@@ -46,7 +47,7 @@ void MainWindow::on_btt_login_clicked()
         Usuarios usuario3("Pedro", "López", "30/01/1985", "pedro", "password789");
         Usuarios usuario4("Adriana", "Pérez", "17/07/1992", "adriana", "password321");
         Usuarios usuario5("Cristian", "Ramírez", "05/12/1993", "cristian", "password654");
-        Usuarios usuario6("María", "Hernández", "10/03/1989", "maria", "password987");
+        Usuarios usuario6("María", "Hernández", "10/03/1989", "maria@", "password987");
         Usuarios usuario7("Melisa", "Gómez", "25/09/1991", "melisa", "password741");
         Usuarios usuario8("Kevin", "Díaz", "19/11/1990", "kevin", "password852");
         Usuarios usuario9("Mario", "Sánchez", "03/05/1988", "mario", "password963");
@@ -86,18 +87,17 @@ void MainWindow::on_btt_login_clicked()
         crearConexionGrafo(grafo, usuario10, usuario6); // Melisa - Adriana
 
 
-
-
         grafo.crearGrafo();
         grafo.crearGrafoLista();
 
 
         // Obtener sugerencias para José
-        listaSugerencias* sugerencias = grafo.sugerirAmistades("jose");
+        listaSugerencias* sugerencias = grafo.sugerirAmistades("maria@");
         sugerencias->mostrarSugerencias();
         delete sugerencias;  // No olvides liberar la memoria
 
     // -------------------------------------------------------------------
+*/
 
     // Obtén los textos de los QLineEdit
     QString username = ui->txt_user->text();    // usuario

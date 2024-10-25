@@ -4,7 +4,8 @@
 
 Form_usuario::Form_usuario(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Form_usuario)
+    ui(new Ui::Form_usuario),
+    modeloTabla(new UsuariosTableModel(this))
 {
     ui->setupUi(this);
     // Muestra la página vacía (page_white) al inicio
@@ -14,6 +15,14 @@ Form_usuario::Form_usuario(QWidget *parent) :
     QString texto_ap = QString::fromStdString(loginUser_global);
     // Asignar el texto al QLabel
     ui->lbl_tituloUser->setText(texto_ap);
+
+    /// Configuración de la tabla de solicitudes
+    ui->tableV_usuarios->setModel(modeloTabla);
+    ui->tableV_usuarios->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    // Conectar la señal de enviarSolicitud al slot para mostrar el mensaje
+    connect(modeloTabla, &UsuariosTableModel::enviarSolicitud, this, &Form_usuario::mostrarMensajeSolicitud);
+
 
 }
 
@@ -51,7 +60,22 @@ void Form_usuario::on_btt_solicitudes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_soli);
 
+    // -------------- TABLA PARA ENVAIR SOLICITUDES ----------------
+    // Obtener el correo del usuario actual desde loginUser_global
+    std::string correoActual = loginUser_global;
 
+    // Actualizar los datos en el modelo, excluyendo al usuario actual
+    modeloTabla->actualizarDatosDesdeAVL(arbolGlobal_usuarios, correoActual);
+
+    // Ajustar el tamaño de las filas después de actualizar los datos
+    ui->tableV_usuarios->resizeRowsToContents();
+
+}
+
+// Slot para mostrar el mensaje de solicitud enviada
+void Form_usuario::mostrarMensajeSolicitud(QString correo)
+{
+    QMessageBox::information(this, "Solicitud Enviada", "Usted le envió una solicitud a " + correo);
 }
 
 

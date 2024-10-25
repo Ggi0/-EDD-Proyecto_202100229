@@ -1,87 +1,87 @@
 digraph G {
 node[shape = "box" style = "filled"]
 Nodo1[label = "ID: 1\nNombre: José" group = "1" fillcolor="lightgray"];
-Nodo1->Nodo2[dir = none];Nodo1->Nodo0x7facbbc06580;
-Nodo0x7facbbc06580[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
-Nodo0x7facbbc06580->Nodo0x7facbbc06700;
-Nodo0x7facbbc06700[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
-Nodo0x7facbbc06700->Nodo0x7facbbc06880;
-Nodo0x7facbbc06880[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
-Nodo0x7facbbc06880->Nodo0x7facbbc06a00;
-Nodo0x7facbbc06a00[label = "ID: 6\nNombre: María" fillcolor = "white"];
-{rank=same;Nodo1;Nodo0x7facbbc06580;Nodo0x7facbbc06700;Nodo0x7facbbc06880;Nodo0x7facbbc06a00}
+Nodo1->Nodo2[dir = none];Nodo1->Nodo0x7fcce4095260;
+Nodo0x7fcce4095260[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
+Nodo0x7fcce4095260->Nodo0x7fcce40953e0;
+Nodo0x7fcce40953e0[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
+Nodo0x7fcce40953e0->Nodo0x7fcce4095560;
+Nodo0x7fcce4095560[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
+Nodo0x7fcce4095560->Nodo0x7fcce40965d0;
+Nodo0x7fcce40965d0[label = "ID: 6\nNombre: María" fillcolor = "white"];
+{rank=same;Nodo1;Nodo0x7fcce4095260;Nodo0x7fcce40953e0;Nodo0x7fcce4095560;Nodo0x7fcce40965d0}
 Nodo2[label = "ID: 2\nNombre: Javier" group = "1" fillcolor="lightgray"];
-Nodo2->Nodo3[dir = none];Nodo2->Nodo0x7facbbc06640;
-Nodo0x7facbbc06640[label = "ID: 1\nNombre: José" fillcolor = "white"];
-Nodo0x7facbbc06640->Nodo0x7facbbc06c40;
-Nodo0x7facbbc06c40[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
-Nodo0x7facbbc06c40->Nodo0x7facbbc07840;
-Nodo0x7facbbc07840[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
-{rank=same;Nodo2;Nodo0x7facbbc06640;Nodo0x7facbbc06c40;Nodo0x7facbbc07840}
+Nodo2->Nodo3[dir = none];Nodo2->Nodo0x7fcce4095320;
+Nodo0x7fcce4095320[label = "ID: 1\nNombre: José" fillcolor = "white"];
+Nodo0x7fcce4095320->Nodo0x7fcce4096810;
+Nodo0x7fcce4096810[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
+Nodo0x7fcce4096810->Nodo0x7fcce409a120;
+Nodo0x7fcce409a120[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
+{rank=same;Nodo2;Nodo0x7fcce4095320;Nodo0x7fcce4096810;Nodo0x7fcce409a120}
 Nodo3[label = "ID: 3\nNombre: Pedro" group = "1" fillcolor="lightgray"];
-Nodo3->Nodo4[dir = none];Nodo3->Nodo0x7facbbc067c0;
-Nodo0x7facbbc067c0[label = "ID: 1\nNombre: José" fillcolor = "white"];
-Nodo0x7facbbc067c0->Nodo0x7facbbc06dc0;
-Nodo0x7facbbc06dc0[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
-Nodo0x7facbbc06dc0->Nodo0x7facbbc07000;
-Nodo0x7facbbc07000[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
-Nodo0x7facbbc07000->Nodo0x7facbbc079c0;
-Nodo0x7facbbc079c0[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
-{rank=same;Nodo3;Nodo0x7facbbc067c0;Nodo0x7facbbc06dc0;Nodo0x7facbbc07000;Nodo0x7facbbc079c0}
+Nodo3->Nodo4[dir = none];Nodo3->Nodo0x7fcce40954a0;
+Nodo0x7fcce40954a0[label = "ID: 1\nNombre: José" fillcolor = "white"];
+Nodo0x7fcce40954a0->Nodo0x7fcce4096990;
+Nodo0x7fcce4096990[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
+Nodo0x7fcce4096990->Nodo0x7fcce4096bd0;
+Nodo0x7fcce4096bd0[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
+Nodo0x7fcce4096bd0->Nodo0x7fcce4095860;
+Nodo0x7fcce4095860[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
+{rank=same;Nodo3;Nodo0x7fcce40954a0;Nodo0x7fcce4096990;Nodo0x7fcce4096bd0;Nodo0x7fcce4095860}
 Nodo4[label = "ID: 4\nNombre: Adriana" group = "1" fillcolor="lightgray"];
-Nodo4->Nodo5[dir = none];Nodo4->Nodo0x7facbbc06940;
-Nodo0x7facbbc06940[label = "ID: 1\nNombre: José" fillcolor = "white"];
-Nodo0x7facbbc06940->Nodo0x7facbbc06f40;
-Nodo0x7facbbc06f40[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
-Nodo0x7facbbc06f40->Nodo0x7facbbc070c0;
-Nodo0x7facbbc070c0[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
-Nodo0x7facbbc070c0->Nodo0x7facbbc076c0;
-Nodo0x7facbbc076c0[label = "ID: 7\nNombre: Melisa" fillcolor = "white"];
-Nodo0x7facbbc076c0->Nodo0x7facbbc07b40;
-Nodo0x7facbbc07b40[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
-{rank=same;Nodo4;Nodo0x7facbbc06940;Nodo0x7facbbc06f40;Nodo0x7facbbc070c0;Nodo0x7facbbc076c0;Nodo0x7facbbc07b40}
+Nodo4->Nodo5[dir = none];Nodo4->Nodo0x7fcce4095620;
+Nodo0x7fcce4095620[label = "ID: 1\nNombre: José" fillcolor = "white"];
+Nodo0x7fcce4095620->Nodo0x7fcce4096b10;
+Nodo0x7fcce4096b10[label = "ID: 5\nNombre: Cristian" fillcolor = "white"];
+Nodo0x7fcce4096b10->Nodo0x7fcce4096c90;
+Nodo0x7fcce4096c90[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
+Nodo0x7fcce4096c90->Nodo0x7fcce4099fa0;
+Nodo0x7fcce4099fa0[label = "ID: 7\nNombre: Melisa" fillcolor = "white"];
+Nodo0x7fcce4099fa0->Nodo0x7fcce40959e0;
+Nodo0x7fcce40959e0[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
+{rank=same;Nodo4;Nodo0x7fcce4095620;Nodo0x7fcce4096b10;Nodo0x7fcce4096c90;Nodo0x7fcce4099fa0;Nodo0x7fcce40959e0}
 Nodo5[label = "ID: 5\nNombre: Cristian" group = "1" fillcolor="lightgray"];
-Nodo5->Nodo6[dir = none];Nodo5->Nodo0x7facbbc06b80;
-Nodo0x7facbbc06b80[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
-Nodo0x7facbbc06b80->Nodo0x7facbbc06d00;
-Nodo0x7facbbc06d00[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
-Nodo0x7facbbc06d00->Nodo0x7facbbc06e80;
-Nodo0x7facbbc06e80[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
-{rank=same;Nodo5;Nodo0x7facbbc06b80;Nodo0x7facbbc06d00;Nodo0x7facbbc06e80}
+Nodo5->Nodo6[dir = none];Nodo5->Nodo0x7fcce4096750;
+Nodo0x7fcce4096750[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
+Nodo0x7fcce4096750->Nodo0x7fcce40968d0;
+Nodo0x7fcce40968d0[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
+Nodo0x7fcce40968d0->Nodo0x7fcce4096a50;
+Nodo0x7fcce4096a50[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
+{rank=same;Nodo5;Nodo0x7fcce4096750;Nodo0x7fcce40968d0;Nodo0x7fcce4096a50}
 Nodo6[label = "ID: 6\nNombre: María" group = "1" fillcolor="lightgray"];
-Nodo6->Nodo7[dir = none];Nodo6->Nodo0x7facbbc06ac0;
-Nodo0x7facbbc06ac0[label = "ID: 1\nNombre: José" fillcolor = "white"];
-Nodo0x7facbbc06ac0->Nodo0x7facbbc07180;
-Nodo0x7facbbc07180[label = "ID: 8\nNombre: Kevin" fillcolor = "white"];
-Nodo0x7facbbc07180->Nodo0x7facbbc07300;
-Nodo0x7facbbc07300[label = "ID: 9\nNombre: Mario" fillcolor = "white"];
-Nodo0x7facbbc07300->Nodo0x7facbbc07480;
-Nodo0x7facbbc07480[label = "ID: 7\nNombre: Melisa" fillcolor = "white"];
-Nodo0x7facbbc07480->Nodo0x7facbbc07cc0;
-Nodo0x7facbbc07cc0[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
-{rank=same;Nodo6;Nodo0x7facbbc06ac0;Nodo0x7facbbc07180;Nodo0x7facbbc07300;Nodo0x7facbbc07480;Nodo0x7facbbc07cc0}
+Nodo6->Nodo7[dir = none];Nodo6->Nodo0x7fcce4096690;
+Nodo0x7fcce4096690[label = "ID: 1\nNombre: José" fillcolor = "white"];
+Nodo0x7fcce4096690->Nodo0x7fcce4096d50;
+Nodo0x7fcce4096d50[label = "ID: 8\nNombre: Kevin" fillcolor = "white"];
+Nodo0x7fcce4096d50->Nodo0x7fcce4096ed0;
+Nodo0x7fcce4096ed0[label = "ID: 9\nNombre: Mario" fillcolor = "white"];
+Nodo0x7fcce4096ed0->Nodo0x7fcce4097050;
+Nodo0x7fcce4097050[label = "ID: 7\nNombre: Melisa" fillcolor = "white"];
+Nodo0x7fcce4097050->Nodo0x7fcce4095b60;
+Nodo0x7fcce4095b60[label = "ID: 10\nNombre: Juan" fillcolor = "white"];
+{rank=same;Nodo6;Nodo0x7fcce4096690;Nodo0x7fcce4096d50;Nodo0x7fcce4096ed0;Nodo0x7fcce4097050;Nodo0x7fcce4095b60}
 Nodo7[label = "ID: 7\nNombre: Melisa" group = "1" fillcolor="lightgray"];
-Nodo7->Nodo8[dir = none];Nodo7->Nodo0x7facbbc07540;
-Nodo0x7facbbc07540[label = "ID: 6\nNombre: María" fillcolor = "white"];
-Nodo0x7facbbc07540->Nodo0x7facbbc07600;
-Nodo0x7facbbc07600[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
-{rank=same;Nodo7;Nodo0x7facbbc07540;Nodo0x7facbbc07600}
+Nodo7->Nodo8[dir = none];Nodo7->Nodo0x7fcce4099e20;
+Nodo0x7fcce4099e20[label = "ID: 6\nNombre: María" fillcolor = "white"];
+Nodo0x7fcce4099e20->Nodo0x7fcce4099ee0;
+Nodo0x7fcce4099ee0[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
+{rank=same;Nodo7;Nodo0x7fcce4099e20;Nodo0x7fcce4099ee0}
 Nodo8[label = "ID: 8\nNombre: Kevin" group = "1" fillcolor="lightgray"];
-Nodo8->Nodo9[dir = none];Nodo8->Nodo0x7facbbc07240;
-Nodo0x7facbbc07240[label = "ID: 6\nNombre: María" fillcolor = "white"];
-{rank=same;Nodo8;Nodo0x7facbbc07240}
+Nodo8->Nodo9[dir = none];Nodo8->Nodo0x7fcce4096e10;
+Nodo0x7fcce4096e10[label = "ID: 6\nNombre: María" fillcolor = "white"];
+{rank=same;Nodo8;Nodo0x7fcce4096e10}
 Nodo9[label = "ID: 9\nNombre: Mario" group = "1" fillcolor="lightgray"];
-Nodo9->Nodo10[dir = none];Nodo9->Nodo0x7facbbc073c0;
-Nodo0x7facbbc073c0[label = "ID: 6\nNombre: María" fillcolor = "white"];
-{rank=same;Nodo9;Nodo0x7facbbc073c0}
+Nodo9->Nodo10[dir = none];Nodo9->Nodo0x7fcce4096f90;
+Nodo0x7fcce4096f90[label = "ID: 6\nNombre: María" fillcolor = "white"];
+{rank=same;Nodo9;Nodo0x7fcce4096f90}
 Nodo10[label = "ID: 10\nNombre: Juan" group = "1" fillcolor="lightgray"];
-Nodo10->Nodo0x7facbbc07780;
-Nodo0x7facbbc07780[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
-Nodo0x7facbbc07780->Nodo0x7facbbc07900;
-Nodo0x7facbbc07900[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
-Nodo0x7facbbc07900->Nodo0x7facbbc07a80;
-Nodo0x7facbbc07a80[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
-Nodo0x7facbbc07a80->Nodo0x7facbbc07c00;
-Nodo0x7facbbc07c00[label = "ID: 6\nNombre: María" fillcolor = "white"];
-{rank=same;Nodo10;Nodo0x7facbbc07780;Nodo0x7facbbc07900;Nodo0x7facbbc07a80;Nodo0x7facbbc07c00}
+Nodo10->Nodo0x7fcce409a060;
+Nodo0x7fcce409a060[label = "ID: 2\nNombre: Javier" fillcolor = "white"];
+Nodo0x7fcce409a060->Nodo0x7fcce409a1e0;
+Nodo0x7fcce409a1e0[label = "ID: 3\nNombre: Pedro" fillcolor = "white"];
+Nodo0x7fcce409a1e0->Nodo0x7fcce4095920;
+Nodo0x7fcce4095920[label = "ID: 4\nNombre: Adriana" fillcolor = "white"];
+Nodo0x7fcce4095920->Nodo0x7fcce4095aa0;
+Nodo0x7fcce4095aa0[label = "ID: 6\nNombre: María" fillcolor = "white"];
+{rank=same;Nodo10;Nodo0x7fcce409a060;Nodo0x7fcce409a1e0;Nodo0x7fcce4095920;Nodo0x7fcce4095aa0}
 }

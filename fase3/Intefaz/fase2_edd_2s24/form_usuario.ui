@@ -327,7 +327,7 @@ QPushButton#btt_cerrarSesion:pressed {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_buscar">
      <widget class="QLineEdit" name="txt_buscarUser">
@@ -716,7 +716,7 @@ QPushButton#btt_hacerPubli:pressed {
        <rect>
         <x>20</x>
         <y>50</y>
-        <width>741</width>
+        <width>551</width>
         <height>161</height>
        </rect>
       </property>

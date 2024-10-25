@@ -19,6 +19,7 @@
 #include "../../solicitudes/registroSolicitudes.h"
 #include "../../usuarios/global_usuariosAVL.h"
 #include "../../usuarios/perfilUsuario.h"
+#include "../modelosTablas/modeloEnviarSoli/UsuariosTableModel.h"
 
 namespace Ui {
 class Form_usuario;
@@ -59,8 +60,11 @@ private slots:
 
     void on_btt_eliminarDatos_clicked();
 
+    void mostrarMensajeSolicitud(QString correo);
+
 private:
     Ui::Form_usuario *ui;
+    UsuariosTableModel *modeloTabla;
 };
 
 #endif // FORM_USUARIO_H

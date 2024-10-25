@@ -36,6 +36,7 @@ Form_admin::~Form_admin()
 void Form_admin::on_btt_buscar_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_buscar);
+
     // Actualizar los datos de la tabla
     modeloTabla->actualizarDatosDesdeAVL(arbolGlobal_usuarios);
 

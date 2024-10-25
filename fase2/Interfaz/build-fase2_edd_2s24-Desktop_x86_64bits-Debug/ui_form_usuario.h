@@ -462,7 +462,7 @@ public:
         page_soli->setObjectName(QString::fromUtf8("page_soli"));
         tableV_usuarios = new QTableView(page_soli);
         tableV_usuarios->setObjectName(QString::fromUtf8("tableV_usuarios"));
-        tableV_usuarios->setGeometry(QRect(20, 50, 741, 161));
+        tableV_usuarios->setGeometry(QRect(20, 50, 551, 161));
         tableV_soliRec = new QTableView(page_soli);
         tableV_soliRec->setObjectName(QString::fromUtf8("tableV_soliRec"));
         tableV_soliRec->setGeometry(QRect(20, 220, 311, 161));
@@ -866,7 +866,7 @@ public:
 
         retranslateUi(Form_usuario);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Form_usuario);
