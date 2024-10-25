@@ -142,3 +142,75 @@ void listaAdyacencia::crearGrafoLista(){
     else{
         std::cout << "(Grafico lista) Command execution failed or returned non-zero: " << returnCode << std::endl;}  
 }
+
+
+// ------------ sugerencias -----------------
+listaSugerencias* listaAdyacencia::sugerirAmistades(std::string correo) {
+    listaSugerencias* sugerencias = new listaSugerencias();
+    
+    // Encontrar el usuario por correo
+    vnodo* usuarioActual = this->cabeza;
+    while (usuarioActual != nullptr && usuarioActual->getData().getCorreo() != correo) {
+        usuarioActual = usuarioActual->getSiguiente();
+    }
+    
+    if (usuarioActual == nullptr) return sugerencias;  // Usuario no encontrado
+    
+    // Obtener la lista de amigos directos del usuario
+    std::set<int> amigosDirectos;
+    enodo* amigo = usuarioActual->getDestinos();
+    while (amigo != nullptr) {
+        amigosDirectos.insert(amigo->getDestino().getID());
+        amigo = amigo->getSiguiente();
+    }
+    
+    // Para cada amigo del usuario
+    amigo = usuarioActual->getDestinos();
+    while (amigo != nullptr) {
+        // Para cada amigo del amigo (potencial sugerencia)
+        vnodo* amigoNodo = this->cabeza;
+        while (amigoNodo != nullptr && amigoNodo->getData().getID() != amigo->getDestino().getID()) {
+            amigoNodo = amigoNodo->getSiguiente();
+        }
+        
+        if (amigoNodo != nullptr) {
+            enodo* amigoDeAmigo = amigoNodo->getDestinos();
+            while (amigoDeAmigo != nullptr) {
+                int idSugerido = amigoDeAmigo->getDestino().getID();
+                
+                // Si no es el usuario original y no es un amigo directo
+                if (idSugerido != usuarioActual->getData().getID() && 
+                    amigosDirectos.find(idSugerido) == amigosDirectos.end()) {
+                    
+                    // Contar amigos en común
+                    int amigosEnComun = 0;
+                    vnodo* sugerido = this->cabeza;
+                    while (sugerido != nullptr && sugerido->getData().getID() != idSugerido) {
+                        sugerido = sugerido->getSiguiente();
+                    }
+                    
+                    if (sugerido != nullptr) {
+                        enodo* amigoSugerido = sugerido->getDestinos();
+                        while (amigoSugerido != nullptr) {
+                            if (amigosDirectos.find(amigoSugerido->getDestino().getID()) != 
+                                amigosDirectos.end()) {
+                                amigosEnComun++;
+                            }
+                            amigoSugerido = amigoSugerido->getSiguiente();
+                        }
+                        
+                        sugerencias->insertarOrdenado(
+                            sugerido->getData().getID(),
+                            sugerido->getData().getNombres(),
+                            amigosEnComun
+                        );
+                    }
+                }
+                amigoDeAmigo = amigoDeAmigo->getSiguiente();
+            }
+        }
+        amigo = amigo->getSiguiente();
+    }
+    
+    return sugerencias;
+}

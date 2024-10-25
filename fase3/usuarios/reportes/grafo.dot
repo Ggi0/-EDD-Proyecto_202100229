@@ -4,7 +4,6 @@ Nodo1->Nodo2[dir = both];
 Nodo1->Nodo3[dir = both];
 Nodo1->Nodo4[dir = both];
 Nodo1->Nodo6[dir = both];
-Nodo1->Nodo7[dir = both];
 Nodo2 [label = "ID: 2\nNombre: Javier"];
 Nodo2->Nodo5[dir = both];
 Nodo3 [label = "ID: 3\nNombre: Pedro"];

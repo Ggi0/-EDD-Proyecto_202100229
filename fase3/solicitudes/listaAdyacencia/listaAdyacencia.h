@@ -3,6 +3,9 @@
 
 #include "vnodo.h"
 #include "../../usuarios/usuario.h"
+#include "sugerenciaAmistad/listaSugerencias.h"
+#include <iostream>
+#include <set>
 
 class Usuarios; // Declaración adelantada
 class listaAdyacencia{
@@ -17,6 +20,9 @@ class listaAdyacencia{
         void crearConexion(Usuarios, Usuarios);
         void crearGrafo();
         void crearGrafoLista();
+
+        // sugerir amistad:
+        listaSugerencias* sugerirAmistades(std::string correo);
 };
 
 #endif // 

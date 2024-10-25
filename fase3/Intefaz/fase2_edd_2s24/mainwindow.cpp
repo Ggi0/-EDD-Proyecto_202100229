@@ -77,13 +77,19 @@ void MainWindow::on_btt_login_clicked()
         crearConexionGrafo(grafo, usuario6, usuario7); // María - Melisa
 
         crearConexionGrafo(grafo, usuario7, usuario4); // Melisa - Adriana
-        crearConexionGrafo(grafo, usuario7, usuario1); // Melisa - jose
 
 
 
 
         grafo.crearGrafo();
         grafo.crearGrafoLista();
+
+
+        // Obtener sugerencias para José
+        listaSugerencias* sugerencias = grafo.sugerirAmistades("jose");
+        sugerencias->mostrarSugerencias();
+        delete sugerencias;  // No olvides liberar la memoria
+
     // -------------------------------------------------------------------
 
     // Obtén los textos de los QLineEdit
