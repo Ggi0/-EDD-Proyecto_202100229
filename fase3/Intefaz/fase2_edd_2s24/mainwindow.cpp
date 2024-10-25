@@ -50,6 +50,7 @@ void MainWindow::on_btt_login_clicked()
         Usuarios usuario7("Melisa", "Gómez", "25/09/1991", "melisa", "password741");
         Usuarios usuario8("Kevin", "Díaz", "19/11/1990", "kevin", "password852");
         Usuarios usuario9("Mario", "Sánchez", "03/05/1988", "mario", "password963");
+        Usuarios usuario10("Juan", "Cc", "03/05/1988", "juan", "password964");
 
         grafo.insert(usuario1);
         grafo.insert(usuario2);
@@ -60,6 +61,7 @@ void MainWindow::on_btt_login_clicked()
         grafo.insert(usuario7);
         grafo.insert(usuario8);
         grafo.insert(usuario9);
+        grafo.insert(usuario10);
 
         crearConexionGrafo(grafo, usuario1, usuario2); // José - Javier
         crearConexionGrafo(grafo, usuario1, usuario3); // José - Pedro
@@ -77,6 +79,11 @@ void MainWindow::on_btt_login_clicked()
         crearConexionGrafo(grafo, usuario6, usuario7); // María - Melisa
 
         crearConexionGrafo(grafo, usuario7, usuario4); // Melisa - Adriana
+
+        crearConexionGrafo(grafo, usuario10, usuario2); // Melisa - Adriana
+        crearConexionGrafo(grafo, usuario10, usuario3); // Melisa - Adriana
+        crearConexionGrafo(grafo, usuario10, usuario4); // Melisa - Adriana
+        crearConexionGrafo(grafo, usuario10, usuario6); // Melisa - Adriana
 
 
 
