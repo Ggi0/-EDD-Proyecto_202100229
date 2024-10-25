@@ -1,5 +1,0 @@
-digraph G {
-    node [shape=record];
-    rankdir=LR;
-    node0 [label="{Correo: maria.lopez@example.com\nContenido: Hoy aprendí algo nuevo, siempre es bueno salir de la zona de confort.\nFecha: 11/08/2024\nHora: 09:45}"];
-}

@@ -1,5 +1,0 @@
-digraph G {
-    node [shape=record];
-    rankdir=LR;
-    node0 [label="{Correo: et@example.com\nContenido: Los pequeños detalles hacen la diferencia, siempre presta atención.\nFecha: 13/08/2024\nHora: 22:45}"];
-}

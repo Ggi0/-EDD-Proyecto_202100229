@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include "../../usuarios/registroUsuarios.h"
+#include "../../solicitudes/listaAdyacencia/listaAdyacencia.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +25,8 @@ private slots:
     void on_btt_login_clicked();
 
     void on_btt_registro_clicked();
+    void crearConexionGrafo(listaAdyacencia&, Usuarios, Usuarios);
+
 
 private:
     Ui::MainWindow *ui;

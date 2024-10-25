@@ -1,5 +1,0 @@
-digraph G {
-    node [shape=record];
-    rankdir=LR;
-    node0 [label="{Correo: 3juan@M\nContenido: El café de la mañana nunca decepciona, ¡energía pura para el día!\nFecha: 10/08/2024\nHora: 07:30}"];
-}

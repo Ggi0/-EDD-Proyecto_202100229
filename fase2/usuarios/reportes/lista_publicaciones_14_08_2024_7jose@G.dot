@@ -1,5 +1,0 @@
-digraph G {
-    node [shape=record];
-    rankdir=LR;
-    node0 [label="{Correo: 7jose@G\nContenido: Esos pequeños momentos de felicidad son los que más cuentan.\nFecha: 14/08/2024\nHora: 13:20}"];
-}

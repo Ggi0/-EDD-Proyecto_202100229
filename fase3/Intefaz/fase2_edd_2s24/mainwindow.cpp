@@ -17,6 +17,7 @@
 #include "../../publicaciones/comentario/listaComentarios/lista_comentarios.h"
 #include "../../publicaciones/registroPublicaciones.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -37,6 +38,53 @@ void MainWindow::on_btt_login_clicked()
 {
     std::string loginUser_global;
 
+    // ----------- probar lista ------------------
+    listaAdyacencia grafo;
+
+        Usuarios usuario1("José", "Martínez", "15/04/1990", "jose", "password123");
+        Usuarios usuario2("Javier", "González", "22/08/1987", "javier", "password456");
+        Usuarios usuario3("Pedro", "López", "30/01/1985", "pedro", "password789");
+        Usuarios usuario4("Adriana", "Pérez", "17/07/1992", "adriana", "password321");
+        Usuarios usuario5("Cristian", "Ramírez", "05/12/1993", "cristian", "password654");
+        Usuarios usuario6("María", "Hernández", "10/03/1989", "maria", "password987");
+        Usuarios usuario7("Melisa", "Gómez", "25/09/1991", "melisa", "password741");
+        Usuarios usuario8("Kevin", "Díaz", "19/11/1990", "kevin", "password852");
+        Usuarios usuario9("Mario", "Sánchez", "03/05/1988", "mario", "password963");
+
+        grafo.insert(usuario1);
+        grafo.insert(usuario2);
+        grafo.insert(usuario3);
+        grafo.insert(usuario4);
+        grafo.insert(usuario5);
+        grafo.insert(usuario6);
+        grafo.insert(usuario7);
+        grafo.insert(usuario8);
+        grafo.insert(usuario9);
+
+        crearConexionGrafo(grafo, usuario1, usuario2); // José - Javier
+        crearConexionGrafo(grafo, usuario1, usuario3); // José - Pedro
+        crearConexionGrafo(grafo, usuario1, usuario4); // José - Adriana
+        crearConexionGrafo(grafo, usuario1, usuario6); // José - María
+
+        crearConexionGrafo(grafo, usuario5, usuario2); // Cristian - Javier
+        crearConexionGrafo(grafo, usuario5, usuario3); // Cristian - Pedro
+        crearConexionGrafo(grafo, usuario5, usuario4); // Cristian - Adriana
+
+        crearConexionGrafo(grafo, usuario3, usuario4); // Pedro - Adriana
+
+        crearConexionGrafo(grafo, usuario6, usuario8); // María - Kevin
+        crearConexionGrafo(grafo, usuario6, usuario9); // María - Mario
+        crearConexionGrafo(grafo, usuario6, usuario7); // María - Melisa
+
+        crearConexionGrafo(grafo, usuario7, usuario4); // Melisa - Adriana
+        crearConexionGrafo(grafo, usuario7, usuario1); // Melisa - jose
+
+
+
+
+        grafo.crearGrafo();
+        grafo.crearGrafoLista();
+    // -------------------------------------------------------------------
 
     // Obtén los textos de los QLineEdit
     QString username = ui->txt_user->text();    // usuario
@@ -104,5 +152,13 @@ void MainWindow::on_btt_registro_clicked()
     // Cierra la ventana actual (login)
     this->close();
 
+}
+
+
+
+
+void MainWindow::crearConexionGrafo(listaAdyacencia &grafo, Usuarios origen, Usuarios destino){
+    grafo.crearConexion(origen, destino);
+    grafo.crearConexion(destino, origen);
 }
 

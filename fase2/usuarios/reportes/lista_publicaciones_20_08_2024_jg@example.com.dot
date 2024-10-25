@@ -1,5 +1,0 @@
-digraph G {
-    node [shape=record];
-    rankdir=LR;
-    node0 [label="{Correo: jg@example.com\nContenido: La lectura de un buen libro puede cambiar tu perspectiva del mundo.\nFecha: 20/08/2024\nHora: 16:45}"];
-}
