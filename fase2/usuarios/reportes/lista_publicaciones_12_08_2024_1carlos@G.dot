@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: 1carlos@G\nContenido: Disfrutando de un día soleado en la playa, la vida es mejor con arena y mar.\nFecha: 12/08/2024\nHora: 14:23}"];
+}

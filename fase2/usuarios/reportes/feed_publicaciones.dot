@@ -1,0 +1,31 @@
+digraph G {
+    rankdir=TB;
+    node [shape=record];
+
+    node_140646199687008[label="{Fecha: 10/02/2024}", style=filled,fillcolor=lightblue];
+    node_140646199687008 -> node_140646199376608 [label="Izq"];
+    node_140646199376608[label="{Fecha: 10/01/2024}", ];
+    node_140646199376608 -> node_140646202660240 [label="Der"];
+    node_140646202660240[label="{Fecha: 9/02/2024}", ];
+    node_140646199687008 -> node_140646220326528 [label="Der"];
+    node_140646220326528[label="{Fecha: 10/05/2024}", ];
+    node_140646220326528 -> node_140646200395488 [label="Izq"];
+    node_140646200395488[label="{Fecha: 11/02/2024}", ];
+    node_140646200395488 -> node_140646222048784 [label="Der"];
+    node_140646222048784[label="{Fecha: 13/02/2024}", ];
+    node_140646220326528 -> node_140646202664560 [label="Der"];
+    node_140646202664560[label="{Fecha: 13/12/2024}", ];
+
+    // Subgrafo para las publicaciones
+    subgraph cluster_publications {
+        style=dashed;
+        label="Publicaciones";
+        pub_0 [shape=record, label="{ID: 1\nCorreo: Gio@123\nContenido: 1ra publicacion\nFecha: 10/02/2024\nHora: 14:23}"];
+        pub_0 -> pub_1;
+        pub_1 [shape=record, label="{ID: 5\nCorreo: Gio@123\nContenido: 5ra publicacion\nFecha: 10/02/2024\nHora: 14:13}"];
+        pub_1 -> pub_2;
+        pub_2 [shape=record, label="{ID: 6\nCorreo: Gio@123\nContenido: 6ra publicacion\nFecha: 10/02/2024\nHora: 16:23}"];
+    }
+
+    node_140646199687008 -> pub_0 [color=red, label="Publicaciones"];
+}

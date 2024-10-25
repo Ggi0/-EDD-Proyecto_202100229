@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_admin</class>
+ <widget class="QWidget" name="Form_admin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Form_admin{
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #A1C4FD, 
+        stop: 1 #C2E9FB
+    ); /* Degradado de azul suave a azul pastel */
+    padding: 10px;
+}
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>431</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Kohinoor Devanagari</family>
+     <pointsize>60</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Administración</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>791</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#frame {
+    background-color: #E0F7FA; /* Azul claro con un toque vibrante */
+    border: 2px solid #00796B; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    
+
+
+    /* Agregar un degradado sutil para darle más dimensión */
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #E0F7FA, 
+        stop: 1 #B2EBF2
+    ); /* Degradado azul claro a un tono más fresco */
+}
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="btt_buscar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kohinoor Devanagari</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btt_buscar {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #3498DB; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_buscar:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_buscar:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+    </property>
+    <property name="text">
+     <string>Buscar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btt_cargarAr">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kohinoor Devanagari</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btt_cargarAr{
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #3498DB; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_cargarAr:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_cargarAr:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+    </property>
+    <property name="text">
+     <string>Carga Masiva</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btt_reportes">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>112</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kohinoor Devanagari</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btt_reportes {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #3498DB; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_reportes:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_reportes:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+    </property>
+    <property name="text">
+     <string>Reportes</string>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>771</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#page_white {
+    background-color: #E0F7FA; /* Azul claro con un toque vibrante */
+    border: 0px solid #00796B; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    
+
+
+    /* Agregar un degradado sutil para darle más dimensión */
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #E0F7FA, 
+        stop: 1 #B2EBF2
+    ); /* Degradado azul claro a un tono más fresco */
+}
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="page_white"/>
+    <widget class="QWidget" name="page_buscar">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>30</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Buscar:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="txt_BusacarUser">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btt_buscar2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>10</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#btt_buscar2 {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+
+    border: 0px solid #3498DB; /* Borde más oscuro para definición */
+}
+
+QPushButton#btt_buscar2:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_buscar2:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+      </property>
+      <property name="text">
+       <string>🔍︎</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>0</y>
+        <width>61</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Orden</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbx_orden">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>10</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PreOrden</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>InOrden</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PostOrden</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QTableView" name="tableView_buscar">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>751</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+       </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btt_eliminarUser">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>10</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#btt_eliminarUser {
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #E74C3C, /* Rojo más claro */
+        stop: 1 #F1948A  /* Rojo aún más claro */
+    ); /* Degradado de rojo claro a rojo más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #C0392B; /* Borde más oscuro para definición */
+    border-radius: 2px; /* Bordes redondeados para suavidad */
+    font-size: 10 px; /* Tamaño de fuente para legibilidad */
+}
+
+QPushButton#btt_eliminarUser:hover {
+    background-color: #CB4335; 
+    border-color: #922B21; 
+}
+
+QPushButton#btt_eliminarUser:pressed {
+    background-color: #922B21; /* Color más oscuro cuando se presiona */
+    border-color: #641E16; /* Borde más oscuro cuando se presiona */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Eliminar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_cargaAr">
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>30</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Carga Masiva:</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>231</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame_2{
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #d3877d, 
+        stop: 1 #f6e1dd
+    ); /* Degradado de #566e71 a un tono más fresco */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="btt_cUsuarios">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>160</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btt_cUsuarios {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #b44c43, /* Azul más claro */
+    stop: 1 #944038  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #582924; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_cUsuarios:hover {
+    background-color: #582924; 
+    border-color: #3c1e1b; 
+}
+
+QPushButton#btt_cUsuarios:press {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #3c1e1b; /* Borde más oscuro cuando se presiona */
+}</string>
+       </property>
+       <property name="text">
+        <string>Cargar usuarios</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>111</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>25</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Usuarios</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>50</y>
+        <width>231</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame_3{
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #d3877d, 
+        stop: 1 #f6e1dd
+    ); /* Degradado de #566e71 a un tono más fresco */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="btt_cSolicitudes">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>160</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btt_cSolicitudes {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #b44c43, /* Azul más claro */
+    stop: 1 #944038  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #582924; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_cSolicitudes:hover {
+    background-color: #582924; 
+    border-color: #3c1e1b; 
+}
+
+QPushButton#btt_cSolicitudes:press {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #3c1e1b; /* Borde más oscuro cuando se presiona */
+}</string>
+       </property>
+       <property name="text">
+        <string>Cargar solicitudes</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>25</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Solicitudes</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>50</y>
+        <width>231</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame_4{
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #d3877d, 
+        stop: 1 #f6e1dd
+    ); /* Degradado de #566e71 a un tono más fresco */
+    padding: 15px; /* Espacio interno mayor para mejor estructura */
+    border: 3px solid #944038; /* Borde en verde azulado para un contraste atractivo */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="btt_cPublicaciones">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>160</y>
+         <width>201</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#btt_cPublicaciones {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #b44c43, /* Azul más claro */
+    stop: 1 #944038  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #582924; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_cPublicaciones:hover {
+    background-color: #582924; 
+    border-color: #3c1e1b; 
+}
+
+QPushButton#btt_cPublicaciones:press {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #3c1e1b; /* Borde más oscuro cuando se presiona */
+}</string>
+       </property>
+       <property name="text">
+        <string>Cargar publicaciones</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Kohinoor Devanagari</family>
+         <pointsize>25</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Publicaciones</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_reportes">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>30</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reportes:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btt_generarReportes">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>380</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Kohinoor Devanagari</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#btt_generarReportes {
+background: qlineargradient(
+    spread: pad, 
+    x1: 0, y1: 0, 
+    x2: 1, y2: 1, 
+    stop: 0 #5DADE2, /* Azul más claro */
+    stop: 1 #85C1E9  /* Azul aún más claro */
+); /* Degradado de azul claro a azul más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #3498DB; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    font-size: 13px; /* Tamaño de fuente para legibilidad */
+  
+}
+
+QPushButton#btt_generarReportes:hover {
+    background-color: #2980B9; 
+    border-color: #1F618D; 
+}
+
+QPushButton#btt_generarReportes:pressed {
+    background-color: #2980B9; /* Color más oscuro cuando se presiona */
+    border-color: #1F618D; /* Borde más oscuro cuando se presiona */
+}</string>
+      </property>
+      <property name="text">
+       <string>Generar repotes</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="gView_AVL">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>371</width>
+        <height>311</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="gView_ListaPubli">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>371</width>
+        <height>311</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btt_cerrarSesion">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>10</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kohinoor Devanagari</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btt_cerrarSesion {
+    background: qlineargradient(
+        spread: pad, 
+        x1: 0, y1: 0, 
+        x2: 1, y2: 1, 
+        stop: 0 #E74C3C, /* Rojo más claro */
+        stop: 1 #F1948A  /* Rojo aún más claro */
+    ); /* Degradado de rojo claro a rojo más claro */
+
+    color: #FFFFFF; /* Texto blanco para buen contraste */
+    border: 2px solid #C0392B; /* Borde más oscuro para definición */
+    border-radius: 5px; /* Bordes redondeados para suavidad */
+    padding: 10px 20px; /* Espacio interno para mejor tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente para legibilidad */
+}
+
+QPushButton#btt_cerrarSesion:hover {
+    background-color: #CB4335; 
+    border-color: #922B21; 
+}
+
+QPushButton#btt_cerrarSesion:pressed {
+    background-color: #922B21; /* Color más oscuro cuando se presiona */
+    border-color: #641E16; /* Borde más oscuro cuando se presiona */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Cerrar sesión</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

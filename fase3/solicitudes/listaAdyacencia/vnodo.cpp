@@ -93,21 +93,31 @@ void vnodo::graficarListaDestinos(std::ofstream &f){
 
     f << nombre_origen + "->Nodo" + nombre + ";" << std::endl;
 
+    // Recorrer todos los destinos
     while(aux != nullptr){
         oss.str("");
         oss << aux;
         std::string nombre = oss.str();
 
-        std::string nombre_destino = "Nodo" + nombre;
-        f << nombre_destino + "[label = \"" + std::to_string(aux->getDestino().getID()) + "\" fillcolor = \"white\"];" << std::endl;
-        rank+=";" + nombre_destino;
+        // Obtener el ID y el nombre del destino
+        int destinoID = aux->getDestino().getID();
+        std::string destinoNombre = aux->getDestino().getNombres();
 
+        // Crear el string para el nodo destino con ID y nombre
+        std::string nombre_destino = "Nodo" + nombre;
+        f << nombre_destino + "[label = \"ID: " + std::to_string(destinoID) + 
+             "\\nNombre: " + destinoNombre + "\" fillcolor = \"white\"];" << std::endl;
+
+        rank += ";" + nombre_destino;
+
+        // Graficar la conexión al siguiente nodo de destino si existe
         if(aux->getSiguiente() != nullptr){
             oss.str("");
             oss << aux->getSiguiente();
-            std::string nombre = oss.str();
-            f << nombre_destino + "->Nodo" + nombre + ";" << std::endl;
+            std::string siguienteNombre = oss.str();
+            f << nombre_destino + "->Nodo" + siguienteNombre + ";" << std::endl;
         }
+
         aux = aux->getSiguiente();
     }
     rank+= "}";

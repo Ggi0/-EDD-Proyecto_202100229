@@ -58,42 +58,71 @@ void listaAdyacencia::crearConexion(Usuarios origen, Usuarios destino){
 }
 
 void listaAdyacencia::crearGrafo(){
-    std::ofstream outfile ("grafo.dot");
+    // Ruta donde deseas guardar el archivo .dot y .png
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
+
+    std::ofstream outfile (outputDir + "grafo.dot");
     outfile << "digraph G {" << std::endl;
 
     vnodo *aux = this->cabeza;
     while(aux != nullptr){
-        std::string valor = std::to_string(aux->getData().getID());
-        std::string dec_nodo  = "Nodo" + valor + "[label = \"" + valor + "\"];";
+        // Obtener el ID y el nombre del usuario para el nodo
+        int id = aux->getData().getID();
+        std::string nombre = aux->getData().getNombres();
+
+        // Construir el string para el nodo con ID y nombre
+        std::string dec_nodo = "Nodo" + std::to_string(id) + " [label = \"ID: " + std::to_string(id) + "\\nNombre: " + nombre + "\"];";
         outfile << dec_nodo << std::endl;
+
+        // Graficar las aristas
         aux->graficarAristas(outfile);
+
+        // Avanzar al siguiente nodo
         aux = aux->getSiguiente();
     }
 
     outfile << "}" << std::endl;
     outfile.close();
+    // Comando para generar el archivo .png usando dot, especificando la ruta completa
+    std::string dotCommand = "/opt/local/bin/dot -Tpng " + outputDir + "grafo.dot -o " + outputDir + "grafo.png";
+    // Ejecutar el comando
+    int returnCode = system(dotCommand.c_str());
 
-    int returnCode = system("/opt/local/bin/dot -Tpng ./grafo.dot -o ./grafo.png");
+    //int returnCode = system("/opt/local/bin/dot -Tpng ./grafo.dot -o ./grafo.png");
 
-    if(returnCode == 0){std::cout << "(Grafico grafo) Command executed successfully." << std::endl;}
-    else{std::cout << "(Grafico grafo) Command execution failed or returned non-zero: " << returnCode << std::endl;}
+    if(returnCode == 0){
+        std::cout << "(Grafico grafo) Command executed successfully." << std::endl;}
+    else{
+        std::cout << "(Grafico grafo) Command execution failed or returned non-zero: " << returnCode << std::endl;}
 }
 
 void listaAdyacencia::crearGrafoLista(){
-    std::ofstream outfile ("grafoLista.dot");
+    // Ruta donde deseas guardar el archivo .dot y .png
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
+
+    std::ofstream outfile (outputDir + "grafoLista.dot");
     outfile << "digraph G {" << std::endl;
     outfile << "node[shape = \"box\" style = \"filled\"]" << std::endl;
 
     vnodo *aux = this->cabeza;
     while(aux != nullptr){
-        std::string valor = std::to_string(aux->getData().getID());
-        std::string nombre = "Nodo" + valor + "[label = \"" + valor + "\" group = \"1\" fillcolor=\"lightgray\"];";
+        // Obtener el ID y el nombre del usuario
+        int id = aux->getData().getID();
+        std::string nombreUsuario = aux->getData().getNombres();
+
+        // Crear el string para el nodo con ID y nombre
+        std::string nombre = "Nodo" + std::to_string(id) + 
+                             "[label = \"ID: " + std::to_string(id) + 
+                             "\\nNombre: " + nombreUsuario + 
+                             "\" group = \"1\" fillcolor=\"lightgray\"];";
         outfile << nombre << std::endl;
 
+        // Si hay un nodo siguiente, graficar la conexión
         if(aux->getSiguiente() != nullptr){
-            outfile << "Nodo" + valor + "->Nodo" + std::to_string(aux->getSiguiente()->getData().getID()) + "[dir = none];";
+            outfile << "Nodo" + std::to_string(id) + "->Nodo" + std::to_string(aux->getSiguiente()->getData().getID()) + "[dir = none];";
         }
 
+        // Graficar las conexiones con los destinos
         aux->graficarListaDestinos(outfile);
         aux = aux->getSiguiente();
     }
@@ -101,8 +130,15 @@ void listaAdyacencia::crearGrafoLista(){
     outfile << "}" << std::endl;
     outfile.close();
 
-    int returnCode = system("/opt/local/bin/dot -Tpng ./grafoLista.dot -o ./grafoLista.png");
+    // Comando para generar el archivo .png usando dot, especificando la ruta completa
+    std::string dotCommand = "/opt/local/bin/dot -Tpng " + outputDir + "grafoLista.dot -o " + outputDir + "grafoLista.png";
+    // Ejecutar el comando
+    int returnCode = system(dotCommand.c_str());
 
-    if(returnCode == 0){std::cout << "(Grafico lista) Command executed successfully." << std::endl;}
-    else{std::cout << "(Grafico lista) Command execution failed or returned non-zero: " << returnCode << std::endl;}  
+    //int returnCode = system("/opt/local/bin/dot -Tpng ./grafoLista.dot -o ./grafoLista.png");
+
+    if(returnCode == 0){
+        std::cout << "(Grafico lista) Command executed successfully." << std::endl;}
+    else{
+        std::cout << "(Grafico lista) Command execution failed or returned non-zero: " << returnCode << std::endl;}  
 }

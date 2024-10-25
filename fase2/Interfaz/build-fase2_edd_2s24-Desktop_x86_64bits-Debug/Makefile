@@ -408,6 +408,7 @@ DIST          = /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/fe
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf \
+		../../../fase3/Intefaz/fase2_edd_2s24/.qmake.stash \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf \
@@ -805,6 +806,7 @@ Makefile: ../../../fase3/Intefaz/fase2_edd_2s24/fase2_edd_2s24.pro /Users/gio/De
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf \
@@ -1121,6 +1123,7 @@ Makefile: ../../../fase3/Intefaz/fase2_edd_2s24/fase2_edd_2s24.pro /Users/gio/De
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/qt_config.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang/qmake.conf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/exclusive_builds.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/mac/sdk.prf:
 /Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/features/toolchain.prf:
@@ -1195,7 +1198,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r fase2_edd_2s24.app
-	-$(DEL_FILE) /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh
+	-$(DEL_FILE) /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/uic_wrapper.sh .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -1755,9 +1758,6 @@ moc_form_registrarusuarios.cpp: ../../../fase3/Intefaz/fase2_edd_2s24/form_regis
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h \
 		moc_predefs.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
 	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/fase2_edd_2s24 -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/arbolAVL -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/listaEnlazadaInt -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaEnlazadaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/pilaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/arbolBinario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/listaComentarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/arbolB -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/listaDobleEnlazada -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/administracion -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../../../fase3/Intefaz/fase2_edd_2s24/form_registrarusuarios.h -o moc_form_registrarusuarios.cpp
@@ -2259,9 +2259,6 @@ moc_mainwindow.cpp: ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h \
 		moc_predefs.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
 	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/fase2_edd_2s24 -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/arbolAVL -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/listaEnlazadaInt -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaEnlazadaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/pilaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/arbolBinario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/listaComentarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/arbolB -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/listaDobleEnlazada -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/administracion -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h -o moc_mainwindow.cpp
@@ -2827,13 +2824,61 @@ form_admin.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_admin.cpp ../../../fase
 		../../../fase3/usuarios/arbolAVL/AVLTableModel.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QAbstractTableModel \
 		ui_form_admin.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QVariant \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFrame \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QGraphicsView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qgraphicsview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/graphicsview/qgraphicsview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpainter.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpainter.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QHeaderView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qheaderview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qheaderview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractitemview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qabstractitemview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qitemselectionmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/itemmodels/qitemselectionmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLabel \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLineEdit \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QPushButton \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QTableView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtableview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qtableview.h \
 		../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMainWindow \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmainwindow.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmainwindow.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_admin.o ../../../fase3/Intefaz/fase2_edd_2s24/form_admin.cpp
 
 form_registrarusuarios.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_registrarusuarios.cpp ../../../fase3/Intefaz/fase2_edd_2s24/form_registrarusuarios.h \
@@ -3072,10 +3117,43 @@ form_registrarusuarios.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_registrarus
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h \
-		ui_form_registrarusuarios.h
+		ui_form_registrarusuarios.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QVariant \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFrame \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLabel \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLineEdit \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QPushButton \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_registrarusuarios.o ../../../fase3/Intefaz/fase2_edd_2s24/form_registrarusuarios.cpp
 
 form_usuario.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.cpp ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.h \
@@ -3338,23 +3416,84 @@ form_usuario.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.cpp ../../../
 		../../../fase3/publicaciones/registroPublicaciones.h \
 		../../../fase3/publicaciones/global_data_publicaciones.h \
 		ui_form_usuario.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QVariant \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QComboBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qcombobox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qcombobox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractitemdelegate.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qabstractitemdelegate.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qstyleoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/styles/qstyleoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractspinbox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractspinbox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qvalidator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/util/qvalidator.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qregularexpression.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/text/qregularexpression.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qslider.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qslider.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractslider.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractslider.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qstyle.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/styles/qstyle.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtabbar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabbar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtabwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qrubberband.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qrubberband.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qabstractitemmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/itemmodels/qabstractitemmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFrame \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QGraphicsView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qgraphicsview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/graphicsview/qgraphicsview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpainter.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpainter.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractscrollarea.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QHeaderView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qheaderview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qheaderview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractitemview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qabstractitemview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qitemselectionmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/itemmodels/qitemselectionmodel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QPushButton \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QTableView \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtableview.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/itemviews/qtableview.h \
 		../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMainWindow \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmainwindow.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtabwidget.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
-		../../../fase3/usuarios/registroUsuarios.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h
+		../../../fase3/usuarios/registroUsuarios.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form_usuario.o ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.cpp
 
 main.o: ../../../fase3/Intefaz/fase2_edd_2s24/main.cpp ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h \
@@ -3591,9 +3730,6 @@ main.o: ../../../fase3/Intefaz/fase2_edd_2s24/main.cpp ../../../fase3/Intefaz/fa
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
@@ -3843,17 +3979,57 @@ mainwindow.o: ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp ../../../fase
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
-		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
-		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
-		../../../fase3/solicitudes/listaAdyacencia/enodo.h \
 		ui_mainwindow.h \
-		../../../fase3/Intefaz/fase2_edd_2s24/form_admin.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QVariant \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QApplication \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qcoreapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/corelib/kernel/qeventloop.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qdesktopwidget.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qguiapplication.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/kernel/qinputmethod.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFrame \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qframe.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLabel \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlabel.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLineEdit \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlineedit.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextcursor.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextformat.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpen.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextoption.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMenuBar \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmenubar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmenubar.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmenu.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmenu.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qaction.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qaction.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qactiongroup.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/kernel/qactiongroup.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QPushButton \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QWidget \
+		../../../fase3/Intefaz/fase2_edd_2s24/form_admin.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QStackedWidget \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qstackedwidget.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qstackedwidget.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qframe.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qframe.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QFileDialog \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qfiledialog.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qfiledialog.h \
@@ -3896,8 +4072,6 @@ mainwindow.o: ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp ../../../fase
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QGraphicsScene \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qgraphicsscene.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/graphicsview/qgraphicsscene.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qpen.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/painting/qpen.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QPixmap \
 		../../../fase3/administracion/leerJson.h \
 		../../../fase3/administracion/json.hpp \
@@ -3911,18 +4085,6 @@ mainwindow.o: ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp ../../../fase
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QAbstractTableModel \
 		../../../fase3/Intefaz/fase2_edd_2s24/form_registrarusuarios.h \
 		../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLabel \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlabel.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlabel.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QLineEdit \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qlineedit.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qlineedit.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextcursor.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextcursor.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextformat.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextformat.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qtextoption.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/text/qtextoption.h \
 		../../../fase3/usuarios/perfilUsuario.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp
 

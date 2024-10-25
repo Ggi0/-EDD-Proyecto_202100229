@@ -1,0 +1,9 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: Gio@123\nContenido: 1ra publicacion\nFecha: 10/02/2024\nHora: 14:23}"];
+    node1 [label="{Correo: Gio@123\nContenido: 5ra publicacion\nFecha: 10/02/2024\nHora: 14:13}"];
+    node0 -> node1;
+    node2 [label="{Correo: Gio@123\nContenido: 6ra publicacion\nFecha: 10/02/2024\nHora: 16:23}"];
+    node1 -> node2;
+}
