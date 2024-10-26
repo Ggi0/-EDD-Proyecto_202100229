@@ -16,14 +16,20 @@ Form_usuario::Form_usuario(QWidget *parent) :
     // Asignar el texto al QLabel
     ui->lbl_tituloUser->setText(texto_ap);
 
-    /// Configuración de la tabla de solicitudes
+    // ------------ para ENVIAR SOLICITUDES -----------------
+    // Configuración de la tabla de solicitudes
     ui->tableV_usuarios->setModel(modeloTabla);
     ui->tableV_usuarios->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // Conectar la señal de enviarSolicitud al slot para mostrar el mensaje
-    connect(modeloTabla, &UsuariosTableModel::enviarSolicitud, this, &Form_usuario::mostrarMensajeSolicitud);
+    // Configuración adicional de la tabla
+    ui->tableV_usuarios->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableV_usuarios->setSelectionMode(QAbstractItemView::SingleSelection);
 
-
+    // Conectar la señal clicked de la tabla con nuestro slot
+    connect(ui->tableV_usuarios, &QTableView::clicked, this, &Form_usuario::procesarClickTabla);
+        connect(modeloTabla, &UsuariosTableModel::enviarSolicitud, this, [this](QString correo){
+            QMessageBox::information(this, "Solicitud Enviada", "Usted le envió una solicitud a " + correo);
+        });
 }
 
 Form_usuario::~Form_usuario()
@@ -60,7 +66,7 @@ void Form_usuario::on_btt_solicitudes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_soli);
 
-    // -------------- TABLA PARA ENVAIR SOLICITUDES ----------------
+    // -------------- TABLA PARA ENVIAR SOLICITUDES ----------------
     // Obtener el correo del usuario actual desde loginUser_global
     std::string correoActual = loginUser_global;
 
@@ -73,9 +79,13 @@ void Form_usuario::on_btt_solicitudes_clicked()
 }
 
 // Slot para mostrar el mensaje de solicitud enviada
-void Form_usuario::mostrarMensajeSolicitud(QString correo)
+void Form_usuario::procesarClickTabla(const QModelIndex &index)
 {
-    QMessageBox::information(this, "Solicitud Enviada", "Usted le envió una solicitud a " + correo);
+    std::string correo = modeloTabla->procesarSeleccion(index);
+    if (!correo.empty()) {
+        correoSeleccionado = correo;
+        qDebug() << "Correo seleccionado:" << QString::fromStdString(correoSeleccionado);
+    }
 }
 
 

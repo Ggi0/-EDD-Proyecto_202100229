@@ -40,7 +40,7 @@ private slots:
 
     void on_btt_publicaciones_clicked();
 
-    void on_btt_solicitudes_clicked();
+    void on_btt_solicitudes_clicked(); // solicitudes
 
     void on_btt_reportes_clicked();
 
@@ -60,11 +60,12 @@ private slots:
 
     void on_btt_eliminarDatos_clicked();
 
-    void mostrarMensajeSolicitud(QString correo);
+    void procesarClickTabla(const QModelIndex &index);  // Nuevo slot para manejar clicks
 
 private:
     Ui::Form_usuario *ui;
     UsuariosTableModel *modeloTabla;
+    std::string correoSeleccionado;  // Variable para guardar el correo seleccionado
 };
 
 #endif // FORM_USUARIO_H

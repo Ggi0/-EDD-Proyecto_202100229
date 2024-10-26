@@ -23,7 +23,7 @@ QVariant UsuariosTableModel::data(const QModelIndex &index, int role) const {
             case 1: return QString::fromStdString(usuario.getApellidos());
             case 2: return QString::fromStdString(usuario.getCorreo());
             case 3: return QString::fromStdString(usuario.getFechaN());
-            case 4: return "Enviar solicitud";  // Texto para el botón
+            case 4: return "Enviar Solicitud";  // Texto para el botón
             default: return QVariant();
         }
     }
@@ -56,17 +56,32 @@ void UsuariosTableModel::actualizarDatosDesdeAVL(AVL& arbol, const std::string& 
     endResetModel();
 }
 
-// Método para recorrer el árbol in-orden y llenar 'datos'
 void UsuariosTableModel::recorrerInOrden(NodoAVL* nodo, const std::string& correoExcluido) {
     if (nodo == nullptr) return;
 
     // Recorrido in-orden
     recorrerInOrden(nodo->getIzq(), correoExcluido);
 
-    // Excluir al usuario con el correo especificado
     if (nodo->getData().getCorreo() != correoExcluido) {
         datos.push_back(nodo->getData());
     }
 
     recorrerInOrden(nodo->getDrcha(), correoExcluido);
+}
+
+std::string UsuariosTableModel::procesarSeleccion(const QModelIndex &index) {
+    if (!index.isValid() || index.column() != 4) return "";  // Verificar que esté en la última columna
+
+    int row = index.row();
+    std::string correoReceptor = datos[row].getCorreo();
+
+    // Emitir señal para enviar solicitud
+    emit enviarSolicitud(QString::fromStdString(correoReceptor));
+
+    // Eliminar la fila seleccionada y actualizar la tabla
+    beginRemoveRows(QModelIndex(), row, row);
+    datos.erase(datos.begin() + row);
+    endRemoveRows();
+
+    return correoReceptor;
 }

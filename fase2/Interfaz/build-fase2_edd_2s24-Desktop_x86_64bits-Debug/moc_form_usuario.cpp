@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Form_usuario_t {
-    QByteArrayData data[17];
-    char stringdata0[383];
+    QByteArrayData data[18];
+    char stringdata0[389];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,8 +47,9 @@ QT_MOC_LITERAL(11, 239, 29), // "on_btt_modificarDatos_clicked"
 QT_MOC_LITERAL(12, 269, 31), // "on_btt_modificarDatos_2_clicked"
 QT_MOC_LITERAL(13, 301, 21), // "actualizar_panelTexto"
 QT_MOC_LITERAL(14, 323, 28), // "on_btt_eliminarDatos_clicked"
-QT_MOC_LITERAL(15, 352, 23), // "mostrarMensajeSolicitud"
-QT_MOC_LITERAL(16, 376, 6) // "correo"
+QT_MOC_LITERAL(15, 352, 18), // "procesarClickTabla"
+QT_MOC_LITERAL(16, 371, 11), // "QModelIndex"
+QT_MOC_LITERAL(17, 383, 5) // "index"
 
     },
     "Form_usuario\0on_btt_cerrarSesion_clicked\0"
@@ -62,7 +63,7 @@ QT_MOC_LITERAL(16, 376, 6) // "correo"
     "on_btt_modificarDatos_2_clicked\0"
     "actualizar_panelTexto\0"
     "on_btt_eliminarDatos_clicked\0"
-    "mostrarMensajeSolicitud\0correo"
+    "procesarClickTabla\0QModelIndex\0index"
 };
 #undef QT_MOC_LITERAL
 
@@ -109,7 +110,7 @@ static const uint qt_meta_data_Form_usuario[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   16,
+    QMetaType::Void, 0x80000000 | 16,   17,
 
        0        // eod
 };
@@ -133,7 +134,7 @@ void Form_usuario::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 10: _t->on_btt_modificarDatos_2_clicked(); break;
         case 11: _t->actualizar_panelTexto(); break;
         case 12: _t->on_btt_eliminarDatos_clicked(); break;
-        case 13: _t->mostrarMensajeSolicitud((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->procesarClickTabla((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }

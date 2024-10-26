@@ -2051,6 +2051,12 @@ moc_form_usuario.cpp: ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QColor \
 		moc_predefs.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
 	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/fase2_edd_2s24 -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/arbolAVL -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/listaEnlazadaInt -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaEnlazadaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/pilaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia/sugerenciaAmistad -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/arbolBinario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/listaComentarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/arbolB -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/listaDobleEnlazada -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/administracion -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/modelosTablas/modeloEnviarSoli -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.h -o moc_form_usuario.cpp
@@ -2762,6 +2768,13 @@ moc_UsuariosTableModel.cpp: ../../../fase3/Intefaz/modelosTablas/modeloEnviarSol
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
 		../../../fase3/publicaciones/publicacion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QColor \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QDebug \
 		moc_predefs.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc
 	/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/bin/moc $(DEFINES) --include /Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/Interfaz/build-fase2_edd_2s24-Desktop_x86_64bits-Debug/moc_predefs.h -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/mkspecs/macx-clang -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/fase2_edd_2s24 -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/arbolAVL -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/listaEnlazadaInt -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaEnlazadaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/pilaSolicitudes -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/solicitudes/listaAdyacencia/sugerenciaAmistad -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/arbolBinario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/listaComentarios -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/comentario/arbolB -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/publicaciones/listaDobleEnlazada -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/administracion -I/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/Intefaz/modelosTablas/modeloEnviarSoli -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui -I/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/lib ../../../fase3/Intefaz/modelosTablas/modeloEnviarSoli/UsuariosTableModel.h -o moc_UsuariosTableModel.cpp
@@ -3619,6 +3632,12 @@ form_usuario.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.cpp ../../../
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/qicon.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/gui/image/qicon.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QColor \
 		ui_form_usuario.h \
 		../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMainWindow \
@@ -3626,11 +3645,6 @@ form_usuario.o: ../../../fase3/Intefaz/fase2_edd_2s24/form_usuario.cpp ../../../
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qmainwindow.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qtabwidget.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qtabwidget.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
 		../../../fase3/usuarios/registroUsuarios.h \
 		../../../fase3/solicitudes/listaAdyacencia/listaAdyacencia.h \
 		../../../fase3/solicitudes/listaAdyacencia/vnodo.h \
@@ -4215,7 +4229,8 @@ mainwindow.o: ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp ../../../fase
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qpushbutton.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qpushbutton.h \
 		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qabstractbutton.h \
-		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/widgets/qabstractbutton.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../../fase3/Intefaz/fase2_edd_2s24/mainwindow.cpp
 
 publicacion.o: ../../../fase3/publicaciones/publicacion.cpp ../../../fase3/publicaciones/publicacion.h
@@ -4964,7 +4979,14 @@ UsuariosTableModel.o: ../../../fase3/Intefaz/modelosTablas/modeloEnviarSoli/Usua
 		../../../fase3/publicaciones/arbolBinario/nodoBST_publi.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/listaD_enlazadaP.h \
 		../../../fase3/publicaciones/listaDobleEnlazada/publicacion_Nodo.h \
-		../../../fase3/publicaciones/publicacion.h
+		../../../fase3/publicaciones/publicacion.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/QMessageBox \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qmessagebox.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtWidgets/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/src/widgets/dialogs/qdialog.h \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtGui/QColor \
+		/Users/gio/Desktop/qt/qt-everywhere-src-5.15.2/qtbase/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o UsuariosTableModel.o ../../../fase3/Intefaz/modelosTablas/modeloEnviarSoli/UsuariosTableModel.cpp
 
 moc_form_admin.o: moc_form_admin.cpp 
