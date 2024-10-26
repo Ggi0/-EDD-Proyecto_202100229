@@ -2,6 +2,8 @@
 
 // para los objetos solicitudes
 #include "solicitud.h"
+// para llamar al grafo de relaciones y poder crear la relación
+#include "global_relacionesAmistad.h"
 
 /*
     -> buscar EMISOR (lista_global)
@@ -20,3 +22,5 @@
  */
 //void registroSolicitudes1(std::string emisor, std::string receptor, std::string estado);
 int registroSolicitudes(std::string emisor, std::string receptor, std::string estado);
+
+void crearConexionGrafo(listaAdyacencia&, Usuarios, Usuarios);

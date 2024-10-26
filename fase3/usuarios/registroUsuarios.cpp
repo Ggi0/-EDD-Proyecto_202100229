@@ -4,6 +4,9 @@
 AVL arbolGlobal_usuarios; 
 std::string loginUser_global;
 
+// llamando al grafo global para almacenar las relaciones entre los usuarios
+listaAdyacencia grafoGlobal_relaciones;
+
 
 
 /*
@@ -19,7 +22,8 @@ int verificarCorreo(std::string nombres, std::string apellidos, std::string fech
     if (arbolGlobal_usuarios.getRaiz() == nullptr) {
         // Insertar el nuevo usuario si el árbol está vacío
         arbolGlobal_usuarios.insert(usuarioTemp);
-        std::cout << "Usuario agregado exitosamente" << std::endl;
+        grafoGlobal_relaciones.insert(usuarioTemp);
+        std::cout << "Usuario agregado exitosamente (AVL y Grafo)" << std::endl;
         return 1;  // Usuario agregado exitosamente
     }
     
@@ -33,7 +37,8 @@ int verificarCorreo(std::string nombres, std::string apellidos, std::string fech
     
     // Si no se encontró un correo duplicado, insertar el nuevo usuario
     arbolGlobal_usuarios.insert(usuarioTemp);
-    std::cout << "Usuario agregado exitosamente" << std::endl;
+    grafoGlobal_relaciones.insert(usuarioTemp);
+    std::cout << "Usuario agregado exitosamente (AVL y Grafo)" << std::endl;
     return 1;  // Usuario agregado exitosamente
 }
 

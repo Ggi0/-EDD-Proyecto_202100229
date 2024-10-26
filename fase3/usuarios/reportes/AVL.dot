@@ -1,23 +1,25 @@
 digraph G {
-Nodo0x7ff0c6c6c6a0[label = "4ana@H"]
-Nodo0x7ff0c6c6c6a0->Nodo0x7ff0c6c62890
-Nodo0x7ff0c6c6c6a0->Nodo0x7ff0c0f76a20
-Nodo0x7ff0c6c62890[label = "2maria@L"]
-Nodo0x7ff0c6c62890->Nodo0x7ff0c6c485f0
-Nodo0x7ff0c6c62890->Nodo0x7ff0c6c695c0
-Nodo0x7ff0c6c485f0[label = "11fase3@"]
-Nodo0x7ff0c6c485f0->Nodo0x7ff0c6c4c920
-Nodo0x7ff0c6c485f0->Nodo0x7ff0c6c5f690
-Nodo0x7ff0c6c4c920[label = "10sofia@G"]
-Nodo0x7ff0c6c5f690[label = "1carlos@G"]
-Nodo0x7ff0c6c695c0[label = "3juan@M"]
-Nodo0x7ff0c0f76a20[label = "7jose@G"]
-Nodo0x7ff0c0f76a20->Nodo0x7ff0c6c59f40
-Nodo0x7ff0c0f76a20->Nodo0x7ff0c6c6c540
-Nodo0x7ff0c6c59f40[label = "6laura@R"]
-Nodo0x7ff0c6c59f40->Nodo0x7ff0c6c67590
-Nodo0x7ff0c6c67590[label = "5luis@P"]
-Nodo0x7ff0c6c6c540[label = "fase3@gio"]
-Nodo0x7ff0c6c6c540->Nodo0x7ff0c6c61cc0
-Nodo0x7ff0c6c61cc0[label = "9miguel@R"]
+Nodo0x7f8c3bc95cf0[label = "4ana@H"]
+Nodo0x7f8c3bc95cf0->Nodo0x7f8c3bc967c0
+Nodo0x7f8c3bc95cf0->Nodo0x7f8c3bc985b0
+Nodo0x7f8c3bc967c0[label = "2maria@L"]
+Nodo0x7f8c3bc967c0->Nodo0x7f8c3bca9b30
+Nodo0x7f8c3bc967c0->Nodo0x7f8c3bc97da0
+Nodo0x7f8c3bca9b30[label = "11fase3@"]
+Nodo0x7f8c3bca9b30->Nodo0x7f8c3bc9ed60
+Nodo0x7f8c3bca9b30->Nodo0x7f8c3bc98020
+Nodo0x7f8c3bc9ed60[label = "10sofia@G"]
+Nodo0x7f8c3bc98020[label = "1carlos@G"]
+Nodo0x7f8c3bc97da0[label = "3juan@M"]
+Nodo0x7f8c3bc985b0[label = "8elena@T"]
+Nodo0x7f8c3bc985b0->Nodo0x7f8c3bca1bb0
+Nodo0x7f8c3bc985b0->Nodo0x7f8c3bca07d0
+Nodo0x7f8c3bca1bb0[label = "6laura@R"]
+Nodo0x7f8c3bca1bb0->Nodo0x7f8c3bc97820
+Nodo0x7f8c3bca1bb0->Nodo0x7f8c3bc72760
+Nodo0x7f8c3bc97820[label = "5luis@P"]
+Nodo0x7f8c3bc72760[label = "7jose@G"]
+Nodo0x7f8c3bca07d0[label = "fase3@gio"]
+Nodo0x7f8c3bca07d0->Nodo0x7f8c3bca8670
+Nodo0x7f8c3bca8670[label = "9miguel@R"]
 }

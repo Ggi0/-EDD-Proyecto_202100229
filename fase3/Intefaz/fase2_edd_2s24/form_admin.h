@@ -17,6 +17,7 @@
 #include <algorithm> // para usar std::remove
 #include "../../administracion/leerJson.h"
 #include "../../usuarios/global_usuariosAVL.h"
+#include "../../solicitudes/global_relacionesAmistad.h"
 #include "../../publicaciones/global_data_publicaciones.h"
 
 #include "../../usuarios/arbolAVL/AVLTableModel.h"

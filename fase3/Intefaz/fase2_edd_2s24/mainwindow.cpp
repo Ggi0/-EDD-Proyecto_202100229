@@ -38,8 +38,8 @@ void MainWindow::on_btt_login_clicked()
 {
     std::string loginUser_global;
 
-    /*
-    // ----------- probar lista ------------------
+
+    /*// ----------- probar lista ------------------
     listaAdyacencia grafo;
 
         Usuarios usuario1("José", "Martínez", "15/04/1990", "jose", "password123");

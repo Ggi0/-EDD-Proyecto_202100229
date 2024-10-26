@@ -219,6 +219,7 @@ void Form_admin::on_btt_eliminarUser_clicked()
 void Form_admin::on_btt_generarReportes_clicked()
 {
     arbolGlobal_usuarios.graph();
+
     // Crear una nueva escena
     QGraphicsScene* scene = new QGraphicsScene(this);
 
@@ -257,6 +258,10 @@ void Form_admin::on_btt_generarReportes_clicked()
         // Mostrar un mensaje de error si la imagen no se pudo cargar
         qDebug() << "Error: No se pudo cargar la imagen.";
     }
+
+
+    grafoGlobal_relaciones.crearGrafoLista();
+    grafoGlobal_relaciones.crearGrafo();
 
 
 }

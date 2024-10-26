@@ -3,6 +3,7 @@
 
 // Arbol AVL globla de USUARIOS
 #include "global_usuariosAVL.h"
+#include "../solicitudes/global_relacionesAmistad.h"
 
 
 // ----- METODOS -----

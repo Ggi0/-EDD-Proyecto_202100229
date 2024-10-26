@@ -2,6 +2,7 @@
 #include <functional>
 #include <string>
 
+
 /*
     RESTRICCIONES:
 
@@ -123,6 +124,9 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
             usuarioEmisor.agregarAmigo(usuarioReceptor.getID());
             usuarioReceptor.agregarAmigo(usuarioEmisor.getID());
 
+            // crear conexion del grafo entre los usuarios
+            crearConexionGrafo(grafoGlobal_relaciones, usuarioEmisor, usuarioReceptor);
+
             std::cout << "Solicitud pendiente ACEPTADA y procesada correctamente." << std::endl;
             std::cout << "EMISOR: " << std::endl;
             usuarioEmisor.printUsuario();
@@ -137,6 +141,10 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
             // Si no había solicitud pendiente previa, proceder con la aceptación normal
             usuarioEmisor.agregarAmigo(usuarioReceptor.getID());
             usuarioReceptor.agregarAmigo(usuarioEmisor.getID());
+
+            // crear conexion del grafo entre los usuarios
+            crearConexionGrafo(grafoGlobal_relaciones, usuarioEmisor, usuarioReceptor);
+
             std::cout << "Solicitud ACEPTADA. Usuarios agregados como amigos." << std::endl;
             std::cout << "EMISOR, " << usuarioEmisor.getCorreo() << " ahora es amigo de: " << usuarioReceptor.getCorreo() << std::endl;
             std::cout << "RECEPTOR: "<< usuarioReceptor.getCorreo() << " ahora es amigo de: " << usuarioEmisor.getCorreo() << std::endl;
@@ -273,4 +281,10 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
     // Si llegamos aquí, tanto el emisor como el receptor existen
     std::cout << "Emisor y receptor encontrados en el árbol." << std::endl;
     return 2; // Indicando que ambos usuarios fueron encontrados
+}
+
+
+void crearConexionGrafo(listaAdyacencia &grafo, Usuarios origen, Usuarios destino){
+    grafo.crearConexion(origen, destino);
+    grafo.crearConexion(destino, origen);
 }
