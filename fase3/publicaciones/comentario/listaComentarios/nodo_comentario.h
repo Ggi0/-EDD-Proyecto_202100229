@@ -12,11 +12,13 @@ class Nodo_com{
     
     public:
         // --------- CONSTRUCTORES
-        // Nodo *primero = Nodo() ---> Invocar a nodo y que devuelva un tipo de nodo 
+        //Nodo_com *primero = Nodo_com(); //---> Invocar a nodo y que devuelva un tipo de nodo 
+        // Constructores y Destructor
         Nodo_com();
-        // Nodo *primero = Nodo(data = 5) -----> Este pasara la información
-        // un nodo que de info tenga 5
         Nodo_com(Comentario valor);
+        Nodo_com(const Nodo_com& other); // Constructor de copia
+        Nodo_com& operator=(const Nodo_com& other); // Operador de asignación
+        ~Nodo_com(); // Destructor
 
         // ---------- Getters and Setters ---------
         void setData(Comentario valor); // Define el valor de del nodo

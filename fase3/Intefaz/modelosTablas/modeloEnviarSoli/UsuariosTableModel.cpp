@@ -75,6 +75,8 @@ std::string UsuariosTableModel::procesarSeleccion(const QModelIndex &index) {
     int row = index.row();
     std::string correoReceptor = datos[row].getCorreo();
 
+    registroSolicitudes(loginUser_global, correoReceptor, "PENDIENTE");
+    
     // Emitir señal para enviar solicitud
     emit enviarSolicitud(QString::fromStdString(correoReceptor));
 

@@ -16,7 +16,8 @@ listaAdyacencia grafoGlobal_relaciones;
 */
 int verificarCorreo(std::string nombres, std::string apellidos, std::string fechaN, std::string correo, std::string contrasenia) {
     // Crear un usuario temporal para la búsqueda
-    Usuarios usuarioTemp(nombres, apellidos, fechaN, correo, contrasenia);
+    std::string hash = sha256(contrasenia);
+    Usuarios usuarioTemp(nombres, apellidos, fechaN, correo, hash);
     
     // Verificar si el árbol está vacío
     if (arbolGlobal_usuarios.getRaiz() == nullptr) {
@@ -49,6 +50,7 @@ int verificarCorreo(std::string nombres, std::string apellidos, std::string fech
     retorna 2 -> para el acceso del administrador
 */
 int iniciarSesion(std::string correo, std::string contrasenia) {
+     std::string hash = sha256(contrasenia);
     // Iniciando sesión como ADMIN
     if (correo == "admin" && contrasenia == "123") {
         std::cout << "ADMINISTRACIÓN" << std::endl;
@@ -65,7 +67,7 @@ int iniciarSesion(std::string correo, std::string contrasenia) {
     NodoAVL* usuarioEncontrado = arbolGlobal_usuarios.buscarPorCorreo(correo);
 
     // Verificar las credenciales del usuario
-    if (usuarioEncontrado != nullptr && usuarioEncontrado->getData().getContrasenia() == contrasenia) {
+    if (usuarioEncontrado != nullptr && usuarioEncontrado->getData().getContrasenia() == hash) {
         std::cout << "Inicio de sesión exitoso para el usuario: " << correo << std::endl;
         loginUser_global = correo;
 

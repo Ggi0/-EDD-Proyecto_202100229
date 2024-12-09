@@ -16,11 +16,17 @@
 #include <QMessageBox>
 #include <algorithm> // para usar std::remove
 #include "../../administracion/leerJson.h"
+
 #include "../../usuarios/global_usuariosAVL.h"
 #include "../../solicitudes/global_relacionesAmistad.h"
 #include "../../publicaciones/global_data_publicaciones.h"
 
 #include "../../usuarios/arbolAVL/AVLTableModel.h"
+
+#include "../../seguridad/registrarArbolMerkle.h"
+#include "../../seguridad/seguridad.h"
+
+#include "../../seguridad/bloques/registrarBlock.h"
 
 namespace Ui {
 class Form_admin;
@@ -56,6 +62,18 @@ private slots:
     void on_btt_eliminarUser_clicked();
 
     void on_btt_generarReportes_clicked();
+
+    void on_btt_back3_clicked();
+
+    void on_btt_next2_clicked();
+
+    void on_btt_back1_clicked();
+
+    void on_btt_next3_clicked();
+
+    void on_btt_back2_clicked();
+
+    void on_btt_next1_clicked();
 
 private:
     Ui::Form_admin *ui;

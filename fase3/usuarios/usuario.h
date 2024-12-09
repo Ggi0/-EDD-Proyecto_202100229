@@ -13,6 +13,8 @@
 
 // para el arbol binario (feed)
 #include "../publicaciones/arbolBinario/bst_publi.h"
+#include "../seguridad/sha256.h"
+
 
 
 #include <fstream>

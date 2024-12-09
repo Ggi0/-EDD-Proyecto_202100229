@@ -44,10 +44,18 @@ public:
     void print() const;    // Imprime de inicio a fin
     void revPrint() const; // Imprime de fin a inicio
 
+    // buscar por ID
+    PublicacionNodo* buscarPorID(int id);
+
+
     // Método para graficar la lista usando Graphviz
     void graficar() const;
     void graficarNodo(const std::string& nombreArchivo) const;
+    void vaciarLista();
 
 };
+
+
+
 
 #endif // LISTAD_ENLAZADAP_H

@@ -1,7 +1,8 @@
 #ifndef PUBLICACION_H
 #define PUBLICACION_H
 #include <string>
-//#include "comentario/arbolB/arbolB.h"
+#include "comentario/arbolB/arbolB.h"
+
 
 /*
     clase para las PUBLICACIONES    
@@ -32,18 +33,26 @@ class Publicacion{
         std::string fecha;
         std::string hora;
 
-        // arbolB arbolComentarios
+        ArbolB arbolComentarios;
         //ArbolB arbolB_comentarios;
 
     public:
-        // ------ CONSTRUCCIOR ------
+        // Constructor sin parámetros
         Publicacion();
+
+        // Constructor con parámetros
         Publicacion(std::string correoP, 
                     std::string contenido,
                     std::string fecha,
                     std::string hora);
 
-        // ------ DESTRUCTOR -------
+        // Constructor de copia
+        Publicacion(const Publicacion& other);
+
+        // Operador de asignación
+        Publicacion& operator=(const Publicacion& other);
+
+        // Destructor
         ~Publicacion();
 
         // ------ GETTERS ----------
@@ -52,7 +61,8 @@ class Publicacion{
         std::string getContenido() const;
         std::string getFecha() const;
         std::string getHora() const;
-        //ArbolB getArbolB_comentarios() const;
+        const ArbolB& getArbolBComentarios() const;  // Versión const
+        ArbolB& getArbolBComentarios();              // Versión no-const
 
         // ------ SETTERS ----------
         void setID_publi(const int ID_publi);
@@ -60,7 +70,7 @@ class Publicacion{
         void setContenido(const std::string& contenido);
         void setFecha(const std::string& fecha);
         void setHora(const std::string& hora);
-        //void setArbolB_comentarios(const ArbolB& arbolB_comentarios);
+        void setArbolBComentarios(const ArbolB& arbolB_comentarios);
         
         // ------ METODOS ----------
         void printPublicacion() const;

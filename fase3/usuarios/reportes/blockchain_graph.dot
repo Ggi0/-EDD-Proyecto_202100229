@@ -1,0 +1,4 @@
+digraph BlockChain {
+    node [shape=record, style=filled];
+    node0 [label="{Index: 0\nTimestamp: 31-10-24::09:56:18\nHash: 0000969aafaa5196280b20faff862092310543acc8f7ef7d80206cbdfa1e71f5\nPrev Hash: 0000}", fillcolor="lightblue"];
+}

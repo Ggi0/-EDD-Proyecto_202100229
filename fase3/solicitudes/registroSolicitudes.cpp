@@ -3,6 +3,9 @@
 #include <string>
 
 
+// llamando a la lista global de solicitudes, para la permanencia de datos.
+arrayList_soli listaGlobal_solicitudes;
+
 /*
     RESTRICCIONES:
 
@@ -56,6 +59,8 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
 
     Usuarios& usuarioEmisor = nodoEmisor->getData();
     Usuarios& usuarioReceptor = nodoReceptor->getData();
+
+    ingresarListaSoli_Global(emisor, receptor, estado);
 
     /// ------ ACEPTADA ----------
     if (estado == "ACEPTADA") {
@@ -287,4 +292,11 @@ int registroSolicitudes(std::string emisor, std::string receptor, std::string es
 void crearConexionGrafo(listaAdyacencia &grafo, Usuarios origen, Usuarios destino){
     grafo.crearConexion(origen, destino);
     grafo.crearConexion(destino, origen);
+}
+
+
+void ingresarListaSoli_Global(std::string emisor, std::string receptor, std::string estado){
+    Solicitud nuevaSolicitud(emisor, receptor, estado);
+    listaGlobal_solicitudes.append(nuevaSolicitud);
+    //listaGlobal_solicitudes.printAll();
 }

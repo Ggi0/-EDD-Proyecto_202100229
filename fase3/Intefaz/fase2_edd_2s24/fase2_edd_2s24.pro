@@ -26,6 +26,13 @@ LISTADEPUBLI_DIR = $$PUBLICACIONES_DIR/listaDobleEnlazada
 ADMIN_DIR = $$PWD/../../administracion
 MODELOS_DIR = $$PWD/../modelosTablas
 MODENVIARSOLI_DIR = $$MODELOS_DIR/modeloEnviarSoli
+MODACEPTARSOLI_DIR = $$MODELOS_DIR/modeloPila
+MODLISTAENVSOLI_DIR = $$MODELOS_DIR/modeloLista
+SEGURIDAD_DIR = $$PWD/../../seguridad
+MERKLE_DIR = $$SEGURIDAD_DIR/merkle
+HUFFMAN_DIR = $$SEGURIDAD_DIR/huffman
+BLOCKCHAIN_DIR = $$SEGURIDAD_DIR/bloques
+LISTABLOCK_DIR = $$BLOCKCHAIN_DIR/listaBloques
 
 SOURCES += \
     form_admin.cpp \
@@ -46,9 +53,16 @@ SOURCES += \
     $$COMENTARIOS_DIR/*.cpp \
     $$LISTADEPUBLI_DIR/*.cpp \
     $$LISTACOMENTARIOS_DIR/*.cpp \
-    #$$ARBOLB_DIR/*.cpp \
+    $$ARBOLB_DIR/*.cpp \
     $$ADMIN_DIR/*.cpp \
-    $$MODENVIARSOLI_DIR/*.cpp
+    $$MODENVIARSOLI_DIR/*.cpp \
+    $$MODACEPTARSOLI_DIR/*.cpp \
+    $$MODLISTAENVSOLI_DIR/*.cpp \
+    $$SEGURIDAD_DIR/*.cpp \
+    $$MERKLE_DIR/*.cpp \
+    $$HUFFMAN_DIR/*.cpp \
+    $$BLOCKCHAIN_DIR/*.cpp \
+    $$LISTABLOCK_DIR/*.cpp
 
 HEADERS += \
     form_admin.h \
@@ -68,9 +82,16 @@ HEADERS += \
     $$COMENTARIOS_DIR/*.h \
     $$LISTADEPUBLI_DIR/*.h \
     $$LISTACOMENTARIOS_DIR/*.h \
-    # $$ARBOLB_DIR/*.h \
+    $$ARBOLB_DIR/*.h \
     $$ADMIN_DIR/*.h \
-    $$MODENVIARSOLI_DIR/*.h
+    $$MODENVIARSOLI_DIR/*.h \
+    $$MODACEPTARSOLI_DIR/*.h \
+    $$MODLISTAENVSOLI_DIR/*.h \
+    $$SEGURIDAD_DIR/*.h \
+    $$MERKLE_DIR/*.h \
+    $$HUFFMAN_DIR/*.h \
+    $$BLOCKCHAIN_DIR/*.h \
+    $$LISTABLOCK_DIR/*.h
 
 FORMS += \
     form_admin.ui \
@@ -95,7 +116,14 @@ INCLUDEPATH += \
     $$ARBOLB_DIR \
     $$LISTADEPUBLI_DIR \
     $$ADMIN_DIR \
-    $$MODENVIARSOLI_DIR
+    $$MODENVIARSOLI_DIR \
+    $$MODACEPTARSOLI_DIR \
+    $$MODLISTAENVSOLI_DIR \
+    $$SEGURIDAD_DIR \
+    $$MERKLE_DIR \
+    $$HUFFMAN_DIR \
+    $$BLOCKCHAIN_DIR \
+    $$LISTABLOCK_DIR
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

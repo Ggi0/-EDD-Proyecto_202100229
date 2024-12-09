@@ -23,6 +23,7 @@ class listaAdyacencia{
 
         // sugerir amistad:
         listaSugerencias* sugerirAmistades(std::string correo);
+        void graficoPersonal(std::string correo);
 };
 
 #endif // 

@@ -38,6 +38,44 @@ void MainWindow::on_btt_login_clicked()
 {
     std::string loginUser_global;
 
+    /*// ------------ probando arbol b --------------------------------
+        Comentario nuevoComentario1("Ana", "mensaje1", "01/01/2024", "08:15");
+        Comentario nuevoComentario1_2("Ana2", "mensaje2ana", "01/01/2024", "08:16");
+        Comentario nuevoComentario2("Luis", "mensaje2", "15/02/2024", "09:30");
+        Comentario nuevoComentario3("Maria", "mensaje3", "28/03/2024", "10:45");
+        Comentario nuevoComentario4("Carlos", "mensaje4", "12/04/2024", "11:00");
+        Comentario nuevoComentario5("Elena", "mensaje5", "25/05/2024", "12:15");
+        Comentario nuevoComentario6("Jorge", "mensaje6", "07/06/2024", "13:30");
+        Comentario nuevoComentario7("Lucia", "mensaje7", "19/07/2024", "14:45");
+        Comentario nuevoComentario8("Pedro", "mensaje8", "30/08/2024", "15:00");
+        Comentario nuevoComentario9("Sofia", "mensaje9", "11/09/2024", "16:15");
+        Comentario nuevoComentario10("Miguel", "mensaje10", "23/10/2024", "17:30");
+        Comentario nuevoComentario11("Laura", "mensaje11", "04/11/2024", "18:45");
+        Comentario nuevoComentario12("MARCOS aurelio", "mensaje12", "16/12/2024", "19:00");
+        Comentario nuevoComentario13("Jorge MAtias", "mensaje13", "06/6/2024", "13:31");
+
+
+        ArbolB arbolB_prueba;  // Crear un árbol B de orden 5 (t = 3)
+
+        arbolB_prueba.insertar(nuevoComentario1);
+        arbolB_prueba.insertar(nuevoComentario1_2);
+        arbolB_prueba.insertar(nuevoComentario2);
+        arbolB_prueba.insertar(nuevoComentario3);
+        arbolB_prueba.insertar(nuevoComentario4);
+        arbolB_prueba.insertar(nuevoComentario5);
+        arbolB_prueba.insertar(nuevoComentario6);
+        arbolB_prueba.insertar(nuevoComentario7);
+        arbolB_prueba.insertar(nuevoComentario8);
+        arbolB_prueba.insertar(nuevoComentario9);
+        arbolB_prueba.insertar(nuevoComentario10);
+        arbolB_prueba.insertar(nuevoComentario11);
+        arbolB_prueba.insertar(nuevoComentario12);
+        arbolB_prueba.insertar(nuevoComentario13);
+
+        arbolB_prueba.graficar();  // Genera el gráfico del árbol
+*/
+
+
 
     /*// ----------- probar lista ------------------
     listaAdyacencia grafo;
@@ -92,12 +130,12 @@ void MainWindow::on_btt_login_clicked()
 
 
         // Obtener sugerencias para José
-        listaSugerencias* sugerencias = grafo.sugerirAmistades("maria@");
+        listaSugerencias* sugerencias = grafo.sugerirAmistades("adriana");
         sugerencias->mostrarSugerencias();
-        delete sugerencias;  // No olvides liberar la memoria
+        delete sugerencias;  // No olvides liberar la memoria*/
 
     // -------------------------------------------------------------------
-*/
+
 
     // Obtén los textos de los QLineEdit
     QString username = ui->txt_user->text();    // usuario

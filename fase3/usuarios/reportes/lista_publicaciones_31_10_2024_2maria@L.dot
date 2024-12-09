@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: 2maria@L\nContenido: hola esta es una prueba para ver si se escribe en el blockchain\nFecha: 31/10/2024\nHora: 05:08}"];
+}

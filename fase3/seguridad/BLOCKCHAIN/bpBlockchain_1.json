@@ -1,0 +1,20 @@
+  {
+  "INDEX": 1,
+  "TIMESTAMP": "31-10-24::09:46:59",
+  "NONCE": 12087,
+  "DATA": [
+    {
+        "correo":"cg@example.com",
+        "contenido":"prueba calificacion edd",
+        "fecha":"31/10/2024",
+        "hora":"09:46",
+        "comentarios":[
+            
+        ]
+    }
+],
+  "PREVIOUSHASH": "0000be8537cbc4c5f2bc9947424e5cdec7837bd7d079ff83410b5bfe5106131c",
+  "HASH": "0000a3d9db8b1591b9d81edef95d7826f24624fe742d29c47209fb11218f53fb",
+  "ROOTMERKLE": "3b4c2b2c9303c766e239c894c7584f2dcd5a1b893a4e2392cf759d358bf45587",
+  "INFORMACIONVALIDA": true
+}

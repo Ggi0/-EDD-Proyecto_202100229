@@ -1,0 +1,5 @@
+digraph G {
+    node [shape=record];
+    rankdir=LR;
+    node0 [label="{Correo: lr@example.com\nContenido: Probando nuevas recetas, la cocina se ha convertido en mi nuevo hobby.\nFecha: 10/08/2024\nHora: 13:15}"];
+}

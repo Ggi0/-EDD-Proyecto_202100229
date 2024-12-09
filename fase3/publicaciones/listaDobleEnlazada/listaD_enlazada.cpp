@@ -1,4 +1,6 @@
 #include "listaD_enlazadaP.h"
+#include <sstream>
+
 
 
 // Constructor
@@ -227,3 +229,28 @@ void ListaDoblementeEnlazadaP::graficarNodo(const std::string& nombreArchivo) co
         std::cerr << "Código de retorno: " << returnCode << std::endl;
     }
 }
+
+
+PublicacionNodo* ListaDoblementeEnlazadaP::buscarPorID(int id) {
+    PublicacionNodo* actual = primero;
+
+    while (actual != nullptr) {
+        if (actual->getData().getID_publi() == id) {
+            return actual; // Retorna el nodo si se encuentra el ID
+        }
+        actual = actual->getSig();
+    }
+    return nullptr; // Retorna nullptr si no se encuentra el ID
+}
+
+void ListaDoblementeEnlazadaP::vaciarLista() {
+    PublicacionNodo* actual = primero;
+    while (actual != nullptr) {
+        PublicacionNodo* siguiente = actual->getSig();
+        delete actual;
+        actual = siguiente;
+    }
+    primero = nullptr;
+    ultimo = nullptr;
+}
+

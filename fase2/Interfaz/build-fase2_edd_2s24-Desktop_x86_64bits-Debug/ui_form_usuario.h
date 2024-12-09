@@ -59,8 +59,8 @@ public:
     QTableView *tableV_soliEnv;
     QWidget *page_reportes;
     QFrame *frame_4;
-    QTableView *tableView;
     QLabel *label_14;
+    QGraphicsView *gView_relaciones;
     QFrame *frame_5;
     QTableView *tableView_2;
     QLabel *label_15;
@@ -474,12 +474,9 @@ public:
         page_reportes->setObjectName(QString::fromUtf8("page_reportes"));
         frame_4 = new QFrame(page_reportes);
         frame_4->setObjectName(QString::fromUtf8("frame_4"));
-        frame_4->setGeometry(QRect(0, 0, 381, 171));
+        frame_4->setGeometry(QRect(10, 10, 381, 361));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
-        tableView = new QTableView(frame_4);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(10, 30, 361, 131));
         label_14 = new QLabel(frame_4);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(10, 10, 221, 21));
@@ -489,6 +486,9 @@ public:
         font6.setBold(true);
         font6.setWeight(75);
         label_14->setFont(font6);
+        gView_relaciones = new QGraphicsView(frame_4);
+        gView_relaciones->setObjectName(QString::fromUtf8("gView_relaciones"));
+        gView_relaciones->setGeometry(QRect(0, 40, 371, 311));
         frame_5 = new QFrame(page_reportes);
         frame_5->setObjectName(QString::fromUtf8("frame_5"));
         frame_5->setGeometry(QRect(400, 0, 381, 171));
@@ -503,12 +503,12 @@ public:
         label_15->setFont(font6);
         frame_6 = new QFrame(page_reportes);
         frame_6->setObjectName(QString::fromUtf8("frame_6"));
-        frame_6->setGeometry(QRect(0, 180, 781, 211));
+        frame_6->setGeometry(QRect(400, 180, 381, 211));
         frame_6->setFrameShape(QFrame::StyledPanel);
         frame_6->setFrameShadow(QFrame::Raised);
         comboBox = new QComboBox(frame_6);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(40, 80, 91, 32));
+        comboBox->setGeometry(QRect(30, 10, 91, 32));
         stackedWidget->addWidget(page_reportes);
         page_hacerPubli = new QWidget();
         page_hacerPubli->setObjectName(QString::fromUtf8("page_hacerPubli"));
@@ -866,7 +866,7 @@ public:
 
         retranslateUi(Form_usuario);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Form_usuario);
@@ -894,7 +894,7 @@ public:
         lbl_dateUserfind->setText(QString());
         label_3->setText(QCoreApplication::translate("Form_usuario", "Publicaciones:", nullptr));
         btt_hacerPubli->setText(QCoreApplication::translate("Form_usuario", "Crear nueva publicaci\303\263n", nullptr));
-        label_14->setText(QCoreApplication::translate("Form_usuario", "Fechas con m\303\241s publicaciones", nullptr));
+        label_14->setText(QCoreApplication::translate("Form_usuario", "Relaciones", nullptr));
         label_15->setText(QCoreApplication::translate("Form_usuario", "Publicaciones con mayor cantidad de comentarios", nullptr));
         label_16->setText(QCoreApplication::translate("Form_usuario", "\302\277Qu\303\251 estas pensando hoy?", nullptr));
         txt_hacerPubli->setText(QString());

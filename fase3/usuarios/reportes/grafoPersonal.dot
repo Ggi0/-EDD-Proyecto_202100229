@@ -1,0 +1,22 @@
+digraph G {
+node[style = "filled"]
+Nodo2 [label="Carlos" fillcolor="lightblue" group="1"];
+Nodo11 [label="Maria" fillcolor="orange" group="2"];
+Nodo2->Nodo11 [dir=both];
+Nodo1 [label="Ana" fillcolor="orange" group="2"];
+Nodo2->Nodo1 [dir=both];
+Nodo12 [label="Pedro" fillcolor="orange" group="2"];
+Nodo2->Nodo12 [dir=both];
+Nodo8 [label="Lucia" fillcolor="orange" group="2"];
+Nodo2->Nodo8 [dir=both];
+Nodo10 [label="Miguel" fillcolor="orange" group="2"];
+Nodo2->Nodo10 [dir=both];
+Nodo4 [label="Elena" fillcolor="lightgreen" group="3"];
+Nodo11->Nodo4 [style=dashed];
+Nodo7 [label="Jose" fillcolor="lightgreen" group="3"];
+Nodo12->Nodo7 [style=dashed];
+Nodo9 [label="Laura" fillcolor="lightgreen" group="3"];
+Nodo1->Nodo9 [style=dashed];
+Nodo15 [label="Sofia" fillcolor="lightgreen" group="3"];
+Nodo1->Nodo15 [style=dashed];
+}

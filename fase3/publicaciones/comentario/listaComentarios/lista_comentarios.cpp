@@ -1,25 +1,51 @@
 #include "lista_comentarios.h"
 
 // Constructor
-lista_comentarios::lista_comentarios(){
-    primero = nullptr;
-    ultimo = nullptr;
+lista_comentarios::lista_comentarios() : primero(nullptr), ultimo(nullptr) {}
+
+// Constructor de copia
+lista_comentarios::lista_comentarios(const lista_comentarios& other) : primero(nullptr), ultimo(nullptr) {
+    Nodo_com* temp = other.primero;
+    while (temp != nullptr) {
+        append(temp->getData());
+        temp = temp->getSig();
+    }
+}
+
+// Operador de asignación
+lista_comentarios& lista_comentarios::operator=(const lista_comentarios& other) {
+    if (this != &other) {
+        while (primero != nullptr) {
+            Nodo_com* temp = primero;
+            primero = primero->getSig();
+            delete temp;
+        }
+        primero = ultimo = nullptr;
+
+        Nodo_com* temp = other.primero;
+        while (temp != nullptr) {
+            append(temp->getData());
+            temp = temp->getSig();
+        }
+    }
+    return *this;
 }
 
 // Destructor
 lista_comentarios::~lista_comentarios() {
-    Nodo_com *tempo = primero;
-    Nodo_com *aux;
-    while (tempo != nullptr) {
-        aux = tempo->getSig();
-        delete tempo;
-        tempo = aux;
+    while (primero != nullptr) {
+        Nodo_com* temp = primero;
+        primero = primero->getSig();
+        delete temp;
     }
+    ultimo = nullptr;
 }
+
 
 Nodo_com* lista_comentarios::getPrimero() {
     return primero;
 }
+
 
 // ----------- METODOS ----------------
 
@@ -187,7 +213,7 @@ void lista_comentarios::setUltimo(Nodo_com* nuevoUltimo) {
 
 void lista_comentarios::graficar() const {
     // Ruta donde deseas guardar el archivo .dot y .png
-    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes";
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
     std::ofstream archivo(outputDir + "lista_comentarios.dot");
     if (!archivo.is_open()) {
         std::cerr << "No se pudo crear el archivo .dot" << std::endl;
@@ -224,10 +250,10 @@ void lista_comentarios::graficar() const {
     int returnCode = system(dotCommand.c_str());
 
     if(returnCode == 0){
-        std::cout << "Command executed successfully." << std::endl;
+        std::cout << "(lista comentarios) Command executed successfully." << std::endl;
         }
     else{
-        std::cout << "Command execution failed or returned non-zero: " << returnCode << std::endl;
+        std::cout << "(lista comentarios) Command execution failed or returned non-zero: " << returnCode << std::endl;
     }
 }
 

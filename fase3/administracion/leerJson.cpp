@@ -70,7 +70,7 @@ void leerSolicitudes(const std::string& pathDelArchivo) {
     }
 }
 
-/*
+
 void leerPublicaciones(const std::string& pathDelArchivo) {
     try {
         nlohmann::json jsonData;
@@ -122,10 +122,10 @@ void leerPublicaciones(const std::string& pathDelArchivo) {
         std::cerr << "Error al procesar el archivo JSON: " << e.what() << std::endl;
     }
 }
-*/
 
 
 
+/*
 void leerPublicaciones(const std::string& pathDelArchivo) {
     try {
         nlohmann::json jsonData;
@@ -161,3 +161,4 @@ void leerPublicaciones(const std::string& pathDelArchivo) {
         std::cerr << "Error al procesar el archivo JSON: " << e.what() << std::endl;
     }
 }
+*/

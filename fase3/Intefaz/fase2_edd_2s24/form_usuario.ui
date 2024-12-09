@@ -327,7 +327,7 @@ QPushButton#btt_cerrarSesion:pressed {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_buscar">
      <widget class="QLineEdit" name="txt_buscarUser">
@@ -746,10 +746,10 @@ QPushButton#btt_hacerPubli:pressed {
      <widget class="QFrame" name="frame_4">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
+        <x>10</x>
+        <y>10</y>
         <width>381</width>
-        <height>171</height>
+        <height>361</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -758,16 +758,6 @@ QPushButton#btt_hacerPubli:pressed {
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTableView" name="tableView">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>361</width>
-         <height>131</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
@@ -786,7 +776,17 @@ QPushButton#btt_hacerPubli:pressed {
         </font>
        </property>
        <property name="text">
-        <string>Fechas con más publicaciones</string>
+        <string>Relaciones</string>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="gView_relaciones">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>371</width>
+         <height>311</height>
+        </rect>
        </property>
       </widget>
      </widget>
@@ -840,9 +840,9 @@ QPushButton#btt_hacerPubli:pressed {
      <widget class="QFrame" name="frame_6">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>400</x>
         <y>180</y>
-        <width>781</width>
+        <width>381</width>
         <height>211</height>
        </rect>
       </property>
@@ -855,8 +855,8 @@ QPushButton#btt_hacerPubli:pressed {
       <widget class="QComboBox" name="comboBox">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>80</y>
+         <x>30</x>
+         <y>10</y>
          <width>91</width>
          <height>32</height>
         </rect>

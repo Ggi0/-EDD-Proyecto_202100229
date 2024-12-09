@@ -214,3 +214,118 @@ listaSugerencias* listaAdyacencia::sugerirAmistades(std::string correo) {
     
     return sugerencias;
 }
+
+
+void listaAdyacencia::graficoPersonal(std::string correo) {
+    // Ruta donde se guardará el archivo .dot y .png
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
+
+    std::ofstream outfile(outputDir + "grafoPersonal.dot");
+    outfile << "digraph G {" << std::endl;
+    outfile << "node[style = \"filled\"]" << std::endl;
+
+    // Encontrar el usuario por correo
+    vnodo* usuarioActual = this->cabeza;
+    while (usuarioActual != nullptr && usuarioActual->getData().getCorreo() != correo) {
+        usuarioActual = usuarioActual->getSiguiente();
+    }
+
+    if (usuarioActual == nullptr) {
+        std::cout << "Usuario no encontrado" << std::endl;
+        return;
+    }
+
+    // Preparar conjuntos para identificar tipos de usuarios
+    std::set<int> amigosDirectos;
+    std::set<int> amigosDeAmigos;
+
+    // Obtener amigos directos
+    enodo* amigo = usuarioActual->getDestinos();
+    while (amigo != nullptr) {
+        amigosDirectos.insert(amigo->getDestino().getID());
+        amigo = amigo->getSiguiente();
+    }
+
+    // Graficar el usuario principal en azul
+    int usuarioID = usuarioActual->getData().getID();
+    std::string nombreUsuario = usuarioActual->getData().getNombres();
+    outfile << "Nodo" << usuarioID 
+            << " [label=\"" << nombreUsuario 
+            << "\" fillcolor=\"lightblue\" group=\"1\"];" << std::endl;
+
+    // Graficar amigos directos en anaranjado
+    amigo = usuarioActual->getDestinos();
+    while (amigo != nullptr) {
+        int amigoID = amigo->getDestino().getID();
+        std::string amigoNombre = amigo->getDestino().getNombres();
+        outfile << "Nodo" << amigoID 
+                << " [label=\"" << amigoNombre 
+                << "\" fillcolor=\"orange\" group=\"2\"];" << std::endl;
+        
+        // Conexión entre usuario y amigo
+        outfile << "Nodo" << usuarioID << "->Nodo" << amigoID 
+                << " [dir=both];" << std::endl;
+
+        // Encontrar amigos de los amigos
+        vnodo* amigoNodo = this->cabeza;
+        while (amigoNodo != nullptr && amigoNodo->getData().getID() != amigoID) {
+            amigoNodo = amigoNodo->getSiguiente();
+        }
+
+        if (amigoNodo != nullptr) {
+            enodo* amigoDeAmigo = amigoNodo->getDestinos();
+            while (amigoDeAmigo != nullptr) {
+                int amigoDeAmigoID = amigoDeAmigo->getDestino().getID();
+                
+                // Excluir al usuario principal y amigos directos
+                if (amigoDeAmigoID != usuarioID && 
+                    amigosDirectos.find(amigoDeAmigoID) == amigosDirectos.end()) {
+                    
+                    amigosDeAmigos.insert(amigoDeAmigoID);
+                }
+                
+                amigoDeAmigo = amigoDeAmigo->getSiguiente();
+            }
+        }
+        
+        amigo = amigo->getSiguiente();
+    }
+
+    // Graficar amigos de amigos en verde
+    for (int amigoDeAmigoID : amigosDeAmigos) {
+        vnodo* amigoDeAmigoNodo = this->cabeza;
+        while (amigoDeAmigoNodo != nullptr && 
+               amigoDeAmigoNodo->getData().getID() != amigoDeAmigoID) {
+            amigoDeAmigoNodo = amigoDeAmigoNodo->getSiguiente();
+        }
+
+        if (amigoDeAmigoNodo != nullptr) {
+            std::string amigoDeAmigoNombre = amigoDeAmigoNodo->getData().getNombres();
+            outfile << "Nodo" << amigoDeAmigoID 
+                    << " [label=\"" << amigoDeAmigoNombre 
+                    << "\" fillcolor=\"lightgreen\" group=\"3\"];" << std::endl;
+
+            // Conexiones al azar a amigos directos para mostrar contexto
+            std::vector<int> amigosDirectosVector(amigosDirectos.begin(), amigosDirectos.end());
+            if (!amigosDirectosVector.empty()) {
+                int randomAmigoID = amigosDirectosVector[rand() % amigosDirectosVector.size()];
+                outfile << "Nodo" << randomAmigoID << "->Nodo" << amigoDeAmigoID 
+                        << " [style=dashed];" << std::endl;
+            }
+        }
+    }
+
+    outfile << "}" << std::endl;
+    outfile.close();
+
+    // Comando para generar el archivo .png
+    std::string dotCommand = "/opt/local/bin/dot -Tpng " + outputDir + "grafoPersonal.dot -o " + outputDir + "grafoPersonal.png";
+    int returnCode = system(dotCommand.c_str());
+
+    if(returnCode == 0){
+        std::cout << "(Grafico Personal) Generado exitosamente." << std::endl;
+    }
+    else{
+        std::cout << "(Grafico Personal) Fallo al generar: " << returnCode << std::endl;
+    }
+}

@@ -19,11 +19,11 @@ class lista_comentarios{
         Nodo_com *ultimo;
 
     public:
-        // ----- CONSTRUCTOR ------
+        // Constructores y Destructor
         lista_comentarios();
-
-        // ------ DESTRUCTOR ------
-        ~lista_comentarios();
+        lista_comentarios(const lista_comentarios& other); // Constructor de copia
+        lista_comentarios& operator=(const lista_comentarios& other); // Operador de asignación
+        ~lista_comentarios(); // Destructor
 
         // ------- METODOS --------
         void push(Comentario comentario);

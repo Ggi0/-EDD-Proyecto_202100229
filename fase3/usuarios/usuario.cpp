@@ -119,10 +119,11 @@ void Usuarios::printUsuario(){
 
 // ----------- modificar datos personales --------------------
 void Usuarios::modificarDatos(const std::string& nuevosNombres, const std::string& nuevosApellidos, const std::string& nuevaContrasenia, const std::string& nuevaFechaN) {
+    std::string hash = sha256(nuevaContrasenia);
     // Usamos los setters para modificar los atributos del usuario
     setNombres(const_cast<std::string&>(nuevosNombres)); // Usamos const_cast para modificar los strings
     setApellidos(const_cast<std::string&>(nuevosApellidos));
-    setContrasenia(const_cast<std::string&>(nuevaContrasenia));
+    setContrasenia(const_cast<std::string&>(hash));
     setFechaN(const_cast<std::string&>(nuevaFechaN));
 
     /*

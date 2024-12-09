@@ -5,7 +5,10 @@
 Form_usuario::Form_usuario(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Form_usuario),
-    modeloTabla(new UsuariosTableModel(this))
+    modeloTabla(new UsuariosTableModel(this)),
+    modeloTablaSolicitudes(new SoliRecividasTableModel(this)),  // Inicializar modelo de solicitudes
+    modeloTablaSolicitudesEnviadas(new listaEnvTableModel(this))  // Inicializar modelo para solicitudes enviadas
+
 {
     ui->setupUi(this);
     // Muestra la página vacía (page_white) al inicio
@@ -17,19 +20,54 @@ Form_usuario::Form_usuario(QWidget *parent) :
     ui->lbl_tituloUser->setText(texto_ap);
 
     // ------------ para ENVIAR SOLICITUDES -----------------
-    // Configuración de la tabla de solicitudes
-    ui->tableV_usuarios->setModel(modeloTabla);
-    ui->tableV_usuarios->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            // Configuración de la tabla de solicitudes
+            ui->tableV_usuarios->setModel(modeloTabla);
+            ui->tableV_usuarios->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // Configuración adicional de la tabla
-    ui->tableV_usuarios->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->tableV_usuarios->setSelectionMode(QAbstractItemView::SingleSelection);
+            // Configuración adicional de la tabla
+            ui->tableV_usuarios->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->tableV_usuarios->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    // Conectar la señal clicked de la tabla con nuestro slot
-    connect(ui->tableV_usuarios, &QTableView::clicked, this, &Form_usuario::procesarClickTabla);
-        connect(modeloTabla, &UsuariosTableModel::enviarSolicitud, this, [this](QString correo){
-            QMessageBox::information(this, "Solicitud Enviada", "Usted le envió una solicitud a " + correo);
-        });
+            // Conectar la señal clicked de la tabla con nuestro slot
+            connect(ui->tableV_usuarios, &QTableView::clicked, this, &Form_usuario::procesarClickTabla);
+            connect(modeloTabla, &UsuariosTableModel::enviarSolicitud, this, [this](QString correo){
+                QMessageBox::information(this, "Solicitud Enviada", "Usted le envió una solicitud a " + correo);
+            });
+
+    // -------------------- para aceptar SOLICITUDES -------------------
+            // Configurar la tabla de solicitudes recibidas
+            ui->tableV_soliRec->setModel(modeloTablaSolicitudes);
+            ui->tableV_soliRec->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+            // Configuración adicional de la tabla
+            ui->tableV_soliRec->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->tableV_soliRec->setSelectionMode(QAbstractItemView::SingleSelection);
+
+            // Conectar señal clicked de la tabla con el slot de procesarClickTablaSolicitudes
+            connect(ui->tableV_soliRec, &QTableView::clicked, this, &Form_usuario::procesarClickTablaSolicitudes);
+
+            // Conectar la señal solicitudProcesada para mostrar mensajes al usuario
+            connect(modeloTablaSolicitudes, &SoliRecividasTableModel::solicitudProcesada, this, [](QString mensaje) {
+                QMessageBox::information(nullptr, "Solicitud Procesada", mensaje);
+            });
+
+    // --------------------- para SOLICITUDES ENVIADAS --------------------
+            // Configurar la tabla de solicitudes enviadas
+            ui->tableV_soliEnv->setModel(modeloTablaSolicitudesEnviadas);
+            ui->tableV_soliEnv->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+            // Configuración adicional de la tabla
+            ui->tableV_soliEnv->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->tableV_soliEnv->setSelectionMode(QAbstractItemView::SingleSelection);
+
+            // Conectar la señal clicked de la tabla con el slot de cancelar solicitud enviada
+            connect(ui->tableV_soliEnv, &QTableView::clicked, this, &Form_usuario::procesarClickTablaSolicitudesEnviadas);
+
+            // Conectar la señal solicitudCancelada para mostrar mensajes al usuario
+            connect(modeloTablaSolicitudesEnviadas, &listaEnvTableModel::solicitudCancelada, this, [](QString mensaje) {
+                QMessageBox::information(nullptr, "Solicitud Cancelada", mensaje);
+            });
+
 }
 
 Form_usuario::~Form_usuario()
@@ -66,15 +104,30 @@ void Form_usuario::on_btt_solicitudes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_soli);
 
-    // -------------- TABLA PARA ENVIAR SOLICITUDES ----------------
     // Obtener el correo del usuario actual desde loginUser_global
     std::string correoActual = loginUser_global;
 
-    // Actualizar los datos en el modelo, excluyendo al usuario actual
-    modeloTabla->actualizarDatosDesdeAVL(arbolGlobal_usuarios, correoActual);
+    // -------------- TABLA PARA ENVIAR SOLICITUDES ----------------
+        // Actualizar los datos en el modelo, excluyendo al usuario actual
+        modeloTabla->actualizarDatosDesdeAVL(arbolGlobal_usuarios, correoActual);
 
-    // Ajustar el tamaño de las filas después de actualizar los datos
-    ui->tableV_usuarios->resizeRowsToContents();
+        // Ajustar el tamaño de las filas después de actualizar los datos
+        ui->tableV_usuarios->resizeRowsToContents();
+
+
+    // ---------------- TAbla para aceptar solicitudes ------------------
+        // Actualizar los datos de la tabla con las solicitudes recibidas
+            modeloTablaSolicitudes->actualizarSolicitudes(correoActual, arbolGlobal_usuarios);
+
+        // Ajustar tamaño de las filas
+        ui->tableV_soliRec->resizeRowsToContents();
+
+    // --------------------- para SOLICITUDES ENVIADAS --------------------
+        // Actualizar los datos de la tabla de solicitudes enviadas
+        modeloTablaSolicitudesEnviadas->actualizarSolicitudes(correoActual, arbolGlobal_usuarios);
+
+        // Ajustar tamaño de las filas
+        ui->tableV_soliEnv->resizeRowsToContents();
 
 }
 
@@ -87,11 +140,54 @@ void Form_usuario::procesarClickTabla(const QModelIndex &index)
         qDebug() << "Correo seleccionado:" << QString::fromStdString(correoSeleccionado);
     }
 }
+ // Slot para manejar acciones en la tabla de aceptar solicitudes
+void Form_usuario::procesarClickTablaSolicitudes(const QModelIndex &index) {
+    QString accion = (index.column() == 1) ? "Aceptar" : "Rechazar";  // Determina la acción
+    std::string correo = modeloTablaSolicitudes->data(index.siblingAtColumn(0), Qt::DisplayRole).toString().toStdString();
+    modeloTablaSolicitudes->procesarAccion(index, accion);  // Llama al método para procesar la acción
+    qDebug() << "Correo seleccionado:" << QString::fromStdString(correo);  // Muestra el correo seleccionado en la consola
+}
+
+void Form_usuario::procesarClickTablaSolicitudesEnviadas(const QModelIndex &index) {
+    if (index.column() == 1) {  // Asegura que se haya hecho clic en la columna "Cancelar"
+        std::string correo = modeloTablaSolicitudesEnviadas->data(index.siblingAtColumn(0), Qt::DisplayRole).toString().toStdString();
+        modeloTablaSolicitudesEnviadas->procesarAccion(index);  // Llama al método para procesar la cancelación
+        qDebug() << "Correo seleccionado:" << QString::fromStdString(correo);  // Muestra el correo seleccionado en la consola
+    }
+}
 
 
 void Form_usuario::on_btt_reportes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_reportes);
+    NodoAVL* usuarioEncontrado = arbolGlobal_usuarios.buscarPorCorreo(loginUser_global);
+            Usuarios& usuario = usuarioEncontrado->getData();
+            BST& bstPersonal = usuario.getBST_feedPublicaciones();
+            bstPersonal.graph();
+            //usuario.graficar_fecha("12/08/2024");
+
+     grafoGlobal_relaciones.graficoPersonal(loginUser_global);
+     // Crear una nueva escena
+     QGraphicsScene* scene3 = new QGraphicsScene(this);
+
+     // Cargar la imagen desde la ruta que conoces
+     QPixmap image3("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/grafoPersonal.png");
+
+     // Verificar si la imagen se cargó correctamente
+     if (!image3.isNull()) {
+         // Crear un item gráfico y agregarlo a la escena
+         QGraphicsPixmapItem* item3 = new QGraphicsPixmapItem(image3);
+         scene3->addItem(item3);
+
+         // Establecer la escena en el QGraphicsView
+         ui->gView_relaciones->setScene(scene3);
+     } else {
+         // Mostrar un mensaje de error si la imagen no se pudo cargar
+         qDebug() << "Error: No se pudo cargar la imagen.";
+     }
+
+     grafoGlobal_relaciones.sugerirAmistades(loginUser_global);
+
 
 }
 

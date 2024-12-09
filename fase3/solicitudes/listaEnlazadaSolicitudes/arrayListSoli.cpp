@@ -170,9 +170,9 @@ void arrayList_soli::grafica() const {
     if (primero != nullptr) {
 
         // Ruta donde deseas guardar el archivo .dot y .png
-        std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase2/usuarios/reportes/";
+        std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
 
-        std::ofstream archivo(outputDir + "listaSolicitudes.dot");
+        std::ofstream archivo(outputDir + "listaGlobal_Solicitudes.dot");
         archivo << "digraph G {" << std::endl;
         archivo << "    rankdir=LR;" << std::endl; // Configuración para colocar nodos de izquierda a derecha
         archivo << "    node [shape=record];" << std::endl;
@@ -195,9 +195,18 @@ void arrayList_soli::grafica() const {
 
         archivo << "}" << std::endl;
         archivo.close();
+        // Comando para generar el archivo .png usando dot, especificando la ruta completa
+        std::string dotCommand = "/opt/local/bin/dot -Tpng " + outputDir + "listaGlobal_Solicitudes.dot -o " + outputDir + "listaGlobal_Solicitudes.png";
 
-        // Comando para generar la imagen a partir del archivo .dot
-        system("/opt/local/bin/dot -Tpng listaSolicitudes.dot -o listaSolicitudes.png");
+        // Ejecutar el comando
+        int returnCode = system(dotCommand.c_str());
+
+        if(returnCode == 0){
+            std::cout << "(lista global soli) Command executed successfully." << std::endl;
+            }
+        else{
+            std::cout << "(lista global soli) Command execution failed or returned non-zero: " << returnCode << std::endl;
+        }
     } else {
         std::cout << "La lista está vacía. No se puede generar la gráfica." << std::endl;
     }

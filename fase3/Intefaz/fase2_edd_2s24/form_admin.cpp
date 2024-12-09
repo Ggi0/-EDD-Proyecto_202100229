@@ -54,6 +54,26 @@ void Form_admin::on_btt_cargarAr_clicked()
 void Form_admin::on_btt_reportes_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->page_reportes);
+
+    // probando el arbol b
+    int idABuscar = 1; // ID de la publicación que quieres encontrar
+    PublicacionNodo* nodoEncontrado = listaGlobal_publicaciones.buscarPorID(idABuscar);
+    if (nodoEncontrado != nullptr) {
+        ArbolB& arbolComentarios = nodoEncontrado->getData().getArbolBComentarios();
+
+        std::cout << "\n=== Estado del Árbol B antes de graficar ===" << std::endl;
+        if (arbolComentarios.estaVacio()) {
+            std::cout << "El árbol está vacío!" << std::endl;
+        } else {
+            arbolComentarios.imprimirEstado();
+        }
+
+        std::cout << "\nIntentando graficar..." << std::endl;
+        arbolComentarios.graficar();
+    } else {
+        std::cout << "Publicación con ID " << idABuscar << " no encontrada." << std::endl;
+    }
+
 }
 
 
@@ -218,6 +238,12 @@ void Form_admin::on_btt_eliminarUser_clicked()
 
 void Form_admin::on_btt_generarReportes_clicked()
 {
+    //std::string varPubli;
+    //varPubli = generarJsonPublicaciones();
+    //std::cout<< "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
+    //std::cout<< varPubli<<std::endl;
+    //std::cout<< "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
+
     arbolGlobal_usuarios.graph();
 
     // Crear una nueva escena
@@ -241,19 +267,19 @@ void Form_admin::on_btt_generarReportes_clicked()
 
     listaGlobal_publicaciones.graficar();
     // Crear una nueva escena
-    QGraphicsScene* scene1 = new QGraphicsScene(this);
+    QGraphicsScene* scene2 = new QGraphicsScene(this);
 
     // Cargar la imagen desde la ruta que conoces
-    QPixmap listaGlobal_publicaciones("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/listaGlobal_publicaciones.png");
+    QPixmap image2("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/listaGlobal_publicaciones.png");
 
     // Verificar si la imagen se cargó correctamente
-    if (!listaGlobal_publicaciones.isNull()) {
+    if (!image2.isNull()) {
         // Crear un item gráfico y agregarlo a la escena
-        QGraphicsPixmapItem* item = new QGraphicsPixmapItem(listaGlobal_publicaciones);
-        scene1->addItem(item);
+        QGraphicsPixmapItem* item2 = new QGraphicsPixmapItem(image2);
+        scene2->addItem(item2);
 
         // Establecer la escena en el QGraphicsView
-        ui->gView_ListaPubli->setScene(scene1);
+        ui->gView_ListaPubli->setScene(scene2);
     } else {
         // Mostrar un mensaje de error si la imagen no se pudo cargar
         qDebug() << "Error: No se pudo cargar la imagen.";
@@ -261,8 +287,127 @@ void Form_admin::on_btt_generarReportes_clicked()
 
 
     grafoGlobal_relaciones.crearGrafoLista();
+    // Crear una nueva escena
+    QGraphicsScene* scene3 = new QGraphicsScene(this);
+
+    // Cargar la imagen desde la ruta que conoces
+    QPixmap image3("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/grafoLista.png");
+
+    // Verificar si la imagen se cargó correctamente
+    if (!image3.isNull()) {
+        // Crear un item gráfico y agregarlo a la escena
+        QGraphicsPixmapItem* item3 = new QGraphicsPixmapItem(image3);
+        scene3->addItem(item3);
+
+        // Establecer la escena en el QGraphicsView
+        ui->gView_ady->setScene(scene3);
+    } else {
+        // Mostrar un mensaje de error si la imagen no se pudo cargar
+        qDebug() << "Error: No se pudo cargar la imagen.";
+    }
+
+
     grafoGlobal_relaciones.crearGrafo();
+    // Crear una nueva escena
+    QGraphicsScene* scene4 = new QGraphicsScene(this);
+
+    // Cargar la imagen desde la ruta que conoces
+    QPixmap image4("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/grafo.png");
+
+    // Verificar si la imagen se cargó correctamente
+    if (!image4.isNull()) {
+        // Crear un item gráfico y agregarlo a la escena
+        QGraphicsPixmapItem* item4 = new QGraphicsPixmapItem(image4);
+        scene4->addItem(item4);
+
+        // Establecer la escena en el QGraphicsView
+        ui->gView_grafo->setScene(scene4);
+    } else {
+        // Mostrar un mensaje de error si la imagen no se pudo cargar
+        qDebug() << "Error: No se pudo cargar la imagen.";
+    }
 
 
+
+
+    registroArbolMerkle();
+    // Crear una nueva escena
+    QGraphicsScene* scene6 = new QGraphicsScene(this);
+
+    // Cargar la imagen desde la ruta que conoces
+    QPixmap image6("/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/merkleTree.png");
+
+    // Verificar si la imagen se cargó correctamente
+    if (!image6.isNull()) {
+        // Crear un item gráfico y agregarlo a la escena
+        QGraphicsPixmapItem* item6 = new QGraphicsPixmapItem(image6);
+        scene6->addItem(item6);
+
+        // Establecer la escena en el QGraphicsView
+        ui->gView_merkle->setScene(scene6);
+    } else {
+        // Mostrar un mensaje de error si la imagen no se pudo cargar
+        qDebug() << "Error: No se pudo cargar la imagen.";
+    }
+
+
+    listaGlobal_solicitudes.grafica();
+
+
+    //PublicacionNodo* nodoPrueba = listaGlobal_publicaciones.get
+    //prueba de publicacion
+
+        /*NodoAVL* usuarioEncontrado = arbolGlobal_usuarios.buscarPorCorreo("1carlos@G");
+        Usuarios& usuario = usuarioEncontrado->getData();
+        BST& bstPersonal = usuario.getBST_feedPublicaciones();
+        bstPersonal.graph();
+        usuario.graficar_fecha("12/08/2024");*/
+    comprimirUsuarios();
+    comprimirSolicitudes();
+    saveBlock();
+
+
+
+
+
+
+}
+
+
+void Form_admin::on_btt_back3_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes3);
+
+
+}
+
+
+void Form_admin::on_btt_next2_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes2);
+}
+
+
+void Form_admin::on_btt_back1_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes);
+}
+
+
+void Form_admin::on_btt_next3_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes3);
+}
+
+
+void Form_admin::on_btt_back2_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes2);
+}
+
+
+void Form_admin::on_btt_next1_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->page_reportes);
 }
 

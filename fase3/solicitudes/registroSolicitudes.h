@@ -24,3 +24,5 @@
 int registroSolicitudes(std::string emisor, std::string receptor, std::string estado);
 
 void crearConexionGrafo(listaAdyacencia&, Usuarios, Usuarios);
+
+void ingresarListaSoli_Global(std::string emisor, std::string receptor, std::string estado);

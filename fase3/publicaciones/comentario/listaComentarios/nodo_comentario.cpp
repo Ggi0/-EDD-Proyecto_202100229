@@ -2,13 +2,26 @@
 
 // ------- CONSTRUCTORES --------
 // Constructor por defecto
-Nodo_com::Nodo_com() : data(), sig(nullptr) {
-    // Inicializa dato si es necesario
+Nodo_com::Nodo_com() : data(), sig(nullptr) {}
+
+// Constructor con valor de `Comentario`
+Nodo_com::Nodo_com(Comentario valor) : data(valor), sig(nullptr) {}
+
+// Constructor de copia
+Nodo_com::Nodo_com(const Nodo_com& other) : data(other.data), sig(nullptr) {}
+
+// Operador de asignación
+Nodo_com& Nodo_com::operator=(const Nodo_com& other) {
+    if (this != &other) {
+        data = other.data;
+        sig = nullptr;
+    }
+    return *this;
 }
 
-// Constructor que inicializa con un valor de Usuarios
-Nodo_com::Nodo_com(Comentario valor) : data(valor), sig(nullptr) {
-    // Los valores ya están inicializados en la lista de inicialización
+// Destructor
+Nodo_com::~Nodo_com() {
+    sig = nullptr; // Asegurarse de no intentar liberar `sig` aquí, ya que la lista lo maneja
 }
 
 // GETTER AND SETTER

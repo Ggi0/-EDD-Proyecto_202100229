@@ -42,7 +42,7 @@ bool validarFormatoFecha(std::string fecha) {
 */
 void verificarCorreo_publicacion(std::string correo, std::string contenido, std::string fecha, std::string hora, lista_comentarios lista_comentarios) {
     std::cout << "Iniciando verificación para publicación de: " << correo << std::endl;
-    //std::cout << "Número de comentarios: " << lista_comentarios.size() << std::endl;
+    std::cout << "Número de comentarios: " << lista_comentarios.size() << std::endl;
     
     // 1) Verificar el formato de la fecha de la publicación
     if (!validarFormatoFecha(fecha)) {
@@ -69,12 +69,18 @@ void verificarCorreo_publicacion(std::string correo, std::string contenido, std:
         while (nodoActual != nullptr) {
             std::cout << "Procesando comentario " << ++contador << std::endl;
             Comentario comentarioActual = nodoActual->getData();
-            //nuevaPublicacion.getArbolB_comentarios().insertar(comentarioActual);
+            nuevaPublicacion.getArbolBComentarios().insertar(comentarioActual);
+            std::cout << "Número de comentarios insertados: " << lista_comentarios.size() << std::endl;
+            nuevaPublicacion.getArbolBComentarios().imprimirEstado();
+            comentarioActual.printComentario();
             nodoActual = nodoActual->getSig();
         }
         //std::cout << "Finalizando inserción de comentarios..." << std::endl;
 
-        //nuevaPublicacion.getArbolB_comentarios().graficar();
+        //nuevaPublicacion.getArbolBComentarios().graficar();
+        // Después de insertar todos los comentarios
+        std::cout << "Estado final del árbol antes de asignar a lista global:" << std::endl;
+        nuevaPublicacion.getArbolBComentarios().imprimirEstado();
 
         asignarListaGlobal_publicaciones(nuevaPublicacion);
         //agregar la publicación al feed del usuario y al de sus amigos
@@ -102,9 +108,27 @@ void verificarCorreo_publicacion(std::string correo, std::string contenido, std:
 
 // asignar a listaGlobal_publicaciones
 void asignarListaGlobal_publicaciones(Publicacion publicacion) {
+        std::cout << "Verificando estado del árbol antes de la copia:" << std::endl;
+    publicacion.getArbolBComentarios().imprimirEstado();
+    
+    // Crear una copia de la publicación
+    Publicacion nuevaPublicacion = publicacion;
+    
+    std::cout << "Verificando estado del árbol después de la copia:" << std::endl;
+    nuevaPublicacion.getArbolBComentarios().imprimirEstado();
+    
+    
+
     // Agregar la publicación a la lista global de publicaciones
-    listaGlobal_publicaciones.append(publicacion);
-    listaGlobal_publicaciones.graficar();
+    listaGlobal_publicaciones.append(nuevaPublicacion);
+    //listaGlobal_publicaciones.graficar();
+
+    // Verificar después de la inserción
+    PublicacionNodo* nodoNuevo = listaGlobal_publicaciones.buscarPorID(publicacion.getID_publi());
+    if (nodoNuevo) {
+        std::cout << "Estado del árbol después de insertar en la lista global:" << std::endl;
+        nodoNuevo->getData().getArbolBComentarios().imprimirEstado();
+    }
 }
 
 

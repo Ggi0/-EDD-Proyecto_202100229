@@ -9,6 +9,8 @@
 #include <QColor>
 #include <QDebug>
 
+#include "../../../solicitudes/registroSolicitudes.h"
+
 class UsuariosTableModel : public QAbstractTableModel {
     Q_OBJECT
 

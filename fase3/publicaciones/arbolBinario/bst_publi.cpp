@@ -181,7 +181,7 @@ void BST::graphHelper(NodoBST *nodo, std::ofstream &f) const {
 }
 
 void BST::graph() const {
-    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes";
+    std::string outputDir = "/Users/gio/Desktop/Edd_2s24/lab_edd_2s24/-EDD-Proyecto_202100229/fase3/usuarios/reportes/";
     std::ofstream outfile(outputDir + "bst.dot");
     outfile << "digraph BST {" << std::endl;
     outfile << "  node [shape=circle];" << std::endl;
